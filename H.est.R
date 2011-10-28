@@ -6,10 +6,9 @@ per.locus <- function(g) {
   n <- length(unique(pop(g)))
   harmN <- 1/mean(1/table(pop(g)))
   a <- makefreq(genind2genpop(g, quiet=T), quiet=T)[[1]]
-  HpJ <- 1 - apply(a**2, 1, sum)
-  HpS <- sum(HpJ) / n
+  HpS <- sum(1 - apply(a^2, 1, sum, na.rm=TRUE)) / n
   Hs_est <- (2*harmN/(2*harmN-1))*HpS
-  HpT <- 1 - sum(apply(a,2,mean)**2)
+  HpT <- 1 - sum(apply(a,2,mean, na.rm=TRUE)^2)
   Ht_est <- HpT + Hs_est/(2*harmN*n)
   #The stats themselves
   G_est <- (Ht_est-Hs_est)/Ht_est
@@ -29,8 +28,8 @@ genotypic_differntiation <- function(g){
   harmN <- 1/mean(1/table(pop(g)))
   
   results <- t(sapply(seploc(g), per.locus))
-  global_Hs <- mean(results[,1])
-  global_Ht <- mean(results[,2])
+  global_Hs <- mean(results[,1], na.rm=T)
+  global_Ht <- mean(results[,2], na.rm=T)
   global_G_est <- (global_Ht - global_Hs)/global_Ht
   global_G_prime_est <- global_G_est*(n-1+global_Hs)/((n-1)*(1-global_Hs))
   global_D <- (global_Ht - global_Hs)/(1 - global_Hs ) * (n/(n-1))

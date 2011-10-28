@@ -34,7 +34,7 @@ genotypic_differntiation <- function(g){
   global_G_est <- (global_Ht - global_Hs)/global_Ht
   global_G_prime_est <- global_G_est*(n-1+global_Hs)/((n-1)*(1-global_Hs))
   global_D <- (global_Ht - global_Hs)/(1 - global_Hs ) * (n/(n-1))
-  return(cbind(results,
+  return(rbind(results,
                c(global_Hs, global_Ht, global_G_est, global_G_prime_est, global_D)  
          ))
 }
