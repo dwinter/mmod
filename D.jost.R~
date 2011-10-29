@@ -1,6 +1,6 @@
 D.jost <- function(x){
   n <- length(unique(pop(x)))
-  harmN <- harmonic.mean(table(pop(x)))
+  harmN <- 1/mean(1/table(pop(x)))
   D.per.locus <- function(g) {
     #what we need to calculate these stats
     a <- makefreq(genind2genpop(g, quiet=T), quiet=T)[[1]]

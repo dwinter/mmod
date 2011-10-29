@@ -30,8 +30,8 @@ diff.stats <- function(x){
                 Ht = global_Ht, 
                 Gst_est = global_G_est, 
                 "G'st_est"= global_G_est*(n-1+global_Hs)/((n-1)*(1-global_Hs)),
-                "D_est(het)" = (global_Ht - global_Hs)/(1 - global_Hs ) * (n/(n-1)),
-                "D_est(mean)"= harmonic.mean(loci[,5])
+                "D_est (het)" = (global_Ht - global_Hs)/(1 - global_Hs ) * (n/(n-1))
+                "D_est (mean)"= harmonic.mean(loci[,5])
               )))
 }
 
