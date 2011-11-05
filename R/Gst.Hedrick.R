@@ -1,4 +1,4 @@
-D.jost <- function(x){
+Gst.Hedrick <- function(x){
   n <- length(unique(pop(x)))
   harmN <- harmonic.mean(table(pop(x)))
   D.per.locus <- function(g) {
@@ -9,18 +9,17 @@ D.jost <- function(x){
     HpT <- 1 - sum(apply(a,2,mean, na.rm=TRUE)^2)
     Ht_est <- HpT + Hs_est/(2*harmN*n)
     #The stat itself
-    D <- (Ht_est-Hs_est)/(1-Hs_est) * (n/(n-1))
-    return(c(Ht_est, Hs_est, D))
+    G_est <- (Ht_est-Hs_est)/Ht_est
+    Gprime_st <- G_est * (n-1+Hs_est)/((n-1)*(1-Hs_est))
+    return(c(Hs_est, Ht_est, Gprime_st))
   }
  loci <- t(sapply(seploc(x), D.per.locus))
   global_Hs <- mean(loci[,1], na.rm=T)
   global_Ht <- mean(loci[,2], na.rm=T)
-  global_D <-  (global_Ht - global_Hs)/(1 - global_Hs ) * (n/(n-1))
+  global_G_est <-  (global_Ht - global_Hs)/global_Ht
+  global_Hedrick <-  global_G_est * (n-1+global_Hs)/((n-1)*(1-global_Hs))
   harm_D <- harmonic.mean(loci)
-  return(list("per locus"=loci[,3],
-              "global (heterozygosities)"=global_D,
-              "global (harmonic mean)" = harm_D
-        ))
+  return(list("per locus"=loci[,3], global_Hedrick))
 
 }
 
