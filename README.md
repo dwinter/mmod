@@ -12,7 +12,12 @@ D.jost
 Gst.Hedrick
 Gst.Nei
 Pairwise version of each.
-Permutation tests for each.
+One function to caculate all these stats
+
+Permutation tests for each?
+
+
+
 
 
 
