@@ -1,3 +1,15 @@
+#' Calculate differentiation statistics for a genetic dataset
+#'
+#' This function calculates three different statistics of differentiaion
+#' for a genetic dataset. Nei's Gst, Hedrick's Gst and Jost's D
+#'
+#' @param x genind object (from package adegenet)
+#' @export
+#' @examples
+#' 
+#' data(nancycats)
+#' diff.stats(nancycats)
+
 diff.stats <- function(x){
   n <- length(unique(pop(x)))
   harmN <- harmonic.mean(table(pop(x)))
