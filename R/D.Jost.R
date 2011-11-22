@@ -1,3 +1,14 @@
+#' Calculate Jost's D using 
+#'
+#' This function calculates Jost's D 
+#'
+#' @param x genind object (from package adegenet)
+#' @export
+#' @examples
+#' 
+#' data(nancycats)
+#' D.Jost(nancycats)
+
 D.Jost <- function(x){
   n <- length(unique(pop(x)))
   harmN <- harmonic.mean(table(pop(x)))

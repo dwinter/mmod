@@ -1,3 +1,16 @@
+#' Calculate Nei's Gst using estimators for Hs and Ht
+#'
+#' This function calculates G'st, Hedrick's  correction to Gst 
+#' accounting for observed Hs. Nei and Chesser's  estimators of
+#' Hs and Ht are used
+#'
+#' @param x genind object (from package adegenet)
+#' @export
+#' @examples
+#' 
+#' data(nancycats) 
+#' Gst.Hedrick(nancycats)
+
 Gst.Hedrick <- function(x){
   n <- length(unique(pop(x)))
   harmN <- harmonic.mean(table(pop(x)))
@@ -19,7 +32,7 @@ Gst.Hedrick <- function(x){
   global_G_est <-  (global_Ht - global_Hs)/global_Ht
   global_Hedrick <-  global_G_est * (n-1+global_Hs)/((n-1)*(1-global_Hs))
   harm_D <- harmonic.mean(loci)
-  return(list("per locus"=loci[,3], global_Hedrick))
+  return(list("per.locus"=loci[,3], "global"=global_Hedrick))
 
 }
 

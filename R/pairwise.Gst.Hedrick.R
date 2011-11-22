@@ -1,4 +1,17 @@
-pairwise.Hedrick.Nei <- function(x) {
+#' Calculates pairwise values of Hedrick's G'st
+#'
+#' This function calculates Hedrick's G'st, a measure of genetic
+#' differentiation, between all combinations of populaitons
+#' in a genind object.
+#'
+#' @param x genind object (from package adegenet)
+#' @export
+#' @examples
+#' 
+#' data(nancycats)
+#' pairwise.Gst.Hedrick(nancycats[1:26,])
+
+pairwise.Gst.Hedrick<- function(x) {
   pops <- seppop(x)
   n.pops <- length(pops)
   #all combinations 

@@ -1,0 +1,129 @@
+* using log directory ‘/home/david/dev/mmod/..Rcheck’
+* using R version 2.13.1 (2011-07-08)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* using session charset: UTF-8
+* checking for file ‘./DESCRIPTION’ ... OK
+* this is package ‘mmod’ version ‘0.1’
+* checking package name space information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking for executable files ... WARNING
+Found the following executable file(s):
+  .git/objects/00/9d48de5f5be0295baecac4964267c333ae3ee0
+  .git/objects/04/3ba798fd0e0b6493c55bb503acdedc098dd62e
+  .git/objects/05/5592b329d3e93f23152825b7ba7764c6771683
+  .git/objects/0d/e0a8d387a147ed8373345220d5a96a1420b589
+  .git/objects/0e/8593e01fa05c5919f94a4fc7a25cd81e1047a2
+  .git/objects/14/48c547996f35a3a9db5a0f22a44ba9880d4d35
+  .git/objects/1c/3ba49b2ff412014af35fabecb13a9bcb986c0a
+  .git/objects/1d/b0e1b9bc62134c16aca15bd364acfd3046937a
+  .git/objects/27/e75e9bc0ccef738c80cfe7ef35bda548693ce9
+  .git/objects/2a/a79227b88c119f5817e3b20d77d3508ef8d763
+  .git/objects/34/d826d7b40dd6f86b1ed7bdc93d0b6dbc5704ff
+  .git/objects/35/609e26887abf04250b402874f388d08febe3b2
+  .git/objects/38/c8ad476f18e27ce8e9763111d6f6b91cf91516
+  .git/objects/3d/3eb736ca4123cb68b911cb33c989e6f24bf540
+  .git/objects/3d/e8dda7d4332c415372c40d0989e674a0c053b3
+  .git/objects/3f/e5c3489d905f5899972f04ee379bf43b13ef8b
+  .git/objects/43/f4a5a0c1c8ccd5cf57125c0ffd489c5f087412
+  .git/objects/45/15c7a20a06e9fa24f36833dcf75dba596bc448
+  .git/objects/45/51f114fe3ea9361f56bbdeca17aebd7bc29e5f
+  .git/objects/48/eaf8528bafa198837828dd9ba69632c7f131d9
+  .git/objects/49/17a6ffc3d64dbe1c3575232eab5ed612da54aa
+  .git/objects/4a/d3f8bcddf4ff835d3ca002839c9a073671952b
+  .git/objects/50/ee54ce911434170eb4a811ee4e44c7b337f3c1
+  .git/objects/51/2712723b31af65bc10c869dff8ba0426c5fc95
+  .git/objects/54/c412e5efb29f3fbe8d631bb9d3a2be8d6640ed
+  .git/objects/55/4f3a9c57273cc2101ff2d760d26060e743f5d0
+  .git/objects/55/fdfcd3fd95b3cf66d4013af09f44d582af6456
+  .git/objects/57/d55b7578bbae6e6985618320c0ea0107382bd1
+  .git/objects/5e/9b73781e0fea13e622765cfbf293dc7e1a7ca5
+  .git/objects/63/a8074eed75d425e6b7ce435fb63036cb4b45bc
+  .git/objects/64/9da08048494e4255da8c5d1687bb116e4bdefa
+  .git/objects/68/e7a55fb29872b824ba784be9d1899d9c86d6ad
+  .git/objects/6a/9514052f923ea828befa52ddb6c0eb90c415cd
+  .git/objects/6a/ef02c1b5322f02bf0dbcd3f6c8252a3606b391
+  .git/objects/6b/964a8c15f7ee18c56d9829338c6ff79ae8151f
+  .git/objects/70/80d7b4c127dbcafdb5b562dd30225875910329
+  .git/objects/73/46788e44124bbb21e6d1b74eb121bd040f8b74
+  .git/objects/75/b5b049d5e603657e69e69a14431c06561e7e6b
+  .git/objects/7a/8da3aa2c50b6c6d90e5e5ca66a20a2dcded510
+  .git/objects/7e/264e4e41e2b7e2a4720fbefbad740a96c08298
+  .git/objects/7f/6bf57d39a6907b99af7a3c1e7be779ea4cca71
+  .git/objects/80/4a1ad927af31cc68b51afaef4e7947cab023e2
+  .git/objects/83/7ac1bd87901feeeba66d8aa738c810d47cbca8
+  .git/objects/8d/2095904d6fb2ca4aeb30bb839c3cb733e2c723
+  .git/objects/8e/d2367f3a48626c3c913d302d3d8eb1b3501c4e
+  .git/objects/93/08d5f302b824baee89f82ebe824d585bff5775
+  .git/objects/99/cb1b01dc546204186251e18ed9d40dfaf11aa0
+  .git/objects/9b/7cc4b0d70431e47fe0a03fa832a242948ec517
+  .git/objects/9e/bf9034c8022b8f780e9bd6d000d0d1326f2382
+  .git/objects/a4/b1ad4995dcd4615a691d2b0c726c3c8f81ef7c
+  .git/objects/ac/7a6d1680f6b5fd5481336f8593f26f4163b757
+  .git/objects/af/d96db02bd2314fd1fea48babe83191dabb9d58
+  .git/objects/b0/2e7f680a6f41bf5965a99f6eef7d214033a306
+  .git/objects/b5/d73222448595b30bbb7cf2d187716240e3593e
+  .git/objects/b9/4b6fa9123c34737e0014af554a3621cea60c45
+  .git/objects/bd/8fa844b79a5fb02ea5b58c52114b386354f06a
+  .git/objects/c0/8841aaff4399d1e123bb22a91f17a05312bc42
+  .git/objects/c2/7f61e6a732f6feac4af49ecfa3c4ba525db211
+  .git/objects/cf/dbb3e30afe27e0a501d6f33f27d9003b00bdc2
+  .git/objects/d4/cccec70c3d84671842504cc632cb542037b056
+  .git/objects/d5/84b45169773a364ecbd10835cc67bfd5abf0aa
+  .git/objects/df/42073d2a29bdb9a34244567fc926f9552b155c
+  .git/objects/e3/bf961756f95c0684ece915c9b071a83f51f4b4
+  .git/objects/e5/eb180a404da9e33a724b5a9d1b0c49f26953cd
+  .git/objects/e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+  .git/objects/e6/bbf3d74a49c8aef8e9fce4587f6d973b73ed29
+  .git/objects/eb/e8a63f88d408bd0b8486fc3cb817b30126fc04
+  .git/objects/f0/b4dbb7901dd58c736bb775014778d5167c0450
+  .git/objects/f0/ddeab0ee73c915d921ee8c6a4fabf4f017847d
+  .git/objects/fc/07cacf0d1fe99f419de1af779dda37987e2509
+  .git/objects/fc/d2d71985544708d53d5503e440e21c6d2ae454
+Source packages should not contain undeclared executable files.
+See section 'Package structure' in the 'Writing R Extensions' manual.
+* checking whether package ‘mmod’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking index information ... OK
+* checking package subdirectories ... WARNING
+Found the following directory(s) with names of check directories:
+  ./..Rcheck
+Most likely, these were included erroneously.
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the name space can be loaded with stated dependencies ... OK
+* checking whether the name space can be unloaded cleanly ... OK
+* checking for unstated dependencies in R code ... OK
+* checking S3 generic/method consistency ... WARNING
+diff:
+  function(x, ...)
+diff.stats:
+  function(x)
+
+See section 'Generic functions and methods' of the 'Writing R
+Extensions' manual.
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking examples ... OK
+* checking PDF version of manual ... WARNING
+LaTeX errors when creating PDF version.
+This typically indicates Rd problems.
+* checking PDF version of manual without hyperrefs or index ... ERROR
+Re-running with no redirection of stdout/stderr.

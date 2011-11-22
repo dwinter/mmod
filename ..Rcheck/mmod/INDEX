@@ -1,0 +1,13 @@
+D.Jost                  Calculate Jost's D using
+Gst.Hedrick             Calculate Nei's Gst using estimators for Hs and
+                        Ht
+Gst.Nei                 Calculate Nei's Gst using estimators for Hs and
+                        Ht
+diff.stats              Calculate differentiation statistics for a
+                        genetic dataset
+harmonic.mean           Harmonic mean
+jacknife.populations    Calculate differentiation stats for a jacknife
+                        sample of a Genind opject
+pairwise.D              Calculates pairwise values of Jost's D
+pairwise.Gst.Hedrick    Calculates pairwise values of Hedrick's G'st
+pairwise.Gst.Nei        Calculates pairwise values of Nei's Gst

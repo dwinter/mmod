@@ -3,7 +3,7 @@ Version: 0.1
 Date: 2011-11-22
 Title: Modern measures of population divergence
 Author: David Winter
-Maintainer: Emmanuel Paradis <Emmanuel.Paradis@ird.fr>
+Maintainer: David Winter <david.winter@gmail.com>
 Depends:
     R (>= 2.6.0),
     adegenet

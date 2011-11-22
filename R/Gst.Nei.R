@@ -1,3 +1,15 @@
+#' Calculate Nei's Gst using estimators for Hs and Ht
+#'
+#' This function calculates Gst following Nei's method and using
+#' Nei and Chesser's estimators for Hs and Ht
+#'
+#' @param x genind object (from package adegenet)
+#' @export
+#' @examples
+#' 
+#' data(nancycats)
+#' Gst.Nei(nancycats)
+
 Gst.Nei <- function(x){
   n <- length(unique(pop(x)))
   harmN <- harmonic.mean(table(pop(x)))

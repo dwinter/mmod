@@ -2,14 +2,14 @@
 #'
 #' This function calculates Jost's D, a measure of genetic
 #' differentiation, between all combinations of populaitons
-#' in genind object.
+#' in a genind object.
 #'
 #' @param x genind object (from package adegenet)
 #' @export
 #' @examples
 #' 
 #' data(nancycats)
-#' pairwise.D(nancycats)
+#' pairwise.D(nancycats[1:26,])
 
 pairwise.D <- function(x) {
   pops <- seppop(x)

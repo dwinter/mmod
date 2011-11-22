@@ -1,3 +1,17 @@
+#' Calculate differentiation stats for a jacknife sample of a Genind opject
+#'
+#' Calcutes
+#'
+#' @param x genind object (from package adegenet)
+#' @param sample_frac fraction of pops to sample in each replication (default 0.5)
+#' @param nreps number of jacknife replicates to run (default 1000)
+#' @export
+#' @examples
+#'\dontrun{  
+#' data(nancycats)
+#' jacknife.populations(nancycats)
+#' }
+
 jacknife.populations <- function(x, sample_frac=0.5, nreps=1000){
  rep <- function(i,d){
   if( i %% 50 == 0){

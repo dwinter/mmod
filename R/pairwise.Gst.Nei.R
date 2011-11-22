@@ -1,3 +1,16 @@
+#' Calculates pairwise values of Nei's Gst
+#'
+#' This function calculates Nei's Gst, a measure of genetic
+#' differentiation, between all combinations of populaitons
+#' in a genind object.
+#'
+#' @param x genind object (from package adegenet)
+#' @export
+#' @examples
+#' 
+#' data(nancycats)
+#' pairwise.Gst.Nei(nancycats[1:26,])
+
 pairwise.Gst.Nei <- function(x) {
   pops <- seppop(x)
   n.pops <- length(pops)
