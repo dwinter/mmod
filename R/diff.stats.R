@@ -36,7 +36,7 @@ diff.stats <- function(x){
   global_Hs <- mean(loci[,1], na.rm=T)
   global_Ht <- mean(loci[,2], na.rm=T)
   global_G_est <- (global_Ht - global_Hs)/global_Ht
-  return(list("per locus"=loci,
+  return(list("per.locus"=loci,
               global=c(
                 Hs = global_Hs, 
                 Ht = global_Ht, 

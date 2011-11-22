@@ -4,9 +4,22 @@ Date: 2011-11-22
 Title: Modern measures of population divergence
 Author: David Winter
 Maintainer: Emmanuel Paradis <Emmanuel.Paradis@ird.fr>
-Depends: R (>= 2.6.0), adegenet
+Depends:
+    R (>= 2.6.0),
+    adegenet
 ZipData: no
-Description: mmod provides functions 
+Description: mmod provides functions
 License: MIT
 URL: https://github.com/dwinter [update!]
-
+Collate:
+    'diff.stats.R'
+    'D.Jost.R'
+    'Gst.Hedrick.R'
+    'Gst.Nei.R'
+    'harmonic.mean.R'
+    'Hs.est.R'
+    'jacknife.pop.R'
+    'pairwise.D.R'
+    'pairwise.Gst.Hedrick.R'
+    'pairwise.Gst.Nei.R'
+    'permute.R'

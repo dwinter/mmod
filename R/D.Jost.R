@@ -1,4 +1,4 @@
-D.jost <- function(x){
+D.Jost <- function(x){
   n <- length(unique(pop(x)))
   harmN <- harmonic.mean(table(pop(x)))
   D.per.locus <- function(g) {
