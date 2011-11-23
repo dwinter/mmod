@@ -1,5 +1,85 @@
 Hmm ... looks like a package
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian)
+entering extended mode
+(./Rd2.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, loaded.
+
+(/usr/share/texmf-texlive/tex/latex/base/book.cls
+Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/bk10.clo))
+(/usr/share/R/share/texmf/tex/latex/Rd.sty
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty)
+(/usr/share/texmf-texlive/tex/latex/tools/longtable.sty)
+(/usr/share/texmf-texlive/tex/latex/tools/bm.sty)
+(/usr/share/texmf-texlive/tex/latex/base/alltt.sty)
+(/usr/share/texmf-texlive/tex/latex/tools/verbatim.sty)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty)
+(/usr/share/R/share/texmf/tex/latex/upquote.sty
+(/usr/share/texmf-texlive/tex/latex/base/textcomp.sty
+(/usr/share/texmf-texlive/tex/latex/base/ts1enc.def))) NOT loading ae
+(/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
+(/usr/share/texmf-texlive/tex/latex/base/t1enc.def)
+kpathsea: Running mktextfm ecrm1000
+/usr/share/texmf/web2c/mktexnam: Could not map source abbreviation  for ecrm1000.
+/usr/share/texmf/web2c/mktexnam: Need to update ?
+mktextfm: Running mf-nowin -progname=mf \mode:=ljfour; mag:=1; nonstopmode; input ecrm1000
+This is METAFONT, Version 2.718281 (TeX Live 2009/Debian)
+
+kpathsea: Running mktexmf ecrm1000
+
+! I can't find file `ecrm1000'.
+<*> ...ljfour; mag:=1; nonstopmode; input ecrm1000
+                                                  
+Please type another input file name
+! Emergency stop.
+<*> ...ljfour; mag:=1; nonstopmode; input ecrm1000
+                                                  
+Transcript written on mfput.log.
+grep: ecrm1000.log: No such file or directory
+mktextfm: `mf-nowin -progname=mf \mode:=ljfour; mag:=1; nonstopmode; input ecrm1000' failed to make ecrm1000.tfm.
+kpathsea: Appending font creation commands to missfont.log.
+
+! Font T1/cmr/m/n/10=ecrm1000 at 10.0pt not loadable: Metric (TFM) file not fou
+nd.
+<to be read again> 
+                   relax 
+l.100 \fontencoding\encodingdefault\selectfont
+                                              
+) (/usr/share/texmf-texlive/tex/latex/psnfss/times.sty) NOT loading lmodern)
+(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
+(/usr/share/texmf-texlive/tex/latex/base/utf8.def
+(/usr/share/texmf-texlive/tex/latex/base/t1enc.dfu)
+(/usr/share/texmf-texlive/tex/latex/base/ot1enc.dfu)
+(/usr/share/texmf-texlive/tex/latex/base/omsenc.dfu)
+(/usr/share/texmf-texlive/tex/latex/base/ts1enc.dfu))
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def))
+No file Rd2.aux.
+(/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd)
+(/usr/share/texmf-texlive/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texmf-texlive/tex/latex/psnfss/t1pcr.fd)
+(/usr/share/texmf-texlive/tex/latex/psnfss/ts1ptm.fd)
+(/usr/share/texmf-texlive/tex/latex/psnfss/t1phv.fd)
+No file Rd2.toc.
+(/usr/share/texmf-texlive/tex/latex/base/utf8.def) [1{/var/lib/texmf/fonts/map/
+pdftex/updmap/pdftex.map}] (/usr/share/texmf-texlive/tex/latex/base/utf8.def)
+(/usr/share/texmf-texlive/tex/latex/base/utf8.def) [2]
+(/usr/share/texmf-texlive/tex/latex/base/utf8.def)
+(/usr/share/texmf-texlive/tex/latex/base/utf8.def)
+(/usr/share/texmf-texlive/tex/latex/base/utf8.def) [3]
+(/usr/share/texmf-texlive/tex/latex/base/utf8.def)
+(/usr/share/texmf-texlive/tex/latex/base/utf8.def) [4]
+(/usr/share/texmf-texlive/tex/latex/base/utf8.def) [5] (./Rd2.aux) )
+(see the transcript file for additional information){/usr/share/texmf-texlive/f
+onts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/type1/urw/courier/uc
+rr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/sh
+are/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fo
+nts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/
+utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (5 pages, 74197 bytes).
+Transcript written on Rd2.log.
 Error in texi2dvi("Rd2.tex", pdf = (out_ext == "pdf"), quiet = FALSE,  : 
-  pdflatex is not available
+  unable to run 'pdflatex' on 'Rd2.tex'
 Error in running tools::texi2dvi
-You may want to clean up by 'rm -rf /tmp/RtmpzkAdP6/Rd2pdfef86be7'
+You may want to clean up by 'rm -rf /tmp/Rtmp6mRSg2/Rd2pdf7de97390'

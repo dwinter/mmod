@@ -5,159 +5,159 @@ library('mmod')
 
 assign(".oldSearch", search(), pos = 'CheckExEnv')
 cleanEx()
-nameEx("D.Jost")
-### * D.Jost
+nameEx("D_Jost")
+### * D_Jost
 
 flush(stderr()); flush(stdout())
 
-### Name: D.Jost
+### Name: D_Jost
 ### Title: Calculate Jost's D using
-### Aliases: D.Jost
+### Aliases: D_Jost
 
 ### ** Examples
 
 data(nancycats)
-D.Jost(nancycats)
+D_Jost(nancycats)
 
 
 
 cleanEx()
-nameEx("Gst.Hedrick")
-### * Gst.Hedrick
+nameEx("Gst_Hedrick")
+### * Gst_Hedrick
 
 flush(stderr()); flush(stdout())
 
-### Name: Gst.Hedrick
+### Name: Gst_Hedrick
 ### Title: Calculate Nei's Gst using estimators for Hs and Ht
-### Aliases: Gst.Hedrick
+### Aliases: Gst_Hedrick
 
 ### ** Examples
 
 data(nancycats)
-Gst.Hedrick(nancycats)
+Gst_Hedrick(nancycats)
 
 
 
 cleanEx()
-nameEx("Gst.Nei")
-### * Gst.Nei
+nameEx("Gst_Nei")
+### * Gst_Nei
 
 flush(stderr()); flush(stdout())
 
-### Name: Gst.Nei
+### Name: Gst_Nei
 ### Title: Calculate Nei's Gst using estimators for Hs and Ht
-### Aliases: Gst.Nei
+### Aliases: Gst_Nei
 
 ### ** Examples
 
 data(nancycats)
-Gst.Nei(nancycats)
+Gst_Nei(nancycats)
 
 
 
 cleanEx()
-nameEx("diff.stats")
-### * diff.stats
+nameEx("diff_stats")
+### * diff_stats
 
 flush(stderr()); flush(stdout())
 
-### Name: diff.stats
-### Title: Calculate differentiation statistics for a genetic dataset
-### Aliases: diff.stats
+### Name: diff_stats
+### Title: Calculate differentiation statistics for a genind objects
+### Aliases: diff_stats
 
 ### ** Examples
 
 data(nancycats)
-diff.stats(nancycats)
+diff_stats(nancycats)
 
 
 
 cleanEx()
-nameEx("harmonic.mean")
-### * harmonic.mean
+nameEx("harmonic_mean")
+### * harmonic_mean
 
 flush(stderr()); flush(stdout())
 
-### Name: harmonic.mean
+### Name: harmonic_mean
 ### Title: Harmonic mean
-### Aliases: harmonic.mean
+### Aliases: harmonic_mean
 
 ### ** Examples
 
 data(nancycats)
 pop.sizes <- table(pop(nancycats))
-harmonic.mean(pop.sizes)
+harmonic_mean(pop.sizes)
 
 
 
 cleanEx()
-nameEx("jacknife.populations")
-### * jacknife.populations
+nameEx("jacknife_populations")
+### * jacknife_populations
 
 flush(stderr()); flush(stdout())
 
-### Name: jacknife.populations
+### Name: jacknife_populations
 ### Title: Calculate differentiation stats for a jacknife sample of a
 ###   Genind opject
-### Aliases: jacknife.populations
+### Aliases: jacknife_populations
 
 ### ** Examples
 
 ## Not run: 
 ##D data(nancycats)
-##D jacknife.populations(nancycats)
+##D jacknife_populations(nancycats)
 ## End(Not run)
 
 
 
 cleanEx()
-nameEx("pairwise.D")
-### * pairwise.D
+nameEx("pairwise_D")
+### * pairwise_D
 
 flush(stderr()); flush(stdout())
 
-### Name: pairwise.D
+### Name: pairwise_D
 ### Title: Calculates pairwise values of Jost's D
-### Aliases: pairwise.D
+### Aliases: pairwise_D
 
 ### ** Examples
 
 data(nancycats)
-pairwise.D(nancycats[1:26,])
+pairwise_D(nancycats[1:26,])
 
 
 
 cleanEx()
-nameEx("pairwise.Gst.Hedrick")
-### * pairwise.Gst.Hedrick
+nameEx("pairwise_Gst_Hedrick")
+### * pairwise_Gst_Hedrick
 
 flush(stderr()); flush(stdout())
 
-### Name: pairwise.Gst.Hedrick
+### Name: pairwise_Gst_Hedrick
 ### Title: Calculates pairwise values of Hedrick's G'st
-### Aliases: pairwise.Gst.Hedrick
+### Aliases: pairwise_Gst_Hedrick
 
 ### ** Examples
 
 data(nancycats)
-pairwise.Gst.Hedrick(nancycats[1:26,])
+pairwise_Gst_Hedrick(nancycats[1:26,])
 
 
 
 cleanEx()
-nameEx("pairwise.Gst.Nei")
-### * pairwise.Gst.Nei
+nameEx("pairwise_Gst_Nei")
+### * pairwise_Gst_Nei
 
 flush(stderr()); flush(stdout())
 
-### Name: pairwise.Gst.Nei
+### Name: pairwise_Gst_Nei
 ### Title: Calculates pairwise values of Nei's Gst
-### Aliases: pairwise.Gst.Nei
+### Aliases: pairwise_Gst_Nei
 
 ### ** Examples
 
 data(nancycats)
-pairwise.Gst.Nei(nancycats[1:26,])
+pairwise_Gst_Nei(nancycats[1:26,])
 
 
 

@@ -12,14 +12,12 @@ Description: mmod provides functions
 License: MIT
 URL: https://github.com/dwinter [update!]
 Collate:
-    'diff.stats.R'
-    'D.Jost.R'
-    'Gst.Hedrick.R'
-    'Gst.Nei.R'
-    'harmonic.mean.R'
-    'Hs.est.R'
-    'jacknife.pop.R'
-    'pairwise.D.R'
-    'pairwise.Gst.Hedrick.R'
-    'pairwise.Gst.Nei.R'
-    'permute.R'
+    'diff_stats.R'
+    'D_Jost.R'
+    'Gst_Hedrick.R'
+    'Gst_Nei.R'
+    'harmonic_mean.R'
+    'jacknife_pop.R'
+    'pairwise_D.R'
+    'pairwise_Gst_Hedrick.R'
+    'pairwise_Gst_Nei.R'

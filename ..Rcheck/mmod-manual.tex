@@ -22,13 +22,45 @@
 \item[Description]\AsIs{mmod provides functions}
 \item[License]\AsIs{MIT}
 \item[URL]\AsIs{https://github.com/dwinter [update!]}
-\item[Collate]\AsIs{'diff.stats.R' 'D.Jost.R' 'Gst.Hedrick.R' 'Gst.Nei.R'
-'harmonic.mean.R' 'Hs.est.R' 'jacknife.pop.R' 'pairwise.D.R'
-'pairwise.Gst.Hedrick.R' 'pairwise.Gst.Nei.R' 'permute.R'}
+\item[Collate]\AsIs{'diff\_stats.R' 'D\_Jost.R' 'Gst\_Hedrick.R' 'Gst\_Nei.R'
+'harmonic\_mean.R' 'jacknife\_pop.R' 'pairwise\_D.R'
+'pairwise\_Gst\_Hedrick.R' 'pairwise\_Gst\_Nei.R'}
 \end{description}
 \Rdcontents{\R{} topics documented:}
 \inputencoding{utf8}
-\HeaderA{D.Jost}{Calculate Jost's D using}{D.Jost}
+\HeaderA{diff\_stats}{Calculate differentiation statistics for a genind objects}{diff.Rul.stats}
+%
+\begin{Description}\relax
+This function calculates three different statistics of
+differentiaion for a genetic dataset. Nei's Gst,
+Hedrick's G'st and Jost's D
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+  diff_stats(x)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{x}] genind object (from package adegenet)
+\end{ldescription}
+\end{Arguments}
+%
+\begin{References}\relax
+Jost, L. (2008), GST and its relatives do not measure
+differentiation. Molecular Ecology, 17: 4015–4026
+\end{References}
+%
+\begin{Examples}
+\begin{ExampleCode}
+data(nancycats)
+diff_stats(nancycats)
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{D\_Jost}{Calculate Jost's D using}{D.Rul.Jost}
 %
 \begin{Description}\relax
 This function calculates Jost's D
@@ -36,7 +68,7 @@ This function calculates Jost's D
 %
 \begin{Usage}
 \begin{verbatim}
-  D.Jost(x)
+  D_Jost(x)
 \end{verbatim}
 \end{Usage}
 %
@@ -49,38 +81,11 @@ This function calculates Jost's D
 \begin{Examples}
 \begin{ExampleCode}
 data(nancycats)
-D.Jost(nancycats)
+D_Jost(nancycats)
 \end{ExampleCode}
 \end{Examples}
 \inputencoding{utf8}
-\HeaderA{diff.stats}{Calculate differentiation statistics for a genetic dataset}{diff.stats}
-%
-\begin{Description}\relax
-This function calculates three different statistics of
-differentiaion for a genetic dataset. Nei's Gst,
-Hedrick's Gst and Jost's D
-\end{Description}
-%
-\begin{Usage}
-\begin{verbatim}
-  diff.stats(x)
-\end{verbatim}
-\end{Usage}
-%
-\begin{Arguments}
-\begin{ldescription}
-\item[\code{x}] genind object (from package adegenet)
-\end{ldescription}
-\end{Arguments}
-%
-\begin{Examples}
-\begin{ExampleCode}
-data(nancycats)
-diff.stats(nancycats)
-\end{ExampleCode}
-\end{Examples}
-\inputencoding{utf8}
-\HeaderA{Gst.Hedrick}{Calculate Nei's Gst using estimators for Hs and Ht}{Gst.Hedrick}
+\HeaderA{Gst\_Hedrick}{Calculate Nei's Gst using estimators for Hs and Ht}{Gst.Rul.Hedrick}
 %
 \begin{Description}\relax
 This function calculates G'st, Hedrick's correction to
@@ -90,7 +95,7 @@ estimators of Hs and Ht are used
 %
 \begin{Usage}
 \begin{verbatim}
-  Gst.Hedrick(x)
+  Gst_Hedrick(x)
 \end{verbatim}
 \end{Usage}
 %
@@ -103,11 +108,11 @@ estimators of Hs and Ht are used
 \begin{Examples}
 \begin{ExampleCode}
 data(nancycats)
-Gst.Hedrick(nancycats)
+Gst_Hedrick(nancycats)
 \end{ExampleCode}
 \end{Examples}
 \inputencoding{utf8}
-\HeaderA{Gst.Nei}{Calculate Nei's Gst using estimators for Hs and Ht}{Gst.Nei}
+\HeaderA{Gst\_Nei}{Calculate Nei's Gst using estimators for Hs and Ht}{Gst.Rul.Nei}
 %
 \begin{Description}\relax
 This function calculates Gst following Nei's method and
@@ -116,7 +121,7 @@ using Nei and Chesser's estimators for Hs and Ht
 %
 \begin{Usage}
 \begin{verbatim}
-  Gst.Nei(x)
+  Gst_Nei(x)
 \end{verbatim}
 \end{Usage}
 %
@@ -129,11 +134,11 @@ using Nei and Chesser's estimators for Hs and Ht
 \begin{Examples}
 \begin{ExampleCode}
 data(nancycats)
-Gst.Nei(nancycats)
+Gst_Nei(nancycats)
 \end{ExampleCode}
 \end{Examples}
 \inputencoding{utf8}
-\HeaderA{harmonic.mean}{Harmonic mean}{harmonic.mean}
+\HeaderA{harmonic\_mean}{Harmonic mean}{harmonic.Rul.mean}
 %
 \begin{Description}\relax
 Calculate the harmonic mean of a numeric vector
@@ -141,7 +146,7 @@ Calculate the harmonic mean of a numeric vector
 %
 \begin{Usage}
 \begin{verbatim}
-  harmonic.mean(x)
+  harmonic_mean(x)
 \end{verbatim}
 \end{Usage}
 %
@@ -155,11 +160,11 @@ Calculate the harmonic mean of a numeric vector
 \begin{ExampleCode}
 data(nancycats)
 pop.sizes <- table(pop(nancycats))
-harmonic.mean(pop.sizes)
+harmonic_mean(pop.sizes)
 \end{ExampleCode}
 \end{Examples}
 \inputencoding{utf8}
-\HeaderA{jacknife.populations}{Calculate differentiation stats for a jacknife sample of a Genind opject}{jacknife.populations}
+\HeaderA{jacknife\_populations}{Calculate differentiation stats for a jacknife sample of a Genind opject}{jacknife.Rul.populations}
 %
 \begin{Description}\relax
 Calcutes
@@ -167,7 +172,7 @@ Calcutes
 %
 \begin{Usage}
 \begin{verbatim}
-  jacknife.populations(x, sample_frac = 0.5, nreps = 1000)
+  jacknife_populations(x, sample_frac = 0.5, nreps = 1000)
 \end{verbatim}
 \end{Usage}
 %
@@ -187,13 +192,13 @@ replication (default 0.5)
 \begin{ExampleCode}
 ## Not run: 
 data(nancycats)
-jacknife.populations(nancycats)
+jacknife_populations(nancycats)
 
 ## End(Not run)
 \end{ExampleCode}
 \end{Examples}
 \inputencoding{utf8}
-\HeaderA{pairwise.D}{Calculates pairwise values of Jost's D}{pairwise.D}
+\HeaderA{pairwise\_D}{Calculates pairwise values of Jost's D}{pairwise.Rul.D}
 %
 \begin{Description}\relax
 This function calculates Jost's D, a measure of genetic
@@ -203,7 +208,7 @@ in a genind object.
 %
 \begin{Usage}
 \begin{verbatim}
-  pairwise.D(x)
+  pairwise_D(x)
 \end{verbatim}
 \end{Usage}
 %
@@ -216,11 +221,11 @@ in a genind object.
 \begin{Examples}
 \begin{ExampleCode}
 data(nancycats)
-pairwise.D(nancycats[1:26,])
+pairwise_D(nancycats[1:26,])
 \end{ExampleCode}
 \end{Examples}
 \inputencoding{utf8}
-\HeaderA{pairwise.Gst.Hedrick}{Calculates pairwise values of Hedrick's G'st}{pairwise.Gst.Hedrick}
+\HeaderA{pairwise\_Gst\_Hedrick}{Calculates pairwise values of Hedrick's G'st}{pairwise.Rul.Gst.Rul.Hedrick}
 %
 \begin{Description}\relax
 This function calculates Hedrick's G'st, a measure of
@@ -230,7 +235,7 @@ populaitons in a genind object.
 %
 \begin{Usage}
 \begin{verbatim}
-  pairwise.Gst.Hedrick(x)
+  pairwise_Gst_Hedrick(x)
 \end{verbatim}
 \end{Usage}
 %
@@ -243,11 +248,11 @@ populaitons in a genind object.
 \begin{Examples}
 \begin{ExampleCode}
 data(nancycats)
-pairwise.Gst.Hedrick(nancycats[1:26,])
+pairwise_Gst_Hedrick(nancycats[1:26,])
 \end{ExampleCode}
 \end{Examples}
 \inputencoding{utf8}
-\HeaderA{pairwise.Gst.Nei}{Calculates pairwise values of Nei's Gst}{pairwise.Gst.Nei}
+\HeaderA{pairwise\_Gst\_Nei}{Calculates pairwise values of Nei's Gst}{pairwise.Rul.Gst.Rul.Nei}
 %
 \begin{Description}\relax
 This function calculates Nei's Gst, a measure of genetic
@@ -257,7 +262,7 @@ in a genind object.
 %
 \begin{Usage}
 \begin{verbatim}
-  pairwise.Gst.Nei(x)
+  pairwise_Gst_Nei(x)
 \end{verbatim}
 \end{Usage}
 %
@@ -270,7 +275,7 @@ in a genind object.
 \begin{Examples}
 \begin{ExampleCode}
 data(nancycats)
-pairwise.Gst.Nei(nancycats[1:26,])
+pairwise_Gst_Nei(nancycats[1:26,])
 \end{ExampleCode}
 \end{Examples}
 \printindex{}

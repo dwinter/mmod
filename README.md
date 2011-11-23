@@ -1,43 +1,52 @@
-*Modern Measures of Differentiation
+#Modern Measures of Differentiation
 
-This is an R-module providing functions to calculate measures of 
-genetic differentiation. At the moment this README is designed to help
-me lay out the work that needs to be done. 
+`mmod` is an R package for calculating modern population divergence statistics. 
 
-At the moment, there are top-level function for three stats
+##Quickstart
 
-+D.Jost()
-+Gst.Nei()
-+Gst.Hedrick()
+###Install
 
-These functions replicate each others work quite a lot so
-there is another to do all three at once:
+mmod isn't on CRAN yet, so for now you can download `mmod_0.1.tar.gz` and 
+install via the command line (or with the GUI if you'd prefer):
 
-+diff.stats()
+        $R CMD INSTALL mmod_0.1.tar.gz 
 
-Finally, there are a couple of ways to check how robust the results are.
-Pairwise examples of each measure:
+###Usage
+Once it's up an running all you need is genepop file with your data
 
-+pairwise.D()
-+pairwise.Gst.Net()
-+pairwise.Gst.Hedrick()
+        >library(mmod)
+        >my_data <- read.genepop("my_file.gen")
+        >diff_stats(my_data)
+   
+##Overview
 
-And a way of taking jack-knife samples across populations:
+Population geneticists have traditionally used Nei's Gst (often confusingly called 
+Fst...) to measure divergence between populations. It turns out, Gst doesn't really
+measure divergence so, [a set of new measures have been developed]
+(http://www.molecularecologist.com/2011/03/should-i-use-fst-gst-or-d-2/)
+  
+mmod is a package that brings two of these mesures, Hedricks (2008) G'st 
+and Jost's (2008) D to R, along wiht an implementation of Nei's Gst that
+uses nearly unbiased estimators for Hs and Ht, the two key paramaters from
+which all these stats are calculated. All these functions work on `genind`
+objects from the libary `adegenet` so data can be read in from standard
+`genepop`files.
 
-+jacknife.pop()
+There are functions for each of these measures which give values for 
+each locus in a `genind` object and a global estimate:
+* `D_Jost()`, `Gst_Hedrick()`, `Gst_Nei()`
 
-**TODO
-DOCUMENTATION!!
-Possibly bring the pairwise functions together into one in the style of diff.stats()
+Because most of the heavy-lifting in calculating all these stats is finding
+Hs and Ht, a function, `diff_stats()` is provided to calulate each at once
 
+Each of the stats can be calculated for each pairwise comparison of populations
+ in a dataset
+* `pairwise_D()`, `pairwise_Gst_Hedrick()`,`pairswise_Gst_Nei()`
 
+Finally, the function `jacknife_population()` can, as the name suggests,
+caluate these statistics in a sample jacknifed across populations
 
-
-
-
-
-
-
-
+##References
+Will go here
 
 
