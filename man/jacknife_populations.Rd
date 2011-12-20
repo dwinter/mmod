@@ -14,12 +14,16 @@
   (default 1000)}
 }
 \description{
-  Calcutes
+  Makes a series of
 }
 \examples{
 \dontrun{
 data(nancycats)
-jacknife_populations(nancycats)
+obs <- diff_stats(nancycats)
+jn <- jacknife_populations(nancycats)
+D_sampled <-jn[5,]
+hist(D_sampled)
+abline(h=obs$global)
 }
 }
 

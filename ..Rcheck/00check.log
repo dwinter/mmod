@@ -9,39 +9,60 @@
 * checking if this is a source package ... OK
 * checking for executable files ... WARNING
 Found the following executable file(s):
+  .git/objects/00/9ce0e3c261ccdb4331f4fbca6a08c974549e1e
   .git/objects/00/9d48de5f5be0295baecac4964267c333ae3ee0
   .git/objects/00/bbe5a6a988abf87b948d7239b832c1b3ed797b
   .git/objects/03/0a8f6af3fa501f40cb050c0b01c07fe92ed4a5
   .git/objects/03/8859d49c8f49a607f725ac2f6ab690cc27220a
+  .git/objects/03/a184f1e05eeb4a296ae47f17da91f04f5798ba
   .git/objects/04/359959fa8310df458e55ab9473526a7dded91c
   .git/objects/04/3ba798fd0e0b6493c55bb503acdedc098dd62e
   .git/objects/05/5592b329d3e93f23152825b7ba7764c6771683
   .git/objects/06/c8d843355156ab3fc3d27f0c1d11ac1afb1bf9
+  .git/objects/0a/febbd26818a922af9083af6a535dea527b6a3e
   .git/objects/0b/3998d0148ce8d692f23f582e58460df01ca13f
+  .git/objects/0c/c484762321e0f479a11e33c6e3aae9d4f98d70
   .git/objects/0d/880664783f9d73826b11e5af57a7579e3bc633
+  .git/objects/0d/d940f51aafe4dc32045ad54d9b566aa14d0711
   .git/objects/0d/e0a8d387a147ed8373345220d5a96a1420b589
   .git/objects/0d/e9861f8f69cfcbb52d22680b414055ce838702
+  .git/objects/0e/5077e2953f5b97f475326de987c805c21a9949
+  .git/objects/0e/68a2707b212317cf381abb111d2c0ed2a63144
   .git/objects/0e/8593e01fa05c5919f94a4fc7a25cd81e1047a2
+  .git/objects/0f/16b7ea3e884de3a223d15fed9774dc9520d8f8
   .git/objects/0f/e2575e463a15f618a6fc7f856b00176729c853
   .git/objects/11/73961976c92927834295935f3927782a91c6ed
   .git/objects/14/48c547996f35a3a9db5a0f22a44ba9880d4d35
   .git/objects/16/b2ccbd1116279c3bccce4d58511dd72f610106
   .git/objects/18/bf79d493e3e6071b78ec698ef3c26dc5dad887
+  .git/objects/1a/153d25fa74c10ea400bdcfc0952c848f231382
   .git/objects/1b/5901faa6fce62ec2b71af8cf7bd58d02e54047
   .git/objects/1c/3ba49b2ff412014af35fabecb13a9bcb986c0a
+  .git/objects/1d/3db808712c6d101f37da29b2d78fc92b213940
   .git/objects/1d/b0e1b9bc62134c16aca15bd364acfd3046937a
+  .git/objects/1f/e550bc0a5a04b48b8f423fa8b034a9f7277f82
+  .git/objects/24/19eabbd20287a2b12f64294895833f43517443
+  .git/objects/24/957655fe56a2d6cc81a0b3d8663fbcc0e2bd1e
+  .git/objects/25/fd8bdd4ff5afa3d3c47ce3c93e945a3aefed31
   .git/objects/27/e75e9bc0ccef738c80cfe7ef35bda548693ce9
+  .git/objects/28/26e76ffdd23a223752861d580b3ac1e62dc4e8
+  .git/objects/29/45298a7c3c488c28db3196c0b26365ec9ca944
+  .git/objects/29/a334fb48eb7133da66faae98cffad41f9b7ec4
   .git/objects/2a/a79227b88c119f5817e3b20d77d3508ef8d763
   .git/objects/2a/cccbdd27b44a800dc2c16668e8819df763f09e
   .git/objects/2c/d5b643bf6c92295d09b819580e591765c7571c
+  .git/objects/32/6b81719f0e41de37a53cbc287959b9f7791ff9
   .git/objects/34/b64a3739676327e3fcfc700c2e265248ec7b16
   .git/objects/34/d826d7b40dd6f86b1ed7bdc93d0b6dbc5704ff
   .git/objects/35/609e26887abf04250b402874f388d08febe3b2
   .git/objects/36/be2a8891f80ebe9a5edff7352044e41f6e3302
   .git/objects/38/3c954314f26aba745a888ba3f019ee5cac41e9
   .git/objects/38/c8ad476f18e27ce8e9763111d6f6b91cf91516
+  .git/objects/39/2b42fc217597b9068ab4c803ee4a2e87a4c34f
+  .git/objects/3b/00cfc2ccd18751d238c2c4113c54f759bff8ba
   .git/objects/3d/3eb736ca4123cb68b911cb33c989e6f24bf540
   .git/objects/3d/e8dda7d4332c415372c40d0989e674a0c053b3
+  .git/objects/3f/02d1cbc90dafba361d6871f5e931ee1c399bec
   .git/objects/3f/4e417c7e4f24591d23999b2f289469f29ae424
   .git/objects/3f/e5c3489d905f5899972f04ee379bf43b13ef8b
   .git/objects/40/28a254ddc82b53ac96aece33e9f3005aa6032d
@@ -50,34 +71,49 @@ Found the following executable file(s):
   .git/objects/45/51f114fe3ea9361f56bbdeca17aebd7bc29e5f
   .git/objects/48/eaf8528bafa198837828dd9ba69632c7f131d9
   .git/objects/49/17a6ffc3d64dbe1c3575232eab5ed612da54aa
+  .git/objects/4a/8ec6662c1537ec280691db043bf6cdc867e28e
   .git/objects/4a/d3f8bcddf4ff835d3ca002839c9a073671952b
+  .git/objects/4b/de61070cd8f72ebde96127a67c0ab82323eef3
   .git/objects/4c/852d5c0a1ffd8128ea118aa97cbf9958686bb6
+  .git/objects/4d/57a0a66ebf04e51d549ca695632490fd3de165
+  .git/objects/50/3965e4c5eaf1f01565f7df6a9b39113ea830f8
   .git/objects/50/45bdc90189e7cbf9f11575bf2697532568b8ba
+  .git/objects/50/547f53ab3bbf49d30c41b0d3c349f4bf379d11
+  .git/objects/50/6f216191cd3aa9cc8511ecd8649b92d3c36609
   .git/objects/50/ee54ce911434170eb4a811ee4e44c7b337f3c1
   .git/objects/51/2712723b31af65bc10c869dff8ba0426c5fc95
   .git/objects/52/071a778f712781c8f1c3a80f3ebfe12a030170
   .git/objects/52/d088f5f53dab6b01a1938238332371efa7c916
+  .git/objects/53/8be18508c984b04324daf175ac31077414042f
   .git/objects/54/c412e5efb29f3fbe8d631bb9d3a2be8d6640ed
   .git/objects/55/4f3a9c57273cc2101ff2d760d26060e743f5d0
   .git/objects/55/fdfcd3fd95b3cf66d4013af09f44d582af6456
+  .git/objects/56/54de26d1c7fa839d5b1f101ddaa3167ef042e9
   .git/objects/57/d55b7578bbae6e6985618320c0ea0107382bd1
   .git/objects/5c/7a0bb90b4d75e70ceafd28a88b4cdedcdb481c
   .git/objects/5c/9fb5b571b3c9e824919e09e27da703d34a0789
+  .git/objects/5d/8a071f0d88af74b34078c762907fb6e183ce4d
   .git/objects/5d/bd4938b19e0e29d266b107a31f741d7a882041
   .git/objects/5e/9b73781e0fea13e622765cfbf293dc7e1a7ca5
+  .git/objects/5f/7923f7e6d96cfabbccebb4032dcee86b888e28
   .git/objects/63/a2c5d15075669053070a911253ba06d7183101
   .git/objects/63/a8074eed75d425e6b7ce435fb63036cb4b45bc
   .git/objects/64/9da08048494e4255da8c5d1687bb116e4bdefa
   .git/objects/68/e7a55fb29872b824ba784be9d1899d9c86d6ad
+  .git/objects/6a/8cb512e67fe1a15c05112f28c8d348bed57429
   .git/objects/6a/9514052f923ea828befa52ddb6c0eb90c415cd
   .git/objects/6a/ef02c1b5322f02bf0dbcd3f6c8252a3606b391
   .git/objects/6b/964a8c15f7ee18c56d9829338c6ff79ae8151f
+  .git/objects/6c/baeb3133d79de8ba0f885ac755ded468dbf7cc
   .git/objects/6f/058f3dc2e565aa48e2ad640123d3d69c9c5945
+  .git/objects/6f/470698bda6a105b7463b5f96ce1c079b6bf9fa
   .git/objects/70/80d7b4c127dbcafdb5b562dd30225875910329
   .git/objects/73/46788e44124bbb21e6d1b74eb121bd040f8b74
   .git/objects/74/d74abf980f073a86fe73af797877100cf9b889
   .git/objects/75/b5b049d5e603657e69e69a14431c06561e7e6b
+  .git/objects/77/0512816dbd8153025f5d028495902cf63e70fc
   .git/objects/7a/8da3aa2c50b6c6d90e5e5ca66a20a2dcded510
+  .git/objects/7d/f97a47ad7f47052d385bd3c36182656410189f
   .git/objects/7e/264e4e41e2b7e2a4720fbefbad740a96c08298
   .git/objects/7f/6bf57d39a6907b99af7a3c1e7be779ea4cca71
   .git/objects/80/4a1ad927af31cc68b51afaef4e7947cab023e2
@@ -85,6 +121,7 @@ Found the following executable file(s):
   .git/objects/83/7ac1bd87901feeeba66d8aa738c810d47cbca8
   .git/objects/88/fa96776758c887e9d9d797a388b3e19d6a6792
   .git/objects/8d/2095904d6fb2ca4aeb30bb839c3cb733e2c723
+  .git/objects/8e/4108049328bab342fac2a1ad0a96f6121aa39d
   .git/objects/8e/d2367f3a48626c3c913d302d3d8eb1b3501c4e
   .git/objects/93/08d5f302b824baee89f82ebe824d585bff5775
   .git/objects/95/e83672746d688133a55049bb69e07d4a87ad3b
@@ -93,9 +130,19 @@ Found the following executable file(s):
   .git/objects/97/bd27fbdca87d32604a1d688a350895456796b1
   .git/objects/98/b2c6944f15377674f5d667f0999610d4f39315
   .git/objects/99/cb1b01dc546204186251e18ed9d40dfaf11aa0
+  .git/objects/9b/5394675fd0b5ab34c6faacf0bb39cecce9f4bd
   .git/objects/9b/7cc4b0d70431e47fe0a03fa832a242948ec517
+  .git/objects/9e/596d4950ff6ef1812e290335d77d1d9b656cd7
+  .git/objects/9e/6d9fd4a5de73f6c6b434d8cc4529f38f301bd5
   .git/objects/9e/bf9034c8022b8f780e9bd6d000d0d1326f2382
+  .git/objects/a0/619ff0a837301705fb828ddc66d37a92ccf39a
+  .git/objects/a0/889a5a6f9a1f0a681ee2aba1fc3ab078885f5c
+  .git/objects/a1/d92cf9a60066f445f81f55f581ff54cd62da0f
+  .git/objects/a3/79dd8e198f7a8f7a811e78990432c2db247bc3
+  .git/objects/a3/effc216d507fe36a8dc6d69e452f0c72732696
   .git/objects/a4/b1ad4995dcd4615a691d2b0c726c3c8f81ef7c
+  .git/objects/a4/f354ea94bc42600fb0be83e5efe07315061176
+  .git/objects/a7/eb30ad07a705245ac1825f2d66cbc996927a5a
   .git/objects/a8/d2f60cf7d288c29e65ef34a31a883248c43d4c
   .git/objects/ac/7a6d1680f6b5fd5481336f8593f26f4163b757
   .git/objects/ad/3ed88f108f9dd9796f018a3c3615036ed7c89f
@@ -110,75 +157,43 @@ Found the following executable file(s):
   .git/objects/c0/ef408cc4de2fd67429f54630be43b79847f5bd
   .git/objects/c1/76adad2bf810ee9a7745d90817fced4987b304
   .git/objects/c2/7f61e6a732f6feac4af49ecfa3c4ba525db211
+  .git/objects/c5/6326ec75e20950e33248ab4ae0cdbb1dd15f8e
   .git/objects/c6/1e2f757d7a475f19ca474f2a194aad389eab6d
   .git/objects/c6/d800da02d9f855f6c1d648d6f658b1c8288fde
+  .git/objects/c8/927743f451b5858a9712d7b824d02c33d51ad2
   .git/objects/cf/dbb3e30afe27e0a501d6f33f27d9003b00bdc2
   .git/objects/d1/fb5626f2093872287bff48c9a71600e5f7265f
+  .git/objects/d2/f74405f8a9b5410f840000aebd4cf7c11033c9
   .git/objects/d4/cccec70c3d84671842504cc632cb542037b056
   .git/objects/d5/07142e410139aa64d4872fadf861200e29a610
   .git/objects/d5/84b45169773a364ecbd10835cc67bfd5abf0aa
   .git/objects/da/66732d93c897d99593170c6876d928bb2f4bd7
+  .git/objects/db/a15eea65844f7739a6a5a56db8dcc5bf88a03a
+  .git/objects/dc/34d89bf71f2682363668fdcfe90d67e99eadc6
   .git/objects/df/42073d2a29bdb9a34244567fc926f9552b155c
+  .git/objects/df/f5f7c1d516725ad7382ad8f0ae1a132a65d2c7
+  .git/objects/e0/f08875c51d80ad635f22860953542847f45b47
   .git/objects/e3/85cc72d66cf6dde7dce5f2af600b0da0c910fd
   .git/objects/e3/bf961756f95c0684ece915c9b071a83f51f4b4
+  .git/objects/e4/9d5a0c929113586a3684ef05d6ac2244e3eb5f
   .git/objects/e5/eb180a404da9e33a724b5a9d1b0c49f26953cd
   .git/objects/e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391
   .git/objects/e6/bbf3d74a49c8aef8e9fce4587f6d973b73ed29
   .git/objects/e8/a0bb615e96e883b90fff9fa3a848a4f04304f7
   .git/objects/eb/5e5bed50a8968eb3da55e2c6ee133f7b9d3736
+  .git/objects/eb/c036c51aede2db3b39d11403f7605d75d8f637
   .git/objects/eb/e8a63f88d408bd0b8486fc3cb817b30126fc04
   .git/objects/ed/403cd6f28a95fd1ed5b68702dec2f4ff436ca8
+  .git/objects/f0/97a7e1bce1dfe37f2dcc8b043f4753b17d3624
   .git/objects/f0/b4dbb7901dd58c736bb775014778d5167c0450
   .git/objects/f0/ddeab0ee73c915d921ee8c6a4fabf4f017847d
   .git/objects/f2/10fd8b30a1dc85c9defd3a1ba60ac8f7c9fd3c
+  .git/objects/f2/1af84172129e566cd9b67425904c406ac835a9
   .git/objects/fc/07cacf0d1fe99f419de1af779dda37987e2509
   .git/objects/fc/d2d71985544708d53d5503e440e21c6d2ae454
+  .git/objects/fe/d02b53f6d24eda92a148ee4a3ddbda7e9ef4f6
 Source packages should not contain undeclared executable files.
 See section 'Package structure' in the 'Writing R Extensions' manual.
-* checking whether package ‘mmod’ can be installed ... OK
-* checking installed package size ... OK
-* checking package directory ... OK
-* checking for portable file names ... OK
-* checking for sufficient/correct file permissions ... OK
-* checking DESCRIPTION meta-information ... OK
-* checking top-level files ... OK
-* checking index information ... OK
-* checking package subdirectories ... WARNING
-Found the following directory(s) with names of check directories:
-  ./..Rcheck
-Most likely, these were included erroneously.
-Subdirectory 'inst' contains no files.
-* checking R files for non-ASCII characters ... OK
-* checking R files for syntax errors ... OK
-* checking whether the package can be loaded ... OK
-* checking whether the package can be loaded with stated dependencies ... OK
-* checking whether the package can be unloaded cleanly ... OK
-* checking whether the name space can be loaded with stated dependencies ... OK
-* checking whether the name space can be unloaded cleanly ... OK
-* checking for unstated dependencies in R code ... OK
-* checking S3 generic/method consistency ... OK
-* checking replacement functions ... OK
-* checking foreign function calls ... OK
-* checking R code for possible problems ... OK
-* checking Rd files ... WARNING
-Error : diff_stats.Rd: non-ASCII input and no declared encoding
-
-problem found in ‘diff_stats.Rd’
-* checking Rd metadata ... OK
-* checking Rd cross-references ... OK
-* checking for missing documentation entries ... OK
-* checking for code/documentation mismatches ... OK
-* checking Rd \usage sections ... OK
-* checking Rd contents ... OK
-* checking for unstated dependencies in examples ... OK
-* checking examples ... OK
-* checking PDF version of manual ... WARNING
-LaTeX errors when creating PDF version.
-This typically indicates Rd problems.
-LaTeX errors found:
-! Font T1/cmr/m/n/10=ecrm1000 at 10.0pt not loadable: Metric (TFM) file not fou
-nd.
-<to be read again> 
-                   relax 
-l.100 \fontencoding\encodingdefault\selectfont
-* checking PDF version of manual without hyperrefs or index ... ERROR
+* checking whether package ‘mmod’ can be installed ... ERROR
+Installation failed.
+See ‘/home/david/dev/mmod/..Rcheck/00install.out’ for details.

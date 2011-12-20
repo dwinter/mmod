@@ -46,7 +46,6 @@ Each of the stats can be calculated for each pairwise comparison of populations
 Finally, the function `jacknife_population()` can, as the name suggests,
 caluate these statistics in a sample jacknifed across populations
 
-##References
-Will go here
-
+mmod is still very much in development, so I'm happy to recieve and
+suggestions contirbutions or bugs you might find
 

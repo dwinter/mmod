@@ -1,8 +1,14 @@
 #' Calculate Nei's Gst using estimators for Hs and Ht
 #'
-#' This function calculates G'st, Hedrick's  correction to Gst 
-#' accounting for observed Hs. Nei and Chesser's  estimators of
-#' Hs and Ht are used
+#' This function calculates Hedrick's G'st from a genind object
+#'
+#' Takes a genind object with population information and calculates Hedrick's 
+#' G'st. This Returns a list with values for each locus as well as a global estimates
+#' 
+#' 
+#' Because estimators of Hs and Ht are used, it's possible to have negative
+#' estimates of Gst. You should treat such results as zeros (or estimating a
+#' value close to zero, and getting it a little wrong)
 #'
 #' @param x genind object (from package adegenet)
 #' @export

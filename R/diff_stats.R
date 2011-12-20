@@ -2,6 +2,9 @@
 #'
 #' This function calculates three different statistics of differentiaion
 #' for a genetic dataset. Nei's Gst, Hedrick's G'st and Jost's D
+#' 
+#' See individual functions D_Jost(), Gst_Hedrick() and Gst_Nei() for more
+#' details
 #'
 #' @param x genind object (from package adegenet)
 #' @export
@@ -30,9 +33,9 @@ diff_stats <- function(x){
     #And the results formated as list
     result <- c("Hs" = Hs_est, 
                 "Ht" = Ht_est, 
-                "Gst_est"=G_est, 
-                "G'st" = Gprime_st,
-                "D_est" = D)
+                "Gst"=G_est, 
+                "Gprime_st" = Gprime_st,
+                "D" = D)
     return(result)
   }
  loci <- t(sapply(seploc(x), per.locus))
@@ -44,9 +47,9 @@ diff_stats <- function(x){
                 Hs = global_Hs, 
                 Ht = global_Ht, 
                 Gst_est = global_G_est, 
-                "G'st_est"= global_G_est*(n-1+global_Hs)/((n-1)*(1-global_Hs)),
-                "D_est(het)" = (global_Ht - global_Hs)/(1 - global_Hs ) * (n/(n-1)),
-                "D_est(mean)"= harmonic_mean(loci[,5])
+                "Gprime_st"= global_G_est*(n-1+global_Hs)/((n-1)*(1-global_Hs)),
+                "D_het" = (global_Ht - global_Hs)/(1 - global_Hs ) * (n/(n-1)),
+                "D_mean"= harmonic_mean(loci[,5])
               )))
 }
 

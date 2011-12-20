@@ -8,7 +8,7 @@ Depends:
     R (>= 2.6.0),
     adegenet
 ZipData: no
-Description: mmod provides functions
+Description: mmod provides functions for measuring population divergence from genotypic data
 License: MIT
 URL: https://github.com/dwinter [update!]
 Collate:
@@ -21,3 +21,4 @@ Collate:
     'pairwise_D.R'
     'pairwise_Gst_Hedrick.R'
     'pairwise_Gst_Nei.R'
+    'help.R'

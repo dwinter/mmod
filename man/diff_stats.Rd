@@ -12,12 +12,16 @@
   differentiaion for a genetic dataset. Nei's Gst,
   Hedrick's G'st and Jost's D
 }
+\details{
+  See individual functions D_Jost(), Gst_Hedrick() and
+  Gst_Nei() for more details
+}
 \examples{
 data(nancycats)
 diff_stats(nancycats)
 }
 \references{
   Jost, L. (2008), GST and its relatives do not measure
-  differentiation. Molecular Ecology, 17: 4015–4026
+  differentiation. Molecular Ecology, 17: 4015-4026.
 }
 

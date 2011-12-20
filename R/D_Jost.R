@@ -1,6 +1,14 @@
-#' Calculate Jost's D using 
+#' Calculate Jost's D 
 #'
-#' This function calculates Jost's D 
+#' This function calculates Jost's D from a genind object
+#'
+#' Takes a genind object with population information and calculates Jost's D
+#' Returns a list with values for each locus as well as two global estimates.
+#' 'global.het' uses the average haves of Hs and Ht across all loci while 
+#' 'global.harm_mean' takes the harmonic mean of all loci.
+#' 
+#' Because estimators of Hs and Ht are used, its possible to have negative
+#' estimates of D. You should treat these as numbers close to zero.
 #'
 #' @param x genind object (from package adegenet)
 #' @export
@@ -8,6 +16,8 @@
 #' 
 #' data(nancycats)
 #' D_Jost(nancycats)
+#' @references
+#'  Jost, L. (2008), GST and its relatives do not measure differentiation. Molecular Ecology, 17: 4015-4026. 
 
 D_Jost <- function(x){
   n <- length(unique(pop(x)))
