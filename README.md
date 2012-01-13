@@ -34,18 +34,18 @@ objects from the libary `adegenet` so data can be read in from standard
 
 There are functions for each of these measures which give values for 
 each locus in a `genind` object and a global estimate:
-*`D_Jost()`
-*`Gst_Hedrick()`
-*`Gst_Nei()`
+* `D_Jost()`
+* `Gst_Hedrick()`
+* `Gst_Nei()`
 
 Because most of the heavy-lifting in calculating all these stats is finding
 Hs and Ht, a function, `diff_stats()` is provided to calulate each at once
 
 Each of the stats can be calculated for each pairwise comparison of populations
  in a dataset
-*`pairwise_D()`
-*`pairwise_Gst_Hedrick()`
-*`pairswise_Gst_Nei()`
+* `pairwise_D()`
+* `pairwise_Gst_Hedrick()`
+* `pairswise_Gst_Nei()`
 
 Finally, the function `jacknife_population()` can, as the name suggests,
 caluate these statistics in a sample jacknifed across populations
