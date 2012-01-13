@@ -25,27 +25,27 @@ Fst...) to measure divergence between populations. It turns out, Gst doesn't rea
 measure divergence so, [a set of new measures have been developed]
 (http://www.molecularecologist.com/2011/03/should-i-use-fst-gst-or-d-2/)
   
-mmod is a package that brings two of these mesures, Hedricks (2008) G'st 
-and Jost's (2008) D to R, along wiht an implementation of Nei's Gst that
-uses nearly unbiased estimators for Hs and Ht, the two key paramaters from
+mmod is a package that brings two of these measures, Hedricks (2008) G'st 
+and Jost's (2008) D to R, along with an implementation of Nei's Gst that
+uses nearly unbiased estimators for Hs and Ht, the two key parameters from
 which all these stats are calculated. All these functions work on `genind`
-objects from the libary `adegenet` so data can be read in from standard
+objects from the library `adegenet` so data can be read in from standard
 `genepop`files.
 
 There are functions for each of these measures which give values for 
 each locus in a `genind` object and a global estimate:
-* `D_Jost()`
-* `Gst_Hedrick()`
-* `Gst_Nei()`
++  `D_Jost()`
++  `Gst_Hedrick()`
++  `Gst_Nei()`
 
 Because most of the heavy-lifting in calculating all these stats is finding
-Hs and Ht, a function, `diff_stats()` is provided to calulate each at once
+Hs and Ht, a function, `diff_stats()` is provided to calculate each at once
 
 Each of the stats can be calculated for each pairwise comparison of populations
  in a dataset
-* `pairwise_D()`
-* `pairwise_Gst_Hedrick()`
-* `pairswise_Gst_Nei()`
++ `pairwise_D()`
++ `pairwise_Gst_Hedrick()`
++ `pairswise_Gst_Nei()`
 
 Finally, the function `jacknife_population()` can, as the name suggests,
 caluate these statistics in a sample jacknifed across populations
