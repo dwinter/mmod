@@ -13,6 +13,7 @@ Found the following executable file(s):
   .git/objects/00/9d48de5f5be0295baecac4964267c333ae3ee0
   .git/objects/00/bbe5a6a988abf87b948d7239b832c1b3ed797b
   .git/objects/01/a7586160529900473d6c343662eb522ba42d4f
+  .git/objects/02/d0d9ae1cf3ec53ab52ae85209298ce96cfaa44
   .git/objects/03/0a8f6af3fa501f40cb050c0b01c07fe92ed4a5
   .git/objects/03/8859d49c8f49a607f725ac2f6ab690cc27220a
   .git/objects/03/a0bfc055d62d0442547903d70f94b60fac01a2
@@ -29,6 +30,7 @@ Found the following executable file(s):
   .git/objects/0b/3998d0148ce8d692f23f582e58460df01ca13f
   .git/objects/0b/f291c09af67e52b897bef483b3a686cda1e193
   .git/objects/0c/c484762321e0f479a11e33c6e3aae9d4f98d70
+  .git/objects/0c/e8eaf8eb1aef40d2c3ab62d50ddff2f78d6793
   .git/objects/0d/880664783f9d73826b11e5af57a7579e3bc633
   .git/objects/0d/d940f51aafe4dc32045ad54d9b566aa14d0711
   .git/objects/0d/e0a8d387a147ed8373345220d5a96a1420b589
@@ -47,6 +49,7 @@ Found the following executable file(s):
   .git/objects/16/0ca14edf4bd0182f230da20d99412a9af60dc6
   .git/objects/16/a80c56aecd4899af980f6c0f03a3fbef6f7927
   .git/objects/16/b2ccbd1116279c3bccce4d58511dd72f610106
+  .git/objects/17/0ec9a9bb1762906473165697353089860a6562
   .git/objects/18/3783c60ac409b0b81224dc3786684c47ed1e34
   .git/objects/18/bf79d493e3e6071b78ec698ef3c26dc5dad887
   .git/objects/19/0f5b64842566d9e3394eb58c95291b7f4cae3e
@@ -62,6 +65,7 @@ Found the following executable file(s):
   .git/objects/1f/ba4b1482accc77acb042fde606ffd66db5b8a9
   .git/objects/1f/e550bc0a5a04b48b8f423fa8b034a9f7277f82
   .git/objects/22/6404db965a0a5a0c5c4a1796a83defcd9cced2
+  .git/objects/23/431f99fab7f28d131a663acb3e65e4832f3ae8
   .git/objects/24/19eabbd20287a2b12f64294895833f43517443
   .git/objects/24/957655fe56a2d6cc81a0b3d8663fbcc0e2bd1e
   .git/objects/25/fd8bdd4ff5afa3d3c47ce3c93e945a3aefed31
@@ -88,8 +92,12 @@ Found the following executable file(s):
   .git/objects/38/c8ad476f18e27ce8e9763111d6f6b91cf91516
   .git/objects/39/2b42fc217597b9068ab4c803ee4a2e87a4c34f
   .git/objects/39/7324724ce40442d8579c956d153f63e487220b
+  .git/objects/39/d1f13c07a136c2227378b4633b4cd3dd16ef66
+  .git/objects/39/d6e59b4f01e8edeb769313cd53b1cf37d22c06
   .git/objects/3a/61344d284c5ca97198404229c7793f225bc9d2
   .git/objects/3b/00cfc2ccd18751d238c2c4113c54f759bff8ba
+  .git/objects/3b/1e957d862c87bbdb22503e92b36e0eb93ef9ce
+  .git/objects/3d/0b9e8d04a39285808002d5a73d894c0861a812
   .git/objects/3d/3eb736ca4123cb68b911cb33c989e6f24bf540
   .git/objects/3d/e8dda7d4332c415372c40d0989e674a0c053b3
   .git/objects/3e/67be935cc4521ec7958dcdaed8fdd438ec4631
@@ -130,8 +138,10 @@ Found the following executable file(s):
   .git/objects/55/fdfcd3fd95b3cf66d4013af09f44d582af6456
   .git/objects/56/54de26d1c7fa839d5b1f101ddaa3167ef042e9
   .git/objects/57/d55b7578bbae6e6985618320c0ea0107382bd1
+  .git/objects/59/39f5facff832ba203557879f0184e54500cb0f
   .git/objects/5b/50b979eadb110b37696a143498a820395b439c
   .git/objects/5b/749aa9d32922eb87fdcba7a8feefd382126edf
+  .git/objects/5b/a0180b308a6c6edeb9e9c6c05d2fd5ffa768e1
   .git/objects/5b/d710358bd489997b31fcc149586ff612aead7f
   .git/objects/5c/7a0bb90b4d75e70ceafd28a88b4cdedcdb481c
   .git/objects/5c/9fb5b571b3c9e824919e09e27da703d34a0789
@@ -182,6 +192,7 @@ Found the following executable file(s):
   .git/objects/83/e7a0645d01f0aed9aa57d21991a5d891bb54b2
   .git/objects/86/0c8f9499ffb6126e383d0758b2bcf3a993f444
   .git/objects/86/8dcd9d51f4206aa811343d34acaaa84cc235e8
+  .git/objects/87/428f33f57d1f91b4b8110cf73d2b53e92533cf
   .git/objects/88/fa96776758c887e9d9d797a388b3e19d6a6792
   .git/objects/8d/2095904d6fb2ca4aeb30bb839c3cb733e2c723
   .git/objects/8e/4108049328bab342fac2a1ad0a96f6121aa39d
@@ -217,9 +228,11 @@ Found the following executable file(s):
   .git/objects/a7/44c5c25684aca925cced7b269a3694be1abc9c
   .git/objects/a7/a6b29e1a2e28a46cd2ffbf65d7b5b29b58634f
   .git/objects/a7/eb30ad07a705245ac1825f2d66cbc996927a5a
+  .git/objects/a8/cb1eb633b22220ff90b950bb2342ffd48a9903
   .git/objects/a8/d2f60cf7d288c29e65ef34a31a883248c43d4c
   .git/objects/a9/df904381ab7e21e10cd2e5db98500864e7c7be
   .git/objects/aa/1a36ae00692b45242fa3d830cabdd4cb7d1635
+  .git/objects/aa/c64969f5c80be2e84ea9fe3b2ed8af650c3b6c
   .git/objects/ac/79066109c5efc132da0ff37d52ddaff09f997c
   .git/objects/ac/7a6d1680f6b5fd5481336f8593f26f4163b757
   .git/objects/ad/3ed88f108f9dd9796f018a3c3615036ed7c89f
@@ -260,6 +273,7 @@ Found the following executable file(s):
   .git/objects/d5/07142e410139aa64d4872fadf861200e29a610
   .git/objects/d5/72b8548005549d88364897bd9c7279b14afebf
   .git/objects/d5/84b45169773a364ecbd10835cc67bfd5abf0aa
+  .git/objects/d7/cca8ea97c540cb967fa4ee0f91870c33d8ea0e
   .git/objects/d9/58b25158595a1576a5cec2f02e3b9e81cb587b
   .git/objects/da/09aa77209d4bad53ca77b0e14e2e799345fa4d
   .git/objects/da/66732d93c897d99593170c6876d928bb2f4bd7
@@ -269,12 +283,14 @@ Found the following executable file(s):
   .git/objects/df/42073d2a29bdb9a34244567fc926f9552b155c
   .git/objects/df/f5f7c1d516725ad7382ad8f0ae1a132a65d2c7
   .git/objects/e0/f08875c51d80ad635f22860953542847f45b47
+  .git/objects/e1/b76661eff69c02f43aefd3fb9b3fa64c3584f6
   .git/objects/e2/13f532b8584607a52df8fc647424003560c879
   .git/objects/e3/85cc72d66cf6dde7dce5f2af600b0da0c910fd
   .git/objects/e3/bf961756f95c0684ece915c9b071a83f51f4b4
   .git/objects/e4/0c8a1c3b964f5792517e23628f26ef021cd324
   .git/objects/e4/9d5a0c929113586a3684ef05d6ac2244e3eb5f
   .git/objects/e5/eb180a404da9e33a724b5a9d1b0c49f26953cd
+  .git/objects/e6/0e3aa3b6ed04dd1f9cacd3ca706faf21735efb
   .git/objects/e6/68de4e87cfd3ba4f091ea97e5833bb48638a67
   .git/objects/e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391
   .git/objects/e6/bbf3d74a49c8aef8e9fce4587f6d973b73ed29
@@ -301,6 +317,41 @@ Found the following executable file(s):
   .git/objects/fe/d02b53f6d24eda92a148ee4a3ddbda7e9ef4f6
 Source packages should not contain undeclared executable files.
 See section 'Package structure' in the 'Writing R Extensions' manual.
-* checking whether package ‘mmod’ can be installed ... ERROR
-Installation failed.
-See ‘/home/david/dev/mmod/..Rcheck/00install.out’ for details.
+* checking whether package ‘mmod’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking index information ... OK
+* checking package subdirectories ... WARNING
+Found the following directory(s) with names of check directories:
+  ./..Rcheck
+Most likely, these were included erroneously.
+Subdirectory 'inst' contains no files.
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the name space can be loaded with stated dependencies ... OK
+* checking whether the name space can be unloaded cleanly ... OK
+* checking for unstated dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking examples ... OK
+* checking PDF version of manual ... OK
+WARNING: There were 2 warnings, see
+  ‘/home/david/dev/mmod/..Rcheck/00check.log’
+for details
