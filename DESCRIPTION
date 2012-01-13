@@ -11,7 +11,7 @@ ZipData: no
 Description: mmod provides functions for measuring
     population divergence from genotypic data
 License: MIT
-URL: https://github.com/dwinter [update!]
+URL: https://github.com/dwinter/mmod
 Collate:
     'diff_stats.R'
     'D_Jost.R'
