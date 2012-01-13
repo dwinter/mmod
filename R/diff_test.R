@@ -18,8 +18,6 @@
 #' 
 
 
-
-
 diff_test <- function(x, sim=TRUE, nreps=10000){
   # The test to be applied to each locus
   per.locus <- function(locus){

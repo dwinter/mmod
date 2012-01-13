@@ -14,7 +14,8 @@
   (default 1000)}
 }
 \description{
-  Makes a series of
+  Makes a series of jacknife samples across populations
+  from a Genind object
 }
 \examples{
 \dontrun{
