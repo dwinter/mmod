@@ -10,6 +10,8 @@
 #' might be.
 #'
 #' @param x genind object (from package adegenet)
+#' @param sim simulate p-value (required for all but the smallest datasets)
+#' @param nreps number of steps used to simulate p-value (default 1000)
 #' @export
 #' @examples
 #' 

@@ -90,23 +90,6 @@ diff_test(nancycats, nreps=100)
 
 
 cleanEx()
-nameEx("fast_repool")
-### * fast_repool
-
-flush(stderr()); flush(stdout())
-
-### Name: fast_repool
-### Title: Calculates pairwise values of Jost's D
-### Aliases: fast_repool
-
-### ** Examples
-
-data(nancycats)
-pairwise_D(nancycats[1:26,])
-
-
-
-cleanEx()
 nameEx("harmonic_mean")
 ### * harmonic_mean
 
@@ -145,6 +128,23 @@ flush(stderr()); flush(stdout())
 ##D hist(D_sampled)
 ##D abline(h=obs$global)
 ## End(Not run)
+
+
+
+cleanEx()
+nameEx("pairwise_D")
+### * pairwise_D
+
+flush(stderr()); flush(stdout())
+
+### Name: pairwise_D
+### Title: Calculates pairwise values of Jost's D
+### Aliases: pairwise_D
+
+### ** Examples
+
+data(nancycats)
+pairwise_D(nancycats[1:26,])
 
 
 
