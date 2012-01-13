@@ -16,8 +16,8 @@
   calculates Hedrick's G'st. This Returns a list with
   values for each locus as well as a global estimates
 
-  Because estimators of Hs and Ht are used, its possible to
-  have negative estimates of Gst. You should treat such
+  Because estimators of Hs and Ht are used, it's possible
+  to have negative estimates of Gst. You should treat such
   results as zeros (or estimating a value close to zero,
   and getting it a little wrong)
 }

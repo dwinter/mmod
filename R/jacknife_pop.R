@@ -14,12 +14,12 @@
 #' D_sampled <-jn[5,]
 #' hist(D_sampled)
 #' abline(h=obs$global)
-#' }j
+#' }
 
 jacknife_populations <- function(x, sample_frac=0.5, nreps=1000){
  rep <- function(i,d){
   if( i %% 50 == 0){
-     print(paste(i,"of", nreps,"reps completed"))
+     cat(paste(i,"of", nreps,"reps completed"))
   }
   to.sample <- sample(d$pop.names, length(d$pop.names) * sample_frac)
   return(diff_stats(d[d$pop.names %in% to.sample,])$global)

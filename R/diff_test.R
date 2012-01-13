@@ -1,19 +1,21 @@
 #' An exact test of population differntiation for Genind objects
 #'
 #' This function performs and exact test of population differentiation
-#' based on allele frequencies between population. 
+#' based on allele frequencies in sub-population.  
 #'
-#' See individual functions D_Jost(), Gst_Hedrick() and Gst_Nei() for more
-#' details
+#' Note, this test returns a p-value _not_ an estimate of effect size.
+#' Since most populations have some degree of population differentiation,
+#' very large samples are almost guaranteed to return signifcant results.
+#' Refer to estimates of D or Gst to ascertain how meaningful such results
+#' might be.
 #'
 #' @param x genind object (from package adegenet)
 #' @export
 #' @examples
 #' 
 #' data(nancycats)
-#' diff_stats(nancycats)
-#' @references
-#'  Jost, L. (2008), GST and its relatives do not measure differentiation. Molecular Ecology, 17: 4015-4026. 
+#' diff_test(nancycats, nreps=100)
+#' 
 
 
 
@@ -36,6 +38,6 @@ diff_test <- function(x, sim=TRUE, nreps=10000){
     return(fisher.test(pop_alleles, simulate.p.value=sim, B=nreps)$p.value)
   }
 
-  loci <- t(sapply(seploc(x), per.locus))
+  loci <- (sapply(seploc(x), per.locus))
   return(loci)
 }
