@@ -28,6 +28,6 @@
 }
 \examples{
 data(nancycats)
-diff_test(nancycats, nreps=100)
+diff_test(seploc(nancycats)[[2]], nreps=100)
 }
 
