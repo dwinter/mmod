@@ -19,9 +19,6 @@ The following object(s) are masked from 'package:base':
  - to post questions/comments: adegenet-forum@lists.r-forge.r-project.org
 
 
-** help
-*** installing help indices
-** building package indices ...
-** testing if installed package can be loaded
-
-* DONE (mmod)
+Error : package 'adegenet' does not have a name space
+ERROR: lazy loading failed for package ‘mmod’
+* removing ‘/home/david/dev/mmod/..Rcheck/mmod’

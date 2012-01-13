@@ -6,6 +6,12 @@
 }
 \arguments{
   \item{x}{genind object (from package adegenet)}
+
+  \item{sim}{simulate p-value (required for all but the
+  smallest datasets)}
+
+  \item{nreps}{number of steps used to simulate p-value
+  (default 1000)}
 }
 \description{
   This function performs and exact test of population
