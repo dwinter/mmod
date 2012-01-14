@@ -1,0 +1,33 @@
+\name{pairwise_Gst_Nei}
+\alias{pairwise_Gst_Nei}
+\title{Calculates pairwise values of Nei's Gst}
+\usage{
+  pairwise_Gst_Nei(x)
+}
+\arguments{
+  \item{x}{genind object (from package adegenet)}
+}
+\description{
+  This function calculates Nei's Gst, a measure of genetic
+  differentiation, between all combinations of populaitons
+  in a genind object.
+}
+\examples{
+data(nancycats)
+pairwise_Gst_Nei(nancycats[1:26,])
+}
+\references{
+  Nei M. (1973) Analysis of gene diversity in subdivided
+  populations. PNAS: 3321-3323.
+
+  Nei M, Chesser RK. (1983). Estimation of fixation indices
+  and gene diversities. Annals of Human Genetics. 47:
+  253-259.
+}
+\seealso{
+  Other Nei: \code{\link{Gst_Nei}}
+
+  Other pairwise: \code{\link{pairwise_D}},
+  \code{\link{pairwise_Gst_Hedrick}}
+}
+
