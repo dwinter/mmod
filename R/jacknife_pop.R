@@ -1,6 +1,7 @@
 #' Calculate differentiation stats for a jacknife sample of a Genind opject
 #'
-#' Makes a series of jacknife samples across populations from a Genind object
+#' Makes a series of jacknife samples across populations from a Genind object 
+#' and calculates differentiation stats for each sample.
 #'
 #' @param x genind object (from package adegenet)
 #' @param sample_frac fraction of pops to sample in each replication (default 0.5)

@@ -8,7 +8,9 @@
   \item{x}{numeric vector}
 }
 \description{
-  Calculate the harmonic mean of a numeric vector
+  Calculate the harmonic mean of a numeric vector (will
+  return NA if there are any negative numbers in the
+  vector)
 }
 \examples{
 data(nancycats)

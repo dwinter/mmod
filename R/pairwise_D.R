@@ -10,7 +10,10 @@
 #' 
 #' data(nancycats)
 #' pairwise_D(nancycats[1:26,])
-
+#' @references
+#'  Jost, L. (2008), GST and its relatives do not measure differentiation. Molecular Ecology, 17: 4015-4026. 
+#' @family pairwise
+#' @family D
 
 pairwise_D <- function(x) {
   pops <- seppop(x)

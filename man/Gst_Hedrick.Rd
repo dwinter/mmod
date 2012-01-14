@@ -25,4 +25,14 @@
 data(nancycats)
 Gst_Hedrick(nancycats)
 }
+\references{
+  Hedrick, PW. (2005), A Standardized Genetic
+  Differentiation Measure. Evolution 59: 1633-1638.
+}
+\seealso{
+  Other diffstat: \code{\link{diff_stats}},
+  \code{\link{D_Jost}}, \code{\link{Gst_Nei}}
+
+  Other Hedrick: \code{\link{pairwise_Gst_Hedrick}}
+}
 

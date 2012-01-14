@@ -5,7 +5,6 @@
 #' Takes a genind object with population information and calculates Hedrick's 
 #' G'st. This Returns a list with values for each locus as well as a global estimates
 #' 
-#' 
 #' Because estimators of Hs and Ht are used, it's possible to have negative
 #' estimates of Gst. You should treat such results as zeros (or estimating a
 #' value close to zero, and getting it a little wrong)
@@ -16,6 +15,10 @@
 #' 
 #' data(nancycats) 
 #' Gst_Hedrick(nancycats)
+#' @references
+#'  Hedrick, PW. (2005), A Standardized Genetic Differentiation Measure. Evolution 59: 1633-1638. 
+#' @family diffstat
+#' @family Hedrick
 
 Gst_Hedrick <- function(x){
   n <- length(unique(pop(x)))

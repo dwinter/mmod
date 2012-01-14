@@ -16,5 +16,4 @@
 #' @docType package
 #' @name mmod
 #' @aliases mmod mmod-package
-#' @import adegenet
 NULL

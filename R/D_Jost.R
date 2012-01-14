@@ -4,7 +4,7 @@
 #'
 #' Takes a genind object with population information and calculates Jost's D
 #' Returns a list with values for each locus as well as two global estimates.
-#' 'global.het' uses the average haves of Hs and Ht across all loci while 
+#' 'global.het' uses the averages of Hs and Ht across all loci while 
 #' 'global.harm_mean' takes the harmonic mean of all loci.
 #' 
 #' Because estimators of Hs and Ht are used, its possible to have negative
@@ -18,6 +18,8 @@
 #' D_Jost(nancycats)
 #' @references
 #'  Jost, L. (2008), GST and its relatives do not measure differentiation. Molecular Ecology, 17: 4015-4026. 
+#' @family diffstat
+#' @family D
 
 D_Jost <- function(x){
   n <- length(unique(pop(x)))

@@ -15,7 +15,8 @@
 }
 \description{
   Makes a series of jacknife samples across populations
-  from a Genind object
+  from a Genind object and calculates differentiation stats
+  for each sample.
 }
 \examples{
 \dontrun{

@@ -10,6 +10,13 @@
 #' 
 #' data(nancycats)
 #' pairwise_Gst_Nei(nancycats[1:26,])
+#' @references
+#'  Nei M. (1973) Analysis of gene diversity in subdivided populations. PNAS: 3321-3323. 
+#' @references
+#'  Nei M, Chesser RK. (1983). Estimation of fixation indices and gene diversities. Annals of Human Genetics. 47: 253-259.
+#' @family pairwise
+#' @family Nei
+
 
 pairwise_Gst_Nei <- function(x) {
   pops <- seppop(x)

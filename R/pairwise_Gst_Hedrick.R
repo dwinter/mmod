@@ -10,6 +10,10 @@
 #' 
 #' data(nancycats)
 #' pairwise_Gst_Hedrick(nancycats[1:26,])
+#' @references
+#'  Hedrick, PW. (2005), A Standardized Genetic Differentiation Measure. Evolution 59: 1633-1638. 
+#' @family pairwise
+#' @family Hedrick
 
 pairwise_Gst_Hedrick<- function(x) {
   pops <- seppop(x)

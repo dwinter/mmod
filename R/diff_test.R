@@ -1,17 +1,19 @@
-#' An exact test of population differntiation for Genind objects
+#' An exact test of population differentiation for Genind objects
 #'
-#' This function performs and exact test of population differentiation
-#' based on allele frequencies in sub-population.  
+#' This function uses Fisher's exact test to determine if alleles in 
+#' sub-populations are drawn randomly from a larger population (i.e. a 
+#' significance test for allelic differentiation among sub-populations).
 #'
-#' Note, this test returns a p-value _not_ an estimate of effect size.
-#' Since most populations have some degree of population differentiation,
-#' very large samples are almost guaranteed to return signifcant results.
-#' Refer to estimates of D or Gst to ascertain how meaningful such results
-#' might be.
+#' Note, this test returns p-values for each locus in a dataset _not_  
+#' estimates of effect size. Since most populations have some degree of 
+#' population differentiation, very large samples are almost guaranteed to 
+#' return significant results. Refer to estimates of D or Gst to ascertain 
+#' how meaningful such results might be.
 #'
 #' @param x genind object (from package adegenet)
 #' @param sim simulate p-value (required for all but the smallest datasets)
 #' @param nreps number of steps used to simulate p-value (default 1000)
+#' @seealso \code{\link{fisher.test}} which this function wraps
 #' @export
 #' @examples
 #' 

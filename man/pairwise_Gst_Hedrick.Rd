@@ -16,4 +16,14 @@
 data(nancycats)
 pairwise_Gst_Hedrick(nancycats[1:26,])
 }
+\references{
+  Hedrick, PW. (2005), A Standardized Genetic
+  Differentiation Measure. Evolution 59: 1633-1638.
+}
+\seealso{
+  Other Hedrick: \code{\link{Gst_Hedrick}}
+
+  Other pairwise: \code{\link{pairwise_D}},
+  \code{\link{pairwise_Gst_Nei}}
+}
 
