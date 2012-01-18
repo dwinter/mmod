@@ -5,6 +5,7 @@
 #' in a genind object.
 #'
 #' @param x genind object (from package adegenet)
+#' @param linearized logical, if TRUE will turned linearized G'st (1/()1-G'st))
 #' @export
 #' @examples
 #' 
@@ -29,5 +30,8 @@ pairwise_Gst_Hedrick<- function(x) {
     }
   res <- sapply(1:dim(allP)[2], function(i) pair(allP[,i][1], allP[,i][2]))
   attributes(res) <- attributes(dist(1:n.pops))
+  if(linearized){
+   return(res/(1-res))
+  }
   return(as.matrix(res))
 }

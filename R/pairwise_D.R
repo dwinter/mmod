@@ -5,6 +5,7 @@
 #' in a genind object.
 #'
 #' @param x genind object (from package adegenet)
+#' @param linearized logical, if TRUE will turned linearized D (1/1-D)
 #' @export
 #' @examples
 #' 
@@ -15,7 +16,7 @@
 #' @family pairwise
 #' @family D
 
-pairwise_D <- function(x) {
+pairwise_D <- function(x, linearized=FALSE) {
   pops <- seppop(x)
   n.pops <- length(pops)
   #all combinations 
@@ -29,7 +30,10 @@ pairwise_D <- function(x) {
     }
   res <- sapply(1:dim(allP)[2], function(i) pair(allP[,i][1], allP[,i][2]))
   attributes(res) <- attributes(dist(1:n.pops))
-  return(as.matrix(res))
+  if(linearized){
+     return(res/(1-res))
+     }
+  else(return(res))
 }
 
 
