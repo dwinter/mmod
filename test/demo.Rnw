@@ -1,0 +1,44 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage[tableposition=top]{caption}
+\usepackage{ifthen}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+
+\title{mmod Demo}
+\author{David Winter}
+\maketitle
+
+This is a short demo of \verb@mmod@ command in R. 
+
+As an example, we are going to examine the \verb@nancycats@ data that comes
+with \verb@adegenet@. This dataset contains microsattelite genotypes
+taken from feral cats in Nancy, France. Our goal is to see (a) to what degree
+populations of these cats are differentiated from each other and (b) if that
+differentiation can be explained by the geographic distance between subpopulations. 
+
+So let's start. 
+
+<<start>>=
+library(mmod)
+data(nancycats)
+nancycats
+@
+
+The functions in \verb@mmod@ work on genind objects, which are provided by
+ \verb@adegenet@, you can read your data in using \verb@read.genepop()@) to 
+ read data in form genepop files. 
+ 
+Once we have the data to work on, we want to know how strong any divergence 
+between sub-populations might be. 
+
+<<diffstat>>=
+diff_stats(nancycats)
+@
+
+OK, what's all that then? \verb@Hs@ and \verb@Ht@ are measures of the 
+heterozgosity expected for this population with and without 
+

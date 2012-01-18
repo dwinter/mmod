@@ -1,0 +1,91 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage[tableposition=top]{caption}
+\usepackage{ifthen}
+\usepackage[utf8]{inputenc}
+
+\usepackage{Sweave}
+\begin{document}
+
+\title{mmod Demo}
+\author{David Winter}
+\maketitle
+
+This is a short demo of \verb@mmod@ command in R. 
+
+As an example, we are going to examine the \verb@nancycats@ data that comes
+with \verb@adegenet@. This dataset contains microsattelite genotypes
+taken from feral cats in Nancy, France. Our goal is to see (a) to what degree
+populations of these cats are differentiated from each other and (b) if that
+differentiation can be explained by the geographic distance between subpopulations. 
+
+So let's start. 
+
+\begin{Schunk}
+\begin{Sinput}
+> library(mmod)
+> data(nancycats)
+> nancycats
+\end{Sinput}
+\begin{Soutput}
+   #####################
+   ### Genind object ### 
+   #####################
+- genotypes of individuals - 
+
+S4 class:  genind
+@call: genind(tab = truenames(nancycats)$tab, pop = truenames(nancycats)$pop)
+
+@tab:  237 x 108 matrix of genotypes
+
+@ind.names: vector of  237 individual names
+@loc.names: vector of  9 locus names
+@loc.nall: number of alleles per locus
+@loc.fac: locus factor for the  108 columns of @tab
+@all.names: list of  9 components yielding allele names for each locus
+@ploidy:  2
+@type:  codom
+
+Optionnal contents: 
+@pop:  factor giving the population of each individual
+@pop.names:  factor giving the population of each individual
+
+@other: a list containing: xy 
+\end{Soutput}
+\end{Schunk}
+
+The functions in \verb@mmod@ work on genind objects, which are provided by
+ \verb@adegenet@, you can read your data in using \verb@read.genepop()@) to 
+ read data in form genepop files. 
+ 
+Once we have the data to work on, we want to know how strong any divergence 
+between sub-populations might be. 
+
+\begin{Schunk}
+\begin{Sinput}
+> diff_stats(nancycats)
+\end{Sinput}
+\begin{Soutput}
+$per.locus
+             Hs        Ht        Gst Gprime_st          D
+fca8  0.7708277 0.8614311 0.10517782 0.4810570 0.42006021
+fca23 0.7415102 0.7992621 0.07225650 0.2924881 0.23738411
+fca43 0.7416796 0.7935120 0.06532017 0.2645865 0.21319208
+fca45 0.7273320 0.7641204 0.04814486 0.1845960 0.14335289
+fca77 0.7766369 0.8655618 0.10273670 0.4822798 0.42300076
+fca78 0.6316202 0.6772045 0.06731245 0.1899390 0.13147655
+fca90 0.7369587 0.8141591 0.09482221 0.3770880 0.31183460
+fca96 0.6699736 0.7654561 0.12473941 0.3937947 0.30740024
+fca37 0.5623259 0.6024354 0.06657894 0.1574662 0.09737005
+
+$global
+        Hs         Ht    Gst_est  Gprime_st      D_het     D_mean 
+0.70654052 0.77146027 0.08415178 0.29942062 0.23504860 0.20017978 
+\end{Soutput}
+\end{Schunk}
+
+OK, what's all that then? \verb@Hs@ and \verb@Ht@ are measures of the 
+heterozgosity expected for this population with and without 
+
