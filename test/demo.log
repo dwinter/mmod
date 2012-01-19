@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2011.11.22)  18 JAN 2012 21:41
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.11.22)  19 JAN 2012 16:10
 entering extended mode
  %&-line parsing enabled.
 **demo.tex
@@ -342,10 +342,11 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 (/etc/texmf/tex/latex/config/graphics.cfg
 File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: dvips.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/share/texmf-texlive/tex/latex/graphics/dvips.def
-File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count100
 ))
 \Gin@req@height=\dimen121
 \Gin@req@width=\dimen122
@@ -355,11 +356,11 @@ Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz)
-\FV@CodeLineNo=\count100
+\FV@CodeLineNo=\count101
 \FV@InFile=\read1
 \FV@TabBox=\box28
-\c@FancyVerbLine=\count101
-\FV@StepNumber=\count102
+\c@FancyVerbLine=\count102
+\FV@StepNumber=\count103
 \FV@OutFile=\write3
 ) (/usr/share/texmf/tex/latex/R/tex/latex/upquote.sty
 Package: upquote 2003/08/11 v1.1 Covington's upright-quote modification to verb
@@ -527,8 +528,7 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 
 (/usr/share/texmf-texlive/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-))))
-No file demo.aux.
+)))) (./demo.aux)
 \openout1 = `demo.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -545,70 +545,74 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 10.
+
 (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 10.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for T1+aett on input line 16.
 
-(/usr/share/texmf-texlive/tex/latex/ae/t1aett.fd
-File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count104
+\scratchdimen=\dimen123
+\scratchbox=\box29
+\nofMPsegments=\count105
+\nofMParguments=\count106
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count107
+\MPscratchDim=\dimen124
+\MPnumerator=\count108
+\everyMPtoPDFconversion=\toks24
 )
-Overfull \hbox (8.85826pt too wide) in paragraph at lines 59--62
-[]\T1/aer/m/n/10 The func-tions in []\T1/aett/m/n/10 mmod \T1/aer/m/n/10 work o
-n genind ob-jects, which are pro-vided by []\T1/aett/m/n/10 adegenet\T1/aer/m/n
-/10 ,
- []
+LaTeX Font Info:    Try loading font information for T1+aett on input line 16.
+ (/usr/share/texmf-texlive/tex/latex/ae/t1aett.fd
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+) [1
 
-[1
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for TS1+aett on input line 94.
 
-])
-*
-(Please type a command or say `\end')
-*\end
+ (/usr/share/texmf/tex/latex/R/tex/latex/ts1aett.fd
+File: ts1aett.fd 
+)
+LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 94.
 
-*
-Runaway argument?
-! Paragraph ended before \end was complete.
-<to be read again> 
-                   \par 
-<*> 
-    
-? 
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*\end
+(/usr/share/texmf-texlive/tex/latex/base/ts1cmtt.fd
+File: ts1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `TS1/aett/m/n' in size <10> not available
+(Font)              Font shape `TS1/cmtt/m/n' tried instead on input line 94.
 
-*^^[[A^^[[D^^[[B
-! Missing \endcsname inserted.
-<to be read again> 
-                   \protect 
-<*> ^^[
-       [A^^[[D^^[[B
-? 
-! Missing \endcsname inserted.
-<to be read again> 
-                   \protect 
-<*> ^^[
-       [A^^[[D^^[[B
-? 
-! Emergency stop.
-<to be read again> 
-                   \protect 
-<*> ^^[
-       [A^^[[D^^[[B
-End of file on the terminal!
+<demo-fig1.pdf, id=10, 433.62pt x 433.62pt>
+File: demo-fig1.pdf Graphic file (type pdf)
+ <use demo-fig1.pdf> [2] [3 <./demo-fig1.pdf>] <demo-fig2.pdf, id=24, 433.62pt 
+x 433.62pt>
+File: demo-fig2.pdf Graphic file (type pdf)
+ <use demo-fig2.pdf>
+[4] [5 <./demo-fig2.pdf>] (./demo.aux)
 
- 
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3535 strings out of 495062
- 48850 string characters out of 1182643
- 102745 words of memory out of 3000000
- 6684 multiletter control sequences out of 15000+50000
- 12950 words of font info for 32 fonts, out of 3000000 for 9000
+ 3961 strings out of 495061
+ 54815 string characters out of 1182620
+ 108397 words of memory out of 3000000
+ 7076 multiletter control sequences out of 15000+50000
+ 17115 words of font info for 46 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 36i,6n,38p,252b,191s stack positions out of 5000i,500n,10000p,200000b,50000s
-Output written on demo.dvi (1 page, 2008 bytes).
+ 36i,6n,38p,252b,280s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/david/.texmf-var/fonts/pk/ljfour/jknappen/ec/tctt1000.600pk></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-tex
+live/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/t
+ype1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmsltt10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmtt10.pfb>
+Output written on demo.pdf (5 pages, 129118 bytes).
+PDF statistics:
+ 57 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+

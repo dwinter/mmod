@@ -16,12 +16,12 @@
 #' @family pairwise
 #' @family Hedrick
 
-pairwise_Gst_Hedrick<- function(x) {
+pairwise_Gst_Hedrick<- function(x, linearized=FALSE) {
   pops <- seppop(x)
   n.pops <- length(pops)
   #all combinations 
   allP <- combn(1:n.pops, 2)
-  # calculate tfh statistic
+  # calculate the statistic
   pair <- function(index.a,index.b){
     a <- pops[[index.a]]
     b <- pops[[index.b]]
@@ -33,5 +33,5 @@ pairwise_Gst_Hedrick<- function(x) {
   if(linearized){
    return(res/(1-res))
   }
-  return(as.matrix(res))
+  return(res)
 }

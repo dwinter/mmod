@@ -19,7 +19,7 @@
 #' @family Nei
 
 
-pairwise_Gst_Nei <- function(x) {
+pairwise_Gst_Nei <- function(x, linearized=FALSE) {
   pops <- seppop(x)
   n.pops <- length(pops)
   #all combinations 
@@ -36,5 +36,5 @@ pairwise_Gst_Nei <- function(x) {
   if(linearized){
      return(res/(1-res))
      }
-  return(as.matrix(res))
+  return(res)
 }
