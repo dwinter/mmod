@@ -2,10 +2,13 @@
 \alias{pairwise_Gst_Nei}
 \title{Calculates pairwise values of Nei's Gst}
 \usage{
-  pairwise_Gst_Nei(x)
+  pairwise_Gst_Nei(x, linearized = FALSE)
 }
 \arguments{
   \item{x}{genind object (from package adegenet)}
+
+  \item{linearized}{logical, if TRUE will turned linearized
+  Gst (1/(1-Gst))}
 }
 \description{
   This function calculates Nei's Gst, a measure of genetic

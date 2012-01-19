@@ -5,7 +5,7 @@ Gst_Nei                 Calculate Nei's Gst using estimators for Hs and
                         Ht
 diff_stats              Calculate differentiation statistics for a
                         genind objects
-diff_test               An exact test of population differntiation for
+diff_test               An exact test of population differentiation for
                         Genind objects
 harmonic_mean           Harmonic mean
 jacknife_populations    Calculate differentiation stats for a jacknife

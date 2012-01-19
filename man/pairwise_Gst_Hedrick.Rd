@@ -2,10 +2,13 @@
 \alias{pairwise_Gst_Hedrick}
 \title{Calculates pairwise values of Hedrick's G'st}
 \usage{
-  pairwise_Gst_Hedrick(x)
+  pairwise_Gst_Hedrick(x, linearized = FALSE)
 }
 \arguments{
   \item{x}{genind object (from package adegenet)}
+
+  \item{linearized}{logical, if TRUE will turned linearized
+  G'st (1/()1-G'st))}
 }
 \description{
   This function calculates Hedrick's G'st, a measure of
