@@ -6,10 +6,12 @@
 
 ###Install
 
-mmod isn't on CRAN yet, so for now you can download `mmod_0.1.tar.gz` and 
-install via the command line (or with the GUI if you'd prefer):
+mmod isn't on CRAN, so you can install the latest stable version using 
+`install.packages("mmod")`. This github repository may be running ahead of 
+the version on CRAN, if you really want the latest version you can download
+ `mmod_*.tar.gz` and install via the command line (or with the GUI if you'd prefer):
 
-        $R CMD INSTALL mmod_0.1.tar.gz 
+        $R CMD INSTALL mmod_*.tar.gz 
 
 ###Usage
 Once it's up an running all you need is genepop file with your data
@@ -30,10 +32,10 @@ and Jost's (2008) D to R, along with an implementation of Nei's Gst that
 uses nearly unbiased estimators for Hs and Ht, the two key parameters from
 which all these stats are calculated. All these functions work on `genind`
 objects from the library `adegenet` so data can be read in from standard
-`genepop`files. To see an overview of a typical usage is provided in a vignette
+`genepop`files. An overview of a typical usage is provided in a vignette
 called "demo", acessable from `vignette("demo", package="mmod")`
 
-There are functions for each of these measures which give values for 
+Briefly yhere are functions for each of these measures which give values for 
 each locus in a `genind` object and a global estimate:`D_Jost()`, 
 `Gst_Hedrick()`, `Gst_Nei()`. Because most of the heavy-lifting in calculating 
 all these stats is finding Hs and Ht, a function, `diff_stats()` is 
