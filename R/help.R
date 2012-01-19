@@ -11,7 +11,7 @@
 #'uses nearly unbiased estimators for Hs and Ht, the two key paramaters from
 #'which all these stats are calculated. All these functions work on genind
 #'objects from the libary adegenet so data can be read in from standard
-#'genepop files.
+#'genepop files. See vignette("demo", package="mmod") for an example usage.
 #'
 #' @docType package
 #' @name mmod
