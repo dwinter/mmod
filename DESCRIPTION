@@ -1,12 +1,13 @@
 Package: mmod
 Version: 0.2
 Date: 2011-11-22
-Title: Modern measures of population divergence
+Title: Modern measures of population differentiation
 Author: David Winter
 Maintainer: David Winter <david.winter@gmail.com>
 Depends:
     R (>= 2.6.0),
     adegenet
+Suggests: pegas
 ZipData: no
 Description: mmod provides functions for measuring
     population divergence from genotypic data
