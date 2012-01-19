@@ -45,17 +45,17 @@ diff_stats(nancycats)
 @
 
 OK, so what's all that then? The first table has statistics calculated individually 
-for each locus in the dataset. \texttt{H$_T$} and \texttt{H$_T$} are estimates of the 
+for each locus in the dataset. \texttt{H$_S$} and \texttt{H$_T$} are estimates of the 
 heterozgosity expected for this population with and without the sub-populations
 defined in the \texttt{nancycats} data respectively. We need to use those to calculate the measures of 
 population divergence so we might as well display them at the same time. 
-\texttt{Gst} is the standard (Nei) G$_{ST}$, \texttt{GPrimest} is Hedricks $G'_{ST}$ and \texttt{D}
- is Josts' D.
+\texttt{Gst} is the standard (Nei) G$_{ST}$, \verb+Gprime_st+ is Hedrick's G'$_{ST}$ and \texttt{D}
+ is Jost's D.
  
-D is the easiest statistic to interperate, as you expect to find $D=0$ for
+D is the easiest statistic to interpret, as you expect to find $D=0$ for
 populations with no differentiation and $D=1$ for completely differentiated 
 populations. As you can see, different loci give quite different estimates of
-divergence but they range from ~0.1--0.4. I'd say that's reasonably 
+divergence but they range from ~0.1--0.4. I'd say that's quite 
 substantial. 
 \newpage
 You might also want to see how regular old G$_{ST}$ compares with
@@ -112,7 +112,7 @@ mantel.rtest(nc.pw_Gst, log(nc.pop_dists), 999)
 So, the geographic distance between these populations can't explain the 
 genetic divergences we see: the correlation is small and non-significant. 
 If you like, we can also visualize this relationship for each statistic
-(Figure 2).
+(Figure 2).\newpage
 
 <<label=fig2plot>>=
 par(mfrow=c(2,1))
