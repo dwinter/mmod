@@ -87,7 +87,7 @@ You probably want to have some idea of how robust this result is. Their are a
 few functions for performing bootstrap samples of \texttt{genind} objects and
 calculating statistics from those samples. Because some of these functions can
 take a long time to run, let's create a whopping great 10 repetition bootstrap
-sample of the \textt{nancycats} data.
+sample of the \texttt{nancycats} data.
 <<bs>>=
 bs <- chao_bootstrap(nancycats, nreps=10)
 bs.D <- summarise_bootsrap(bs, D_Jost)
@@ -95,7 +95,7 @@ bs.D
 @
 As you can see, printing a summarised bootstrap sample gives us shows a basic
 overview of that data, but there is quite a lot more there use 
-\textt{str(bs.D))} to check it out. I don't think there
+\texttt{str(bs.D))} to check it out. I don't think there
 is much point trying to interpret confidence intervals estimated from 10 
 samples, so let's move on.
 

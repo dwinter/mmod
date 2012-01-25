@@ -6,6 +6,8 @@
 #'
 #' @param x genind object (from package adegenet)
 #' @param linearized logical, if TRUE will turned linearized D (1/1-D)
+#' @param global.het logical if TRUE returns global estimate of D based on 
+#' mean heterozysoity (FALSE for harmonic mean)
 #' @export
 #' @examples
 #' 
@@ -16,7 +18,7 @@
 #' @family pairwise
 #' @family D
 
-pairwise_D <- function(x, linearized=FALSE) {
+pairwise_D <- function(x, linearized=FALSE, global.het=TRUE) {
   pops <- seppop(x)
   n.pops <- length(pops)
   #all combinations 
@@ -26,14 +28,19 @@ pairwise_D <- function(x, linearized=FALSE) {
     a <- pops[[index.a]]
     b <- pops[[index.b]]
     temp <- repool(a,b)
-    return(D_Jost(temp)$global.het)
-    }
+    if(global.het){
+      return(D_Jost(temp)$global.het)
+      }
+    else
+      return(D_Jost(temp)$global.harm_mean)
+  }
   res <- sapply(1:dim(allP)[2], function(i) pair(allP[,i][1], allP[,i][2]))
   attributes(res) <- attributes(dist(1:n.pops))
   if(linearized){
      return(res/(1-res))
      }
-  else(return(res))
+  else
+    return(res)
 }
 
 

@@ -34,12 +34,12 @@ D_Jost <- function(x){
     D <- (Ht_est-Hs_est)/(1-Hs_est) * (n/(n-1))
     return(c(Hs_est, Ht_est, D))
   }
- loci <- t(sapply(seploc(x), D.per.locus))
-  global_Hs <- mean(loci[,1], na.rm=T)
-  global_Ht <- mean(loci[,2], na.rm=T)
+ loci <- sapply(seploc(x), D.per.locus)
+  global_Hs <- mean(loci[1,], na.rm=T)
+  global_Ht <- mean(loci[2,], na.rm=T)
   global_D <-  (global_Ht - global_Hs)/(1 - global_Hs ) * (n/(n-1))
-  harm_D <- harmonic_mean(loci)
-  return(list("per.locus"=loci[,3],
+  harm_D <- harmonic_mean(loci[3,])
+  return(list("per.locus"=loci[3,],
               "global.het"=global_D,
               "global.harm_mean" = harm_D
         ))
