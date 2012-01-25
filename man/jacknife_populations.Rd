@@ -28,4 +28,8 @@ hist(D_sampled)
 abline(h=obs$global)
 }
 }
+\seealso{
+  Other resample: \code{\link{chao_bootstrap}},
+  \code{\link{summarise_bootsrap}}
+}
 

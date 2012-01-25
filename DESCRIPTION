@@ -7,7 +7,8 @@ Maintainer: David Winter <david.winter@gmail.com>
 Depends:
     R (>= 2.6.0),
     adegenet
-Suggests: pegas
+Suggests:
+    pegas
 ZipData: no
 Description: mmod provides functions for measuring
     population divergence from genotypic data
@@ -25,3 +26,5 @@ Collate:
     'pairwise_Gst_Nei.R'
     'help.R'
     'diff_test.R'
+    'chao_bootstrap.R'
+    'summarise_bootstrap.R'

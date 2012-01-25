@@ -1,3 +1,26 @@
+#' Apply a differentiation statistic to a bootstrap sample sample
+#'
+#' This function applies a differentiation statistic (eg, D_Jost, Gst_Hedrick or 
+#' Gst_Nei) to a list of genind objects, possibly produced with
+#' chao_bootsrap or jacknife_populations. The resulting list contains a matrix
+#' of values with the statistic for each locus as well as a global estimate 
+#' for every object in the sample. Additionally, mean and 95% confidence 
+#' intervals are calculated for each set of statisics A custom print method 
+#' that displays these summaries is provided.
+#' 
+#'
+#' @param bs list of genind objects
+#' @param statistic differentiation statistic to apply.
+#' @family resample
+#' @export
+#' @examples
+#'\dontrun{  
+#' data(nancycats)
+#' bs <- chao_bootstrap(nancycats)
+#' summarise_bootstrap(bs, D_Jost)
+#'}
+
+
 summarise_bootsrap <- function(bs, statistic){
   nreps <- length(bs)
   stats <- sapply(bs, statistic)
@@ -11,29 +34,39 @@ summarise_bootsrap <- function(bs, statistic){
   if(identical(statistic, D_Jost)){
     res$global.harm <- unlist(stats[3,])
     }
+  summarise <- function(x){
+    return(c(mean=mean(x), quantile(x, c(0.025, 0.975))))
+  }
+  res$summary.loci <- apply(loc_stats, 2, summarise)
+  res$summary.global.het <- summarise(res$global.het)
+  if(identical(statistic, D_Jost)){
+    res$summary.global.harm <- summarise(res$global.harm)
+    }
   class(res) <- "summarised_bs"
   return(res)
 }
 
-print.summarised_bs <- function(x, digits=4){
+#' @S3method print summarised_bs
+
+print.summarised_bs <- function(x, ...){
   
-  summarise <- function(x){
-  res <- round(c(mean=mean(x), quantile(x, c(0.025, 0.975))), digits)
-  return(paste(res[1], "\t(", res[2],"-", res[3], ")\n", sep="")) 
+  print_line <- function(x){
+  x <- round(x, 4)
+  return(paste(x[1], "\t(", x[2],"-", x[3], ")\n", sep="")) 
   }
   
   loc.names <- colnames(x$per.locus)
-  loc.results <- apply(x$per.locus, 1, summarise)
+  loc.results <- apply(x$summary.loci, 2, print_line)
   cat("\nEstimates for each locus\n")
   cat("Locus\tMean\t 95% CI\n")
   for(i in 1:length(loc.names)){
     cat(paste(loc.names[i], loc.results[i], sep="\t"))
   }
   cat("\nGlobal Estimate based on average heterozygosity\n")
-  cat(summarise(x$global.het))
-  if(!is.null(x$global.harm)){
+  cat(print_line(x$summary.global.het))
+  if(!is.null(x$summary.global.harm)){
     cat("\nGlobal Estimate based on harmonic mean of statistic\n")
-    cat(summarise(x$global.harm))
+    cat(print_line(x$summary.global.harm))
   }
 }
 

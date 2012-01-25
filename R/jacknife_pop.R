@@ -16,6 +16,7 @@
 #' hist(D_sampled)
 #' abline(h=obs$global)
 #' }
+#' @family resample
 
 jacknife_populations <- function(x, sample_frac=0.5, nreps=1000){
  rep <- function(i,d){
