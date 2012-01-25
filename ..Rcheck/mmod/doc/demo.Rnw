@@ -1,0 +1,149 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+%% \VignetteIndexEntry{mmod vignette}
+
+\begin{document}
+\title{{\sc mmod} vignette}
+\author{David Winter\\
+      david.winter@gmail.com}
+\maketitle
+
+This is a short demo of \texttt{mmod} library for differentiation statistics in R. 
+As an example, we are going to examine the \texttt{nancycats} data that comes
+with \texttt{adegenet}. This dataset contains microsattelite genotypes
+taken from feral cats in Nancy, France. 
+So let's start. 
+
+<<start>>=
+library(mmod)
+data(nancycats)
+nancycats
+@
+\newpage
+The nancycats data comes in \texttt{adegenet}'s default class for genotypic 
+data, the \texttt{genind} class. The functions in \texttt{mmod} work on genind
+ objects, so you would usually start by reading in your data using 
+ \texttt{read.genepop} 
+ 
+ 
+Now that we have our data on hand, our goal is to see 
+
+\begin{itemize}
+        \item Whether this population is substantially differentiated into 
+        smaller sub-popultions
+        \item Whether such differentiation can be explain by the geographical
+        distance between sub-populations.
+\end{itemize}
+
+
+We can look at several statistics to ask answer the first question by using
+ the \verb+diff_stats()+ function:
+
+<<diffstat>>=
+diff_stats(nancycats)
+@
+
+OK, so what's all that then? The first table has statistics calculated individually 
+for each locus in the dataset. \texttt{H$_S$} and \texttt{H$_T$} are estimates of the 
+heterozgosity expected for this population with and without the sub-populations
+defined in the \texttt{nancycats} data respectively. We need to use those to calculate the measures of 
+population divergence so we might as well display them at the same time. 
+\texttt{Gst} is the standard (Nei) G$_{ST}$, \verb+Gprime_st+ is Hedrick's G'$_{ST}$ and \texttt{D}
+ is Jost's D.
+ 
+D is the easiest statistic to interpret, as you expect to find $D=0$ for
+populations with no differentiation and $D=1$ for completely differentiated 
+populations. As you can see, different loci give quite different estimates of
+divergence but they range from ~0.1--0.4. I'd say that's quite 
+substantial. 
+\newpage
+You might also want to see how regular old G$_{ST}$ compares with
+with D (Figure 1):
+
+<<label=fig1plot>>=
+nc.diff_stats <- diff_stats(nancycats)
+with(nc.diff_stats, plot(per.locus[,"Gst"], per.locus[,"D"], xlab="Gst", ylab="D"))
+fit <- with(nc.diff_stats, (lm(per.locus[,"D"] ~ per.locus[,"Gst"])))
+abline(fit)
+@
+\begin{figure}
+\begin{center}
+<<label=fig1, fig=TRUE, echo=FALSE>>=
+<<fig1plot>>
+@
+\end{center}
+\label{Gst v D}
+\caption{Nei's Gst against Jost's D}
+\end{figure}
+
+The second part of the list returned by \verb+diff_stat+ contains global
+estimates of each of these statistics. For G$_{ST}$ and G'$_{ST}$ these are based on the 
+average of \texttt{H$_S$} and \texttt{H$_T$} across loci. For D you get two, the harmonic mean of the
+estimate of D for each locus and, because that method won't work if you end up with
+negative estimates of D, one calculated as per G$_{ST}$ and G'$_{ST}$.
+\newpage
+You probably want to have some idea of how robust this result is. Their are a 
+few functions for performing bootstrap samples of \texttt{genind} objects and
+calculating statistics from those samples. Because some of these functions can
+take a long time to run, let's create a whopping great 10 repetition bootstrap
+sample of the \textt{nancycats} data.
+<<bs>>=
+bs <- chao_bootstrap(nancycats, nreps=10)
+bs.D <- summarise_bootsrap(bs, D_Jost)
+bs.D
+str(bs.D)
+@
+As you can see, printing a summarised bootstrap sample gives us shows a basic
+overview of that date, but there is quite a lot more there. I don't think there
+is much point trying to interpret confidence intervals estimated from 10 
+samples, so let's move on.
+
+Next, we want to know if geography can explain that differentiation. 
+The nancycats data comes with coordinates for each populations. We can use
+these to get Euclidean distances:
+
+<<label=show_coords>>=
+head(nancycats@other$xy, 4)
+nc.pop_dists <- dist(nancycats@other$xy, method="euclidean")
+@
+
+\texttt{mmod} provides functions to calculate pairwise versions of each of
+the differentiation statistics. Because we want to perform a Mantel test, we'll
+use the "linearized" version of each D, which is just $x/(1-x)$.
+
+<<label=pw>>=
+nc.pw_D <- pairwise_D(nancycats, linearized=TRUE)
+@
+
+The library \texttt{ade4}, which is loaded with  \texttt{mmod}, provides 
+functions to perform Mantel tests on distance matrices. 
+
+<<label=mantel>>=
+mantel.rtest(nc.pw_D, log(nc.pop_dists), 999)
+@
+
+So, the geographic distance between these populations can't explain the 
+genetic divergences we see: the correlation is small and non-significant. 
+If you like, we can also visualize this relationship for each statistic
+(Figure 2).\newpage
+
+<<label=fig2plot>>=
+fit <- lm(as.vector(nc.pw_D) ~ as.vector(nc.pop_dists))
+plot(as.vector(nc.pop_dists), as.vector(nc.pw_D), 
+     ylab="pairwise D", xlab="physical distance")
+abline(fit)
+@
+\begin{figure}
+\begin{center}
+<<label=fig2, fig=TRUE, echo=FALSE>>=
+<<fig2plot>>
+@
+\end{center}
+\label{Gst v D}
+\caption{Geographic distance does not explain genetic differentiation}
+\end{figure}
+
+There are a couple of other functions that are not used here, use 
+\texttt{help(package="mmod")} to read about them.
+\end{document}
