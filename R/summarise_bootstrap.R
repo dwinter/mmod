@@ -19,7 +19,7 @@ print.summarised_bs <- function(x, digits=4){
   
   summarise <- function(x){
   res <- round(c(mean=mean(x), quantile(x, c(0.025, 0.975))), digits)
-  return(paste("\t", res[1], "\t(", res[2],"-", res[3], ")\n", sep="")) 
+  return(paste(res[1], "\t(", res[2],"-", res[3], ")\n", sep="")) 
   }
   
   loc.names <- colnames(x$per.locus)
