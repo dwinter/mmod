@@ -22,7 +22,7 @@ nancycats
 @
 \newpage
 The nancycats data comes in \texttt{adegenet}'s default class for genotypic 
-data, \texttt{genind} class. The functions in \texttt{mmod} work on genind
+data, the \texttt{genind} class. The functions in \texttt{mmod} work on genind
  objects, so you would usually start by reading in your data using 
  \texttt{read.genepop} 
  
@@ -38,7 +38,7 @@ Now that we have our data on hand, our goal is to see
 
 
 We can look at several statistics to ask answer the first question by using
- the \verb+diff_stats+ function:
+ the \verb+diff_stats()+ function:
 
 <<diffstat>>=
 diff_stats(nancycats)
@@ -83,6 +83,22 @@ average of \texttt{H$_S$} and \texttt{H$_T$} across loci. For D you get two, the
 estimate of D for each locus and, because that method won't work if you end up with
 negative estimates of D, one calculated as per G$_{ST}$ and G'$_{ST}$.
 \newpage
+You probably want to have some idea of how robust this result is. Their are a 
+few functions for performing bootstrap samples of \texttt{genind} objects and
+calculating statistics from those samples. Because some of these functions can
+take a long time to run, let's create a whopping great 10 repetition bootstrap
+sample of the \textt{nancycats} data.
+<<bs>>=
+bs <- chao_bootstrap(nancycats, nreps=10)
+bs.D <- summarise_bootsrap(bs, D_Jost)
+bs.D
+@
+As you can see, printing a summarised bootstrap sample gives us shows a basic
+overview of that data, but there is quite a lot more there use 
+\textt{str(bs.D))} to check it out. I don't think there
+is much point trying to interpret confidence intervals estimated from 10 
+samples, so let's move on.
+
 Next, we want to know if geography can explain that differentiation. 
 The nancycats data comes with coordinates for each populations. We can use
 these to get Euclidean distances:
@@ -93,20 +109,18 @@ nc.pop_dists <- dist(nancycats@other$xy, method="euclidean")
 @
 
 \texttt{mmod} provides functions to calculate pairwise versions of each of
-the differntiation statistics. Because we want to perform a Mantel test, we'll
-use the "linearized" version of each statistic, which is just $x/(1-x)$.
+the differentiation statistics. Because we want to perform a Mantel test, we'll
+use the "linearized" version of each D, which is just $x/(1-x)$.
 
 <<label=pw>>=
 nc.pw_D <- pairwise_D(nancycats, linearized=TRUE)
-nc.pw_Gst <- pairwise_Gst_Nei(nancycats, linearized=TRUE)
 @
 
-The libary \texttt{ade4}, which is loaded with  \texttt{mmod}, provides 
+The library \texttt{ade4}, which is loaded with  \texttt{mmod}, provides 
 functions to perform Mantel tests on distance matrices. 
 
 <<label=mantel>>=
 mantel.rtest(nc.pw_D, log(nc.pop_dists), 999)
-mantel.rtest(nc.pw_Gst, log(nc.pop_dists), 999)
 @
 
 So, the geographic distance between these populations can't explain the 
@@ -115,14 +129,9 @@ If you like, we can also visualize this relationship for each statistic
 (Figure 2).\newpage
 
 <<label=fig2plot>>=
-par(mfrow=c(2,1))
 fit <- lm(as.vector(nc.pw_D) ~ as.vector(nc.pop_dists))
 plot(as.vector(nc.pop_dists), as.vector(nc.pw_D), 
      ylab="pairwise D", xlab="physical distance")
-abline(fit)
-fit <- lm(as.vector(nc.pw_Gst) ~ as.vector(nc.pop_dists))
-plot(as.vector(nc.pop_dists), as.vector(nc.pw_Gst),
-     ylab="pairwise Gst", xlab="physical distance") 
 abline(fit)
 @
 \begin{figure}
