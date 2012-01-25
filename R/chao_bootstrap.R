@@ -3,7 +3,8 @@
 #' This function produces bootstrap samples from a genind object, with each
 #' subpopulation resampled according to its size. Because there are many 
 #' statistics that you may wish to calculte from these samples, this function
-#' returns a list that can be futher processed (see examples).
+#' returns a list of genind objects representing bootsrap samples that can then
+#' be futher processed (see examples).
 #' 
 #'
 #' @param x genind object (from package adegenet)
@@ -33,3 +34,23 @@ chao_bootstrap <- function(x, nreps = 1000){
 }
 
 
+summarise_bootsrap(bs, statistic, round_to=4, plot=FALSE){
+  nreps <- dim(bs)[2]
+  res <- sapply(bs, statistic)
+  per.locus <- matrix(unlist(res[1,]), nrow=nreps)
+  global.het <- unlist(res[2,])
+  #Only D_Jost has another estimate of global value
+  if(identical(stat, D_Jost)){
+    global.harm <- unlist(res[3,])
+  }
+  
+  summarise <- function(x){
+    ci <- round(quantile(x, c(0.025, 0.975)), round_to)
+    mean <- round(mean(x), round_to)
+    line <- paste(mean, " (", ci[1], "-", ci[2], ")", sep="")  
+    return(line)
+  }
+  apply(per.locus, 2, summarise)
+  sapply(global.het, summarise)
+
+}
