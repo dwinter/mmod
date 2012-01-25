@@ -31,7 +31,7 @@ Now that we have our data on hand, our goal is to see
 
 \begin{itemize}
         \item Whether this population is substantially differentiated into 
-        smaller sub-popultions
+        smaller sub-populations
         \item Whether such differentiation can be explain by the geographical
         distance between sub-populations.
 \end{itemize}
@@ -49,10 +49,10 @@ for each locus in the dataset. \texttt{H$_S$} and \texttt{H$_T$} are estimates o
 heterozgosity expected for this population with and without the sub-populations
 defined in the \texttt{nancycats} data respectively. We need to use those to calculate the measures of 
 population divergence so we might as well display them at the same time. 
-\texttt{Gst} is the standard (Nei) G$_{ST}$, \verb+Gprime_st+ is Hedrick's G'$_{ST}$ and \texttt{D}
- is Jost's D.
+\texttt{Gst} is the standard (Nei) G$_{ST}$, \verb+Gprime_st+ is Hedrick's G''$_{ST}$ and \texttt{D}
+ is Jost's d$_{EST}$.
  
-D is the easiest statistic to interpret, as you expect to find $D=0$ for
+d$_{EST}$ is the easiest statistic to interpret, as you expect to find $D=0$ for
 populations with no differentiation and $D=1$ for completely differentiated 
 populations. As you can see, different loci give quite different estimates of
 divergence but they range from ~0.1--0.4. I'd say that's quite 
@@ -79,26 +79,26 @@ abline(fit)
 
 The second part of the list returned by \verb+diff_stat+ contains global
 estimates of each of these statistics. For G$_{ST}$ and G'$_{ST}$ these are based on the 
-average of \texttt{H$_S$} and \texttt{H$_T$} across loci. For D you get two, the harmonic mean of the
-estimate of D for each locus and, because that method won't work if you end up with
-negative estimates of D, one calculated as per G$_{ST}$ and G'$_{ST}$.
+average of \texttt{H$_S$} and \texttt{H$_T$} across loci. For d$_{EST}$ you get two, the harmonic mean of the
+d$_{EST}$ for each locus and, because that method won't work if you end up with
+negative estimates of D, one calculated as per G$_{ST}$ and G''$_{ST}$.
 \newpage
-You probably want to have some idea of how robust this result is. Their are a 
+You probably want to have some idea of how robust this result is. \texttt(mmod) has a
 few functions for performing bootstrap samples of \texttt{genind} objects and
 calculating statistics from those samples. Because some of these functions can
 take a long time to run, let's create a whopping great 10 repetition bootstrap
-sample of the \texttt{nancycats} data.
+sample of the \texttt{nancycats} data, then calculate d$_{EST}$ from that sample:
 <<bs>>=
 bs <- chao_bootstrap(nancycats, nreps=10)
 bs.D <- summarise_bootsrap(bs, D_Jost)
 bs.D
 @
 As you can see, printing a summarised bootstrap sample gives us shows a basic
-overview of that data, but there is quite a lot more there use 
-\texttt{str(bs.D))} to check it out. I don't think there
+overview of that data, but there is also quite a lot more there - use 
+\texttt{str(bs.D))} or the classic bs.D\$ [tab tab] to check it out. I don't think there
 is much point trying to interpret confidence intervals estimated from 10 
 samples, so let's move on.
-
+\newpage
 Next, we want to know if geography can explain that differentiation. 
 The nancycats data comes with coordinates for each populations. We can use
 these to get Euclidean distances:
@@ -126,7 +126,7 @@ mantel.rtest(nc.pw_D, log(nc.pop_dists), 999)
 So, the geographic distance between these populations can't explain the 
 genetic divergences we see: the correlation is small and non-significant. 
 If you like, we can also visualize this relationship for each statistic
-(Figure 2).\newpage
+(Figure 2).
 
 <<label=fig2plot>>=
 fit <- lm(as.vector(nc.pw_D) ~ as.vector(nc.pop_dists))
@@ -137,7 +137,6 @@ abline(fit)
 \begin{figure}
 \begin{center}
 <<label=fig2, fig=TRUE, echo=FALSE>>=
-<<fig2plot>>
 @
 \end{center}
 \label{Gst v D}
