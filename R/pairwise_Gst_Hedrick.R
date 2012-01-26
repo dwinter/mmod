@@ -13,8 +13,6 @@
 #' pairwise_Gst_Hedrick(nancycats[1:26,])
 #' @references
 #'  Hedrick, PW. (2005), A Standardized Genetic Differentiation Measure. Evolution 59: 1633-1638. 
-#' @references
-#'  Merimans, PG and Hedrick PW. (2010), Assessing population structure: FST and related measures. Molecular Ecology Resources 11: 5-18
 #' @family pairwise
 #' @family Hedrick
 
