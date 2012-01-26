@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{parskip}
-%% \VignetteIndexEntry{mmod vignette}
+%% \VignetteIndexEntry{mmod-demo}
 
 \begin{document}
 \title{{\sc mmod} vignette}
@@ -47,16 +47,21 @@ diff_stats(nancycats)
 OK, so what's all that then? The first table has statistics calculated individually 
 for each locus in the dataset. \texttt{H$_S$} and \texttt{H$_T$} are estimates of the 
 heterozgosity expected for this population with and without the sub-populations
-defined in the \texttt{nancycats} data respectively. We need to use those to calculate the measures of 
-population divergence so we might as well display them at the same time. 
-\texttt{Gst} is the standard (Nei) G$_{ST}$, \verb+Gprime_st+ is Hedrick's G''$_{ST}$ and \texttt{D}
- is Jost's d$_{EST}$.
+defined in the \texttt{nancycats} data respectively. We need to use those to 
+calculate the measures of  population divergence so we might as well display 
+them at the same time. \texttt{Gst} is the standard (Nei) G$_{ST}$, 
+\verb+Gprime_st+ is Hedrick's G''$_{ST}$ and \texttt{D} is Jost's d$_{EST}$.
+Because all of these statistics are estimated from estimators of \texttt{H$_S$} 
+and \texttt{H$_T$}, it's possible to get negative values for each of these 
+differentiation measures. Populations can't be negatively differentiated, so 
+you should think of these as estimates of a number close to zero (it's up to 
+you and your reviewers to decided to report the negative numbers of just 
+zeros).
  
-d$_{EST}$ is the easiest statistic to interpret, as you expect to find $D=0$ for
-populations with no differentiation and $D=1$ for completely differentiated 
-populations. As you can see, different loci give quite different estimates of
-divergence but they range from ~0.1--0.4. I'd say that's quite 
-substantial. 
+\texxttt{D$_{EST}$} is the easiest statistic to interpret, as you expect to 
+find $D=0$ for populations with no differentiation and $D=1$ for completely 
+differentiated populations. As you can see, different loci give quite 
+different estimates of divergence but they range from ~0.1--0.4.
 \newpage
 You might also want to see how regular old G$_{ST}$ compares with
 with D (Figure 1):
@@ -78,10 +83,11 @@ abline(fit)
 \end{figure}
 
 The second part of the list returned by \verb+diff_stat+ contains global
-estimates of each of these statistics. For G$_{ST}$ and G'$_{ST}$ these are based on the 
-average of \texttt{H$_S$} and \texttt{H$_T$} across loci. For d$_{EST}$ you get two, the harmonic mean of the
-d$_{EST}$ for each locus and, because that method won't work if you end up with
-negative estimates of D, one calculated as per G$_{ST}$ and G''$_{ST}$.
+estimates of each of these statistics. For G$_{ST}$ and G''$_{ST}$ these are 
+based on the average of \texttt{H$_S$} and \texttt{H$_T$} across loci. For 
+D$_{EST}$ you get two, the harmonic mean of the D$_{EST}$ for each locus and, 
+because that method won't work if you end up with negative estimates of D$_{EST}$, 
+one calculated as per G$_{ST}$ and G''$_{ST}$.
 \newpage
 You probably want to have some idea of how robust this result is. \texttt(mmod) has a
 few functions for performing bootstrap samples of \texttt{genind} objects and
@@ -95,9 +101,10 @@ bs.D
 @
 As you can see, printing a summarised bootstrap sample gives us shows a basic
 overview of that data, but there is also quite a lot more there - use 
-\texttt{str(bs.D))} or the classic bs.D\$ [tab tab] to check it out. I don't think there
-is much point trying to interpret confidence intervals estimated from 10 
-samples, so let's move on.
+\texttt{str(bs.D))} or the classic bs.D\$ [tab tab] to check it out. I don't 
+think there is much point trying to interpret confidence intervals estimated 
+from 10 samples, but the point estimates seem to show a population with some
+substantial differentiation.
 \newpage
 Next, we want to know if geography can explain that differentiation. 
 The nancycats data comes with coordinates for each populations. We can use
@@ -110,7 +117,8 @@ nc.pop_dists <- dist(nancycats@other$xy, method="euclidean")
 
 \texttt{mmod} provides functions to calculate pairwise versions of each of
 the differentiation statistics. Because we want to perform a Mantel test, we'll
-use the "linearized" version of each D, which is just $x/(1-x)$.
+use the "linearized" version of D, which is just $x/(1-x)$ (each of the 
+pairwise stats has and argument to return this version).
 
 <<label=pw>>=
 nc.pw_D <- pairwise_D(nancycats, linearized=TRUE)
@@ -137,6 +145,7 @@ abline(fit)
 \begin{figure}
 \begin{center}
 <<label=fig2, fig=TRUE, echo=FALSE>>=
+<<fig2plot>>
 @
 \end{center}
 \label{Gst v D}
