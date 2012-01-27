@@ -58,7 +58,7 @@ you should think of these as estimates of a number close to zero (it's up to
 you and your reviewers to decided to report the negative numbers of just 
 zeros).
  
-\texxttt{D$_{EST}$} is the easiest statistic to interpret, as you expect to 
+\texttt{D$_{EST}$} is the easiest statistic to interpret, as you expect to 
 find $D=0$ for populations with no differentiation and $D=1$ for completely 
 differentiated populations. As you can see, different loci give quite 
 different estimates of divergence but they range from ~0.1--0.4.

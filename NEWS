@@ -1,3 +1,3 @@
 * 0.1.1 First release on CRAN - bassic diff. stats including pairwise versions and exact test of differentiation. 
 
-* 0.2 More documentation. Added a vignette to reproduce analysis for nancycats data
+* 0.2 More documentation. Bootstrapping functions added. Gst_Hedrick now returns G''_ST. Added a vignette to reproduce analysis for nancycats data
