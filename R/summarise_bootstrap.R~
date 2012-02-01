@@ -24,9 +24,8 @@
 summarise_bootsrap <- function(bs, statistic){
   nreps <- length(bs)
   stats <- sapply(bs, statistic)
-  loc_stats <- matrix(unlist(stats[1,]), nrow=nreps, 
-               dimnames=list(paste("rep", 1:nreps, sep=""), bs[[1]]@loc.names)
-               )
+  loc_stats <- do.call(rbind, stats["per.locus",])
+
   res <-list("per.locus"= loc_stats,
              "global.het"=unlist(stats[2,])
             )

@@ -34,7 +34,7 @@ summarise_bootsrap <- function(bs, statistic){
     res$global.harm <- unlist(stats[3,])
     }
   summarise <- function(x){
-    return(c(mean=mean(x), quantile(x, c(0.025, 0.975))))
+    return(c(mean=mean(x), quantile(x, c(0.025, 0.975), na.rm=TRUE)))
   }
   res$summary.loci <- apply(loc_stats, 2, summarise)
   res$summary.global.het <- summarise(res$global.het)
