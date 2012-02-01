@@ -38,7 +38,7 @@ D_Jost <- function(x){
   global_Hs <- mean(loci[,1], na.rm=T)
   global_Ht <- mean(loci[,2], na.rm=T)
   global_D <-  (global_Ht - global_Hs)/(1 - global_Hs ) * (n/(n-1))
-  harm_D <- harmonic_mean(loci)
+  harm_D <- harmonic_mean(loci[,3])
   return(list("per.locus"=loci[,3],
               "global.het"=global_D,
               "global.harm_mean" = harm_D
