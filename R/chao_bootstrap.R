@@ -38,17 +38,3 @@ chao_bootstrap <- function(x, nreps=1000){
   
   return(replicate(nreps, one_rep()))
 }
-
-
-recreate_matrix <- function(x){
-  loc <- x@loc.fac
-  pop_sizes <- table(pop(x))
-  pop_n <- length(pop_sizes)
-  m <- apply(x@tab,2, function(y) tapply(y, pop(x), mean, na.rm=TRUE) )
-  per_pop <- function(i){
-    t(do.call(rbind, tapply(m[i,], loc, ralleles, pop_sizes[i]) )) 
-    }
-  res <- do.call(rbind, sapply(1:pop_n , per_pop, simplify=FALSE))/2
-  m2 <- apply(res, 2, function(y) tapply(y, pop(x), mean, na.rm=TRUE) )
-  return(m-m2)
-}

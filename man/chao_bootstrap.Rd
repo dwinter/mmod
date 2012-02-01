@@ -22,9 +22,7 @@
 \dontrun{
 data(nancycats)
 bs <- chao_bootstrap(nancycats)
-bs_D <- sapply(bs, D_Jost)
-hist(unlist(bs_D[2,]))
-quantile( unlist(bs_D[2,]), c(0.025, 0.5, 0.975) )
+bs_D <- summarise_bootstrap(bs, D_Jost)
 }
 }
 \seealso{

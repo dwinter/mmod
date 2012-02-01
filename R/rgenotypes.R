@@ -7,7 +7,7 @@
 #' for other simulations
 #' 
 #' @param n integer number of indviduals 
-#' @param polidy integer number of alleles to asign to each indivudal
+#' @param ploidy integer number of alleles to asign to each indivudal
 #' @param probs vector of probabilies corresponding to allele frequences
 #'
 #' @return A matrix with individuals in columns, alleles in rows
@@ -16,9 +16,9 @@
 #' @examples
 #' 
 #' data(nancycats)
-#' obs_allele_freqs <- apply(nancycats@tab[,1:16], 2,mean)
+#' obs_allele_freqs <- apply(nancycats$tab[,1:16], 2,mean)
 #' rgenotypes(10, 2, obs_allele_freqs)
-#' obs_allele_freqs_noNA <- apply(nancycats@tab[,1:16], 2,mean, na.rm=TRUE)
+#' obs_allele_freqs_noNA <- apply(nancycats$tab[,1:16], 2,mean, na.rm=TRUE)
 #' rgenotypes(10, 2, obs_allele_freqs_noNA)
 
 rgenotypes <- function(n, ploidy, probs){

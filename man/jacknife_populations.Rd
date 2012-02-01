@@ -15,17 +15,16 @@
 }
 \description{
   Makes a series of jacknife samples across populations
-  from a Genind object and calculates differentiation stats
-  for each sample.
+  from a Genind object. This functino resurns a list of
+  genind objects that can then be further processed (see
+  examples).
 }
 \examples{
 \dontrun{
 data(nancycats)
 obs <- diff_stats(nancycats)
 jn <- jacknife_populations(nancycats)
-D_sampled <-jn[5,]
-hist(D_sampled)
-abline(h=obs$global)
+jn.D <- summarise_bootstrap(jn, D_Jost)
 }
 }
 \seealso{
