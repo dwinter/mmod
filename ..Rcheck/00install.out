@@ -1,0 +1,7 @@
+* installing *source* package ‘mmod’ ...
+** R
+Error in .install_package_code_files(".", instdir) : 
+files in '/home/david/dev/mmod2/R' missing from 'Collate' field:
+  rgenotypes.R
+ERROR: unable to collate and parse R files for package ‘mmod’
+* removing ‘/home/david/dev/mmod2/..Rcheck/mmod’
