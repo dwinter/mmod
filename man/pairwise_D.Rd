@@ -2,17 +2,13 @@
 \alias{pairwise_D}
 \title{Calculates pairwise values of Jost's D}
 \usage{
-  pairwise_D(x, linearized = FALSE, global.het = TRUE)
+  pairwise_D(x, linearized = FALSE)
 }
 \arguments{
   \item{x}{genind object (from package adegenet)}
 
   \item{linearized}{logical, if TRUE will turned linearized
   D (1/1-D)}
-
-  \item{global.het}{logical if TRUE returns global estimate
-  of D based on mean heterozysoity (FALSE for harmonic
-  mean)}
 }
 \description{
   This function calculates Jost's D, a measure of genetic
