@@ -5,16 +5,16 @@
 #'
 #' @param x genind object (from package adegenet)
 #' @export
-#' @examples
-#' 
-#' data(nancycats)
-#' Gst_Nei(nancycats)
 #' @references
 #'  Nei M. (1973) Analysis of gene diversity in subdivided populations. PNAS: 3321-3323. 
 #' @references
 #'  Nei M, Chesser RK. (1983). Estimation of fixation indices and gene diversities. Annals of Human Genetics. 47: 253-259.
 #' @family diffstat
 #' @family Nei
+#' @examples
+#' 
+#' data(nancycats)
+#' Gst_Nei(nancycats)
 
 Gst_Nei <- function(x){
   n <- length(unique(pop(x)))

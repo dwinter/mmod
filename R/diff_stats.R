@@ -8,20 +8,21 @@
 #'
 #' @param x genind object (from package adegenet)
 #' @export
-#' @examples
 #' 
-#' data(nancycats)
-#' diff_stats(nancycats)
 #' @references
 #'  Hedrick, PW. (2005), A Standardized Genetic Differentiation Measure. Evolution 59: 1633-1638. 
 #' @references
 #'  Jost, L. (2008), GST and its relatives do not measure differentiation. Molecular Ecology, 17: 4015-4026.
 #' @references
+#' Meirmans PG, Hedrick PW (2011) Assessing population structure: FST and related measures. Molecular Ecology Resources, 11, 5–18
+#' @references
 #'  Nei M. (1973) Analysis of gene diversity in subdivided populations. PNAS: 3321-3323. 
 #' @references
 #'  Nei M, Chesser RK. (1983). Estimation of fixation indices and gene diversities. Annals of Human Genetics. 47: 253-259.
 #' @family diffstat
-
+#' @examples
+#' data(nancycats)
+#' diff_stats(nancycats)
 
 diff_stats <- function(x){
   n <- length(unique(pop(x)))

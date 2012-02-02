@@ -6,15 +6,29 @@
 #' returns a list of genind objects representing bootsrap samples that can then
 #' be futher processed (see examples).
 #' 
+#' You should note, this is a standard (frequentist) approach to quantifying
+#' uncertainty - effectively asking "if the population was exactly like as our"
+#' sample, and we repeatedly took samples like this from it, how much would 
+#' those samples vary?" The confidence intervals don't include uncertainty 
+#' produced from any biases in the way you collected your data. 
+#' Additoinally, this boostrapping procedure displays a slight upward bias, if
+#' you plan or reporting a confidence interval for your statistic, it is 
+#' probably a good idea to subtract the difference between the point estimate 
+#' of the statistic and the mean of the boostrap distribution from the extremes
+#' of the interval. 
 #'
 #' @param x genind object (from package adegenet)
 #' @param nreps numeric number of bootstrap replicates to perform (default 1000)
 #' @export
+#' @references Chao, A. et al. (2008). A Two-Stage probabilistic approach to Multiple-Community similarity indices. Biometrics, 64:1178-1186
 #' @examples
 #'\dontrun{  
 #' data(nancycats)
+#' obs.D <- D_Jost(nancycats)
 #' bs <- chao_bootstrap(nancycats)
 #' bs_D <- summarise_bootstrap(bs, D_Jost)
+#' bias <- bs.D$summary.global.het[1] - obs.D$global.het
+#' bs.D$summary.global.het - bias
 #'}
 #' @family resample
 #' 

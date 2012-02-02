@@ -1,3 +1,19 @@
-* 0.1.1 First release on CRAN - bassic diff. stats including pairwise versions and exact test of differentiation. 
+* 0.1.1 __
 
-* 0.2 More documentation. Added a vignette to reproduce analysis for nancycats data
+First release on CRAN - bassic diff. stats including pairwise versions and 
+exact test of differentiation. 
+
+* 0.2 __
+
+More documentation. Added a vignette to reproduce analysis for nancycats data
+
+* 0.2.1 __
+
+chao_boostrap now uses multinomial distribution to create samples (previously 
+it resampled individuals) - this makes very little difference. 
+
+Discussion in chao_bootsrap's documentation about bias in bootstrapping
+procedure
+Significant speeding up of all functions by using base R as much as possible
+
+

@@ -1,6 +1,6 @@
 \name{summarise_bootsrap}
 \alias{summarise_bootsrap}
-\title{Apply a differentiation statistic to a bootstrap sample sample}
+\title{Apply a differentiation statistic to a bootstrap sample}
 \usage{
   summarise_bootsrap(bs, statistic)
 }
