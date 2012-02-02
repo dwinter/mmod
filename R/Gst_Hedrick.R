@@ -14,7 +14,7 @@
 #' @references
 #'  Hedrick, PW. (2005), A Standardized Genetic Differentiation Measure. Evolution 59: 1633-1638. 
 #' @references
-#' Meirmans PG, Hedrick PW (2011) Assessing population structure: FST and related measures. Molecular Ecology Resources, 11, 5–18
+#' Meirmans PG, Hedrick PW (2011), Assessing population structure: FST and related measures. Molecular Ecology Resources, 11:5-18
 #' @family diffstat
 #' @family Hedrick
 #' @examples 

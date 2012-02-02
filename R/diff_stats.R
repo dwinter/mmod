@@ -14,7 +14,7 @@
 #' @references
 #'  Jost, L. (2008), GST and its relatives do not measure differentiation. Molecular Ecology, 17: 4015-4026.
 #' @references
-#' Meirmans PG, Hedrick PW (2011) Assessing population structure: FST and related measures. Molecular Ecology Resources, 11, 5–18
+#' Meirmans PG, Hedrick PW (2011), Assessing population structure: FST and related measures. Molecular Ecology Resources, 11:5-18
 #' @references
 #'  Nei M. (1973) Analysis of gene diversity in subdivided populations. PNAS: 3321-3323. 
 #' @references
