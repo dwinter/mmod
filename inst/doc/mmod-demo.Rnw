@@ -53,8 +53,8 @@ defined in the \texttt{nancycats} data respectively. We need to use those to
 calculate the measures of population divergence so we might as well display
 them at the same time. \texttt{Gst} is the standard (Nei) $G_\text{ST}$,
 \verb+Gprime_st+ is Hedrick's $G''_\text{ST}$ and \texttt{D} is Jost's $D_\text{est}$.
-Because all of these statistics are estimated from estimators of \texttt{Hs}
-and \texttt{Ht}, it's possible to get negative values for each of these
+Because all of these statistics are estimated from estimators of $H_\text{S}$
+and $H_\text{T}$, it's possible to get negative values for each of these
 differentiation measures. Populations can't be negatively differentiated, so
 you should think of these as estimates of a number close to zero (it's up to
 you and your reviewers to decide if you report the negative numbers of just
