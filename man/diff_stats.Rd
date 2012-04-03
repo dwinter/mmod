@@ -2,15 +2,20 @@
 \alias{diff_stats}
 \title{Calculate differentiation statistics for a genind objects}
 \usage{
-  diff_stats(x)
+  diff_stats(x, phi_st = FALSE)
 }
 \arguments{
   \item{x}{genind object (from package adegenet)}
+
+  \item{phi_st}{Boolean Calculate Phi_st (default is
+  FALSE)}
 }
 \description{
-  This function calculates three different statistics of
-  differentiation for a genetic dataset. Nei's Gst,
-  Hedrick's G'st and Jost's D
+  By default this function calculates three different
+  statistics of differentiation for a genetic dataset.
+  Nei's Gst, Hedrick's G''st and Jost's D. Optionally, it
+  can also calculate Phi'st, which is somewhat more
+  computationally intensive.
 }
 \details{
   See individual functions D_Jost(), Gst_Hedrick() and

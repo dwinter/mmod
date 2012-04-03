@@ -1,4 +1,18 @@
-Phi_st_meirmans <- function(x){
+#' Calculate distance between individual for co-dominant locus
+#'
+#' This function calculates the distance between individuals in a genind
+#' object based on their genotypes. 
+#' Specifically, the simple metric of Kosman and Leonard (2005) in which 
+#' distance is calculated as a propotion of shared alleles at each locus.
+#' 
+#'
+#' @param x genind object (from package adegenet)
+#'
+#' @return either a list of distance matrices, one for each locus or a single 
+#' matrix containing the mean distance between individuals across all loci
+#' @export
+
+Phi_st_Meirmans <- function(x){
 
 
     max_between_dist <- function(pop_name, pop_freqs){
@@ -47,8 +61,8 @@ Phi_st_meirmans <- function(x){
 	}
 
 	global <- with(dist.codom(x), amova_st(distances, dropped))
-	loci <- t(sapply(dist.codom(x, global=FALSE), 
-	         function(d) with(d, amova_st(distances, dropped))))
+	loci <- sapply(dist.codom(x, global=FALSE), 
+	         function(d) with(d, amova_st(distances, dropped)))
 	return(list(per.locus=loci, global=global))
 }
 

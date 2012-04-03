@@ -66,27 +66,26 @@ differentiated populations. As you can see, different loci give quite
 different estimates of divergence but they range from $\sim$0.1--0.4.
 
 \textsc{mmod} can calculate another statistic of differentiation called
-$\phi'\text{ST}$. This statistic is based on the Analysis of Molecular
+$\varphi'_\text{ST}$. This statistic is based on the Analysis of Molecular
 Variance (AMOVA) method, which partitions the variance in genetic distances
 in a dataset to between-population and within-population components (it is 
-possible to use this frame work for more than two levels of population 
-structure, but that has not been implimented in R). Because
- $\phi'\text{ST}$ can take some time to calculate it has its own function:
+possible to use this framework to partition variance using more than two 
+levels of population structure, but that has not been implemented in 
+\textsc{mmod} yet). Because $\varphi'_\text{ST}$ can take some time to 
+calculate it has its own function:
  
  
 <<diffstat>>=
-Phi_st_Meirmans(nancycats[1:40,])
+(nc.phi <- Phi_st_Meirmans(nancycats[1:40,]))
 @
 
-You might also want to see how Nei's $G_\text{ST}$ compares with
-with $D_\text{est}$ (Figure 1):
+You might want to see how these different measures compare to each other
+across the loci we've looked at. You can see the corrected measures (all those)
+other than $G_\text{ST}$ show a similar pattern (Figure 1):
 
 <<label=fig1plot>>=
-nc.diff_stats <- diff_stats(nancycats)
-with(nc.diff_stats,
-plot(per.locus[,"Gst"], per.locus[,"D"], xlab="Gst", ylab="D"))
-fit <- with(nc.diff_stats, (lm(per.locus[,"D"] ~ per.locus[,"Gst"])))
-abline(fit)
+nc.diff_stats <- diff_stats(nancycats, phi_st=TRUE)
+with(nc.diff_stats, pairs(per.locus[,3:6], upper.panel=panel.smooth))
 @
 \begin{figure}
 \begin{center}
@@ -95,7 +94,7 @@ abline(fit)
 @
 \end{center}
 \label{Gst v D}
-\caption{Nei's $G_\text{ST}$ against Jost's $D$}
+\caption{Comparison of differentiation measures}
 \end{figure}
 
 The second part of the list returned by \verb+diff_stat+ contains global

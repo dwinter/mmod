@@ -1,12 +1,15 @@
 #' Calculate differentiation statistics for a genind objects
 #'
-#' This function calculates three different statistics of differentiation
-#' for a genetic dataset. Nei's Gst, Hedrick's G'st and Jost's D
+#' By default this function calculates three different statistics of 
+#' differentiation for a genetic dataset. Nei's Gst, Hedrick's G''st and
+#' Jost's D. Optionally, it can also calculate Phi'st, which is somewhat 
+#' more computationally intensive.
 #' 
 #' See individual functions D_Jost(), Gst_Hedrick() and Gst_Nei() for more
 #' details
 #'
 #' @param x genind object (from package adegenet)
+#' @param phi_st Boolean Calculate Phi_st (default is FALSE)
 #' @export
 #' 
 #' @references
@@ -24,7 +27,7 @@
 #' data(nancycats)
 #' diff_stats(nancycats)
 
-diff_stats <- function(x){
+diff_stats <- function(x, phi_st=FALSE){
   n <- length(unique(pop(x)))
   harmN <- harmonic_mean(table(pop(x)))
   pops <- pop(x)
@@ -48,17 +51,28 @@ diff_stats <- function(x){
     return(result)
   }
  loci <- t(sapply(seploc(x), per.locus))
+
   global_Hs <- mean(loci[,1], na.rm=T)
   global_Ht <- mean(loci[,2], na.rm=T)
   global_G_est <- (global_Ht - global_Hs)/global_Ht
-  return(list("per.locus"=loci,
-              global=c(
-                Hs = global_Hs, 
-                Ht = global_Ht, 
-                Gst_est = global_G_est, 
-                "Gprime_st"= global_G_est*(n-1+global_Hs)/((n-1)*(1-global_Hs)),
-                "D_het" = (global_Ht - global_Hs)/(1 - global_Hs ) * (n/(n-1)),
-                "D_mean"= harmonic_mean(loci[,5])
-              )))
+  
+  if(phi_st){
+    phi_stat <- Phi_st_Meirmans(x)
+    loci <- cbind(loci, Phi_st=phi_stat$per.locus)
+
+  }
+  
+  global <- c(Hs = global_Hs, 
+              Ht = global_Ht, 
+              Gst_est = global_G_est, 
+              "Gprime_st"= global_G_est*(n-1+global_Hs)/((n-1)*(1-global_Hs)),
+              "D_het" = (global_Ht - global_Hs)/(1 - global_Hs ) * (n/(n-1)),
+              "D_mean"= harmonic_mean(loci[,5]))
+  
+  if(phi_st){
+    global <- c(global, Phi_st=phi_stat$global)
+  }
+  
+  return(list("per.locus"=loci, global=global))
 }
 
