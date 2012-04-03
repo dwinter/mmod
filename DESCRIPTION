@@ -29,3 +29,5 @@ Collate:
     'chao_bootstrap.R'
     'summarise_bootstrap.R'
     'rgenotypes.R'
+    'dist.codom.R'
+    'Phi_st_Meirmans.R'

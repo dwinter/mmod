@@ -1,6 +1,7 @@
 export(chao_bootstrap)
 export(diff_stats)
 export(diff_test)
+export(dist.codom)
 export(D_Jost)
 export(Gst_Hedrick)
 export(Gst_Nei)

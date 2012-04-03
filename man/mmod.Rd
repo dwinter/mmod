@@ -1,7 +1,7 @@
 \docType{package}
 \name{mmod}
 \alias{mmod}
-\alias{"mmod-package"}
+\alias{mmod-package}
 \title{Modern Measures of Divergence}
 \description{
   Population geneticists have traditionally used Nei's Gst

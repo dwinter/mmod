@@ -64,7 +64,20 @@ $D_\text{est}$ is the easiest statistic to interpret, as you expect to
 find $D=0$ for populations with no differentiation and $D=1$ for completely
 differentiated populations. As you can see, different loci give quite
 different estimates of divergence but they range from $\sim$0.1--0.4.
-\newpage
+
+\textsc{mmod} can calculate another statistic of differentiation called
+$\phi'\text{ST}$. This statistic is based on the Analysis of Molecular
+Variance (AMOVA) method, which partitions the variance in genetic distances
+in a dataset to between-population and within-population components (it is 
+possible to use this frame work for more than two levels of population 
+structure, but that has not been implimented in R). Because
+ $\phi'\text{ST}$ can take some time to calculate it has its own function:
+ 
+ 
+<<diffstat>>=
+Phi_st_Meirmans(nancycats[1:40,])
+@
+
 You might also want to see how Nei's $G_\text{ST}$ compares with
 with $D_\text{est}$ (Figure 1):
 

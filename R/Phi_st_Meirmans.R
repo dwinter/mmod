@@ -1,10 +1,11 @@
 Phi_st_meirmans <- function(x){
 
 
-	add_max_distance <- function(x, index){
-	sum(sapply(x[-1*index], function(y) y*x[index]))
-	}	
-	
+    max_between_dist <- function(pop_name, pop_freqs){
+	inter_dists <- sapply(pop_freqs[names(pop_freqs) != pop_name], function(x) x * pop_freqs[pop_name])
+	return(sum(inter_dists))
+    }
+    
 	amova_st <- function(dm, dropped){
 	
 	if(is.null(dropped)){
@@ -38,7 +39,7 @@ Phi_st_meirmans <- function(x){
 	max_between <- sapply(unique(pops), max_between_dist, pop.freqs)
 	max_SSD_total <- sum(within_dists + max_between) / (2*n)
 	max_MSD_among <- (max_SSD_total - SSD_within) / df
-	sigma2_prime <- (max_MSD_among - MSD_within)/ncoef
+	sigma2a_prime <- (max_MSD_among - MSD_within)/ncoef
 	phi_max = sigma2a_prime /(sigma2a_prime + MSD_within)
 	phi_prime <- phi/phi_max
 	
@@ -46,7 +47,8 @@ Phi_st_meirmans <- function(x){
 	}
 
 	global <- with(dist.codom(x), amova_st(distances, dropped))
-	loci <- sapply(dist.codom(x, global=FALSE), function(d) with(d, amova_st(distances, dropped)))
+	loci <- t(sapply(dist.codom(x, global=FALSE), 
+	         function(d) with(d, amova_st(distances, dropped))))
 	return(list(per.locus=loci, global=global))
 }
 
