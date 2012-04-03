@@ -6,7 +6,7 @@
 %% \VignetteIndexEntry{mmod-demo}
 
 \begin{document}
-\title{{\sc mmod} vignette}
+\title{\textsc{mmod} vignette}
 \author{David Winter\\
       david.winter@gmail.com}
 \maketitle
@@ -34,7 +34,7 @@ Now that we have our data on hand, our goal is to see
 \begin{itemize}
         \item Whether this population is substantially differentiated into
         smaller sub-populations
-        \item Whether such differentiation can be explain by the geographical
+        \item Whether such differentiation can be explained by the geographical
         distance between sub-populations.
 \end{itemize}
 
@@ -46,7 +46,7 @@ We can look at several statistics to ask answer the first question by using
 diff_stats(nancycats)
 @
 
-OK, so what's all that then? The first table has statistics calculated individually
+OK, so what is that telling us? The first table has statistics calculated individually
 for each locus in the dataset. \texttt{Hs} and \texttt{Ht} are estimates of the
 heterozygosity expected for this population with and without the sub-populations
 defined in the \texttt{nancycats} data respectively. We need to use those to
@@ -65,7 +65,7 @@ find $D=0$ for populations with no differentiation and $D=1$ for completely
 differentiated populations. As you can see, different loci give quite
 different estimates of divergence but they range from $\sim$0.1--0.4.
 \newpage
-You might also want to see how regular old $G_\text{ST}$ compares with
+You might also want to see how Nei's $G_\text{ST}$ compares with
 with $D_\text{est}$ (Figure 1):
 
 <<label=fig1plot>>=
