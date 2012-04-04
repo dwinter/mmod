@@ -25,6 +25,10 @@
 #'  Nei M. (1973) Analysis of gene diversity in subdivided populations. PNAS: 3321-3323. 
 #' @references
 #'  Nei M, Chesser RK. (1983). Estimation of fixation indices and gene diversities. Annals of Human Genetics. 47: 253-259.
+#' @references
+#'  Meirmans, PW. (2005), Using the AMOVA framework to estimate a standardized genetic differentiation measure. Evolution 60: 2399-402.
+#' @references
+#'  Excoffier, L., Smouse, P., Quattro, J. (1992), Analysis of molecular variance inferred from metric distances among DNA haplotypes: application to human mitochondrial DNA restriction data. Genetics 131: 479-91
 #' @family diffstat
 #' @examples
 #' data(nancycats)

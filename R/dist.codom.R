@@ -14,6 +14,9 @@
 #'
 #' @return either a list of distance matrices, one for each locus or a single 
 #' matrix containing the mean distance between individuals across all loci
+#' @return Dropped for each distance matrix and object of class "na.action" 
+#' containing indices to those indivudals in the genind object which where 
+#' omitted due to having NAs
 #' @export
 #' 
 #' @references

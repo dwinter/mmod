@@ -1,16 +1,23 @@
 #' Calculate Phi_st from a genind object
 #'
-#' This function calculates the distance between individuals in a genind
-#' object based on their genotypes. 
-#' Specifically, the simple metric of Kosman and Leonard (2005) in which 
-#' distance is calculated as a propotion of shared alleles at each locus.
-#' 
+#' This function calculates Meirmans' corrected version of Phi_st, an Fst 
+#' analog produced using the AMOVA framework. Note, the global estimate produced
+#' by this function is calculated as the mean distance between indivudals
+#' across all loci, and this exlcuded individuals with one or more missing 
+#' value. 
 #'
 #' @param x genind object (from package adegenet)
 #'
-#' @return either a list of distance matrices, one for each locus or a single 
-#' matrix containing the mean distance between individuals across all loci
+#' @return per.locus Phi_st estimate for each locus
+#' @return global Phi_st estimate across all loci 
 #' @export
+#' @references
+#'  Meirmans, PW. (2005), Using the AMOVA framework to estimate a standardized genetic differentiation measure. Evolution 60: 2399-402.
+#' @references
+#'  Excoffier, L., Smouse, P., Quattro, J. (1992), Analysis of molecular variance inferred from metric distances among DNA haplotypes: application to human mitochondrial DNA restriction data. Genetics 131: 479-91
+#' @family diffstat
+
+
 
 Phi_st_Meirmans <- function(x){
 

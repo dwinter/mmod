@@ -22,6 +22,7 @@
 #' @export
 #' @references Chao, A. et al. (2008). A Two-Stage probabilistic approach to Multiple-Community similarity indices. Biometrics, 64:1178-1186
 #' @examples
+#' @return A list of genind objects
 #'\dontrun{  
 #' data(nancycats)
 #' obs.D <- D_Jost(nancycats)
