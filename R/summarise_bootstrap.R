@@ -35,7 +35,7 @@
 #'}
 
 
-summarise_bootsrap <- function(bs, statistic){
+summarise_bootstrap <- function(bs, statistic){
   nreps <- length(bs)
   stats <- sapply(bs, statistic)
   loc_stats <- do.call(rbind, stats["per.locus",])

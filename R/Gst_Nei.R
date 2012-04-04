@@ -20,16 +20,10 @@
 
 Gst_Nei <- function(x){
   n <- length(unique(pop(x)))
-  harmN <- harmonic_mean(table(pop(x)))
-  pops <- pop(x)
-  Gst.per.locus <- function(g) {
-    #what we need to calculate these 
-    a <- apply(g@tab,2,function(row) tapply(row, pops, mean, na.rm=TRUE))
-    HpS <- sum(1 - apply(a^2, 1, sum, na.rm=TRUE)) / n
-    Hs_est <- (2*harmN/(2*harmN-1))*HpS
-    HpT <- 1 - sum(apply(a,2,mean, na.rm=TRUE)^2)
-    Ht_est <- HpT + Hs_est/(2*harmN*n)
-    #The stat itself
+  Gst.per.locus <- function(g) { 
+    hets <- HsHt(g,n) #A private function form mmod
+    Ht_est <- hets["Ht_est"]
+    Hs_est <- hets["Hs_est"]
     G_est <- (Ht_est-Hs_est)/Ht_est
     return(c(Hs_est, Ht_est, G_est))
   }

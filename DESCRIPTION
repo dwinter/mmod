@@ -31,3 +31,4 @@ Collate:
     'rgenotypes.R'
     'dist.codom.R'
     'Phi_st_Meirmans.R'
+    'HsHt.R'
