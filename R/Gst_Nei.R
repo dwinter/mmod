@@ -4,13 +4,15 @@
 #' Nei and Chesser's estimators for Hs and Ht
 #'
 #' @param x genind object (from package adegenet)
-#' @export
+#' @return per.locus estimates of Gst for each locus in the dataset
+#' @return per.locus estimates of Gst for across all loci
 #' @references
 #'  Nei M. (1973) Analysis of gene diversity in subdivided populations. PNAS: 3321-3323. 
 #' @references
 #'  Nei M, Chesser RK. (1983). Estimation of fixation indices and gene diversities. Annals of Human Genetics. 47: 253-259.
 #' @family diffstat
 #' @family Nei
+#' @export
 #' @examples
 #' 
 #' data(nancycats)

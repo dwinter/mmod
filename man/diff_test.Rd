@@ -7,11 +7,17 @@
 \arguments{
   \item{x}{genind object (from package adegenet)}
 
-  \item{sim}{simulate p-value (required for all but the
-  smallest datasets)}
+  \item{sim}{boolean simulate p-value by using an MCMC
+  sample of those tables that have the same marginal totals
+  as the observed data (required for all but the smallest
+  datasets)}
 
   \item{nreps}{number of steps used to simulate p-value
   (default 1000)}
+}
+\value{
+  named vector of p-values testing the null hypothesis
+  these samples where drawn from a panmictic population.
 }
 \description{
   This function uses Fisher's exact test to determine if
@@ -32,6 +38,7 @@ data(nancycats)
 diff_test(seploc(nancycats)[[2]], nreps=100)
 }
 \seealso{
-  \code{\link{fisher.test}} which this function wraps
+  \code{\link{fisher.test}} from base R, which this
+  function wraps
 }
 

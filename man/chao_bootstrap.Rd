@@ -10,6 +10,9 @@
   \item{nreps}{numeric number of bootstrap replicates to
   perform (default 1000)}
 }
+\value{
+  A list of genind objects
+}
 \description{
   This function produces bootstrap samples from a genind
   object, with each subpopulation resampled according to

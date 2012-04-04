@@ -4,6 +4,7 @@
 #' differentiation, between all combinations of populaitons
 #' in a genind object.
 #'
+#' @return dist A distance matrix with between-population values of G''st
 #' @param x genind object (from package adegenet)
 #' @param linearized logical, if TRUE will turned linearized G'st (1/()1-G'st))
 #' @export

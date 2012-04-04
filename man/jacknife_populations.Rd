@@ -13,6 +13,9 @@
   \item{nreps}{number of jacknife replicates to run
   (default 1000)}
 }
+\value{
+  list A list of genind objects to be further processed
+}
 \description{
   Makes a series of jacknife samples across populations
   from a Genind object. This functino resurns a list of

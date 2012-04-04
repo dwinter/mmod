@@ -11,9 +11,13 @@
 #' how meaningful such results might be.
 #'
 #' @param x genind object (from package adegenet)
-#' @param sim simulate p-value (required for all but the smallest datasets)
+#' @param sim boolean simulate p-value by using an MCMC sample of 
+#' those tables that have the same marginal totals as the observed data 
+#' (required for all but the smallest datasets)
 #' @param nreps number of steps used to simulate p-value (default 1000)
-#' @seealso \code{\link{fisher.test}} which this function wraps
+#' @return named vector of p-values testing the null hypothesis these samples
+#' where drawn from a panmictic population.
+#' @seealso \code{\link{fisher.test}} from base R, which this function wraps
 #' @export
 #' @examples
 #' 

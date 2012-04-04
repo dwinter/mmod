@@ -8,6 +8,7 @@
 #' @param sample_frac fraction of pops to sample in each replication (default 0.5)
 #' @param nreps number of jacknife replicates to run (default 1000)
 #' @export
+#' @return list A list of genind objects to be further processed
 #' @examples
 #'\dontrun{  
 #' data(nancycats)

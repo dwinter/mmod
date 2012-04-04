@@ -11,6 +11,7 @@
 #' 
 #' data(nancycats)
 #' pairwise_D(nancycats[1:26,])
+#' @return dist A distance matrix with between-population values of D
 #' @references
 #'  Jost, L. (2008), GST and its relatives do not measure differentiation. Molecular Ecology, 17: 4015-4026. 
 #' @family pairwise

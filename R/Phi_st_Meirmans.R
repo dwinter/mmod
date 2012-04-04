@@ -16,6 +16,9 @@
 #' @references
 #'  Excoffier, L., Smouse, P., Quattro, J. (1992), Analysis of molecular variance inferred from metric distances among DNA haplotypes: application to human mitochondrial DNA restriction data. Genetics 131: 479-91
 #' @family diffstat
+#' @examples
+#' data(nancycats)
+#' Phi_st_Meirmans(nancycats[1:26,])
 
 
 

@@ -4,6 +4,7 @@
 #' (will return NA if there are any negative numbers in the vector)
 #' @param x numeric vector
 #' @export
+#' @return harmonic mean of vector
 #' @examples
 #' 
 #' data(nancycats)

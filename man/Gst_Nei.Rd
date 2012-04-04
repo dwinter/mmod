@@ -7,6 +7,11 @@
 \arguments{
   \item{x}{genind object (from package adegenet)}
 }
+\value{
+  per.locus estimates of Gst for each locus in the dataset
+
+  per.locus estimates of Gst for across all loci
+}
 \description{
   This function calculates Gst following Nei's method and
   using Nei and Chesser's estimators for Hs and Ht
@@ -25,7 +30,8 @@ Gst_Nei(nancycats)
 }
 \seealso{
   Other diffstat: \code{\link{diff_stats}},
-  \code{\link{D_Jost}}, \code{\link{Gst_Hedrick}}
+  \code{\link{D_Jost}}, \code{\link{Gst_Hedrick}},
+  \code{\link{Phi_st_Meirmans}}
 
   Other Nei: \code{\link{pairwise_Gst_Nei}}
 }

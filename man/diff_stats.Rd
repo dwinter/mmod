@@ -10,6 +10,13 @@
   \item{phi_st}{Boolean Calculate Phi_st (default is
   FALSE)}
 }
+\value{
+  per.locus values for each statistic for each locus in the
+  dataset
+
+  global estimtes for these statistics across all loci in
+  the dataset
+}
 \description{
   By default this function calculates three different
   statistics of differentiation for a genetic dataset.
@@ -42,9 +49,19 @@ diff_stats(nancycats)
   Nei M, Chesser RK. (1983). Estimation of fixation indices
   and gene diversities. Annals of Human Genetics. 47:
   253-259.
+
+  Meirmans, PW. (2005), Using the AMOVA framework to
+  estimate a standardized genetic differentiation measure.
+  Evolution 60: 2399-402.
+
+  Excoffier, L., Smouse, P., Quattro, J. (1992), Analysis
+  of molecular variance inferred from metric distances
+  among DNA haplotypes: application to human mitochondrial
+  DNA restriction data. Genetics 131: 479-91
 }
 \seealso{
   Other diffstat: \code{\link{D_Jost}},
-  \code{\link{Gst_Hedrick}}, \code{\link{Gst_Nei}}
+  \code{\link{Gst_Hedrick}}, \code{\link{Gst_Nei}},
+  \code{\link{Phi_st_Meirmans}}
 }
 

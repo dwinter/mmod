@@ -7,6 +7,13 @@
 \arguments{
   \item{x}{genind object (from package adegenet)}
 }
+\value{
+  per.locus values for each G''st for each locus in the
+  dataset
+
+  global estimtes for G''st based on overall heterozygosity
+  or the harmonic
+}
 \description{
   This function calculates Hedrick's G'st from a genind
   object
@@ -35,7 +42,8 @@ Gst_Hedrick(nancycats)
 }
 \seealso{
   Other diffstat: \code{\link{diff_stats}},
-  \code{\link{D_Jost}}, \code{\link{Gst_Nei}}
+  \code{\link{D_Jost}}, \code{\link{Gst_Nei}},
+  \code{\link{Phi_st_Meirmans}}
 
   Other Hedrick: \code{\link{pairwise_Gst_Hedrick}}
 }

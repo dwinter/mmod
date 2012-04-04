@@ -11,6 +11,8 @@
 #'
 #' @param x genind object (from package adegenet)
 #' @export
+#' @return per.locus values for each G''st for each locus in the dataset
+#' @return global estimtes for G''st based on overall heterozygosity or the harmonic
 #' @references
 #'  Hedrick, PW. (2005), A Standardized Genetic Differentiation Measure. Evolution 59: 1633-1638. 
 #' @references

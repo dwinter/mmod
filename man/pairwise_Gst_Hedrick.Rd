@@ -10,6 +10,10 @@
   \item{linearized}{logical, if TRUE will turned linearized
   G'st (1/()1-G'st))}
 }
+\value{
+  dist A distance matrix with between-population values of
+  G''st
+}
 \description{
   This function calculates Hedrick's G'st, a measure of
   genetic differentiation, between all combinations of

@@ -8,8 +8,9 @@
 #'
 #' @param x genind object (from package adegenet)
 #' @param matrix Boolean return matrix (not dist object)
-#' @param seplocs Boolean if TRUE, return a list of matrices for each locus,
-#' if FALSE a single global estimate based on all loci
+#' @param global Boolean if TRUE, return a single global estimate based on all
+#' loci. If FALSE return a list of matrices for each locus.
+#' if FALSE 
 #' @param na.rm Boolean if TRUE remove individuals with NAs
 #'
 #' @return either a list of distance matrices, one for each locus or a single 
@@ -25,7 +26,7 @@
 #'  
 #' @examples
 #' data(nancycats)
-#' dist_codom(nancycats[,1])
+#' dist.codom(nancycats[,1])
 
 
 dist.codom <- function(x, matrix=TRUE, global=TRUE, na.rm=TRUE){

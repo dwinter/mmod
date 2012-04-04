@@ -12,12 +12,14 @@
 }
 \details{
   mmod is a package that brings two of these mesures,
-  Hedricks (2008) G'st and Jost's (2008) D to R, along wiht
+  Hedricks (2005) G'st and Jost's (2008) D to R, along wiht
   an implementation of Nei's Gst that uses nearly unbiased
   estimators for Hs and Ht, the two key paramaters from
   which all these stats are calculated. All these functions
   work on genind objects from the libary adegenet so data
   can be read in from standard genepop files. See
-  vignette("demo", package="mmod") for an example usage.
+  vignette("demo", package="mmod") for some discussion
+  about these statistics and an example of a typical usage
+  of the package.
 }
 

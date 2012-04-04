@@ -7,7 +7,29 @@
 \arguments{
   \item{bs}{list of genind objects}
 
-  \item{statistic}{differentiation statistic to apply.}
+  \item{statistic}{differentiation statistic to apply (the
+  function itself, as with apply family functions)}
+}
+\value{
+  per.locus matrix of statistics calulate for each locus
+  and each bootstrap replication
+
+  global.het vector of global estimates calculated from
+  overall heterozygosity
+
+  global.het vector of global estimates calculated from
+  harmonic mean of statistic (only applied to D_Jost)
+
+  summary.loci matrix containing mean, .025 and 0.975
+  percentile and varaince of statisic for each locus
+
+  summary.global_het mean, .025 and 0.975 percentile and
+  variance for global estimate variance of statistic for
+  each locus based on heterozygosity
+
+  summary.global_harm mean, .025 and 0.975 percentile and
+  variance for global estimate variance of statistic for
+  each locus based on harmonic mean
 }
 \description{
   This function applies a differentiation statistic (eg,

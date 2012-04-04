@@ -7,6 +7,12 @@
 \arguments{
   \item{x}{genind object (from package adegenet)}
 }
+\value{
+  per.locus values for each D for each locus in the dataset
+
+  global estimtes for D based on overall heterozygosity or
+  the harmonic mean of values for each locus
+}
 \description{
   This function calculates Jost's D from a genind object
 }
@@ -33,6 +39,7 @@ D_Jost(nancycats)
   Other D: \code{\link{pairwise_D}}
 
   Other diffstat: \code{\link{diff_stats}},
-  \code{\link{Gst_Hedrick}}, \code{\link{Gst_Nei}}
+  \code{\link{Gst_Hedrick}}, \code{\link{Gst_Nei}},
+  \code{\link{Phi_st_Meirmans}}
 }
 

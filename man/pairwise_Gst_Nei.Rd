@@ -10,6 +10,10 @@
   \item{linearized}{logical, if TRUE will turned linearized
   Gst (1/(1-Gst))}
 }
+\value{
+  dist A distance matrix with between-population values of
+  Gst
+}
 \description{
   This function calculates Nei's Gst, a measure of genetic
   differentiation, between all combinations of populaitons

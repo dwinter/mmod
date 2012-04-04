@@ -7,6 +7,9 @@
 \arguments{
   \item{x}{numeric vector}
 }
+\value{
+  harmonic mean of vector
+}
 \description{
   Calculate the harmonic mean of a numeric vector (will
   return NA if there are any negative numbers in the
