@@ -19,9 +19,10 @@
 #' @family resample
 
 jacknife_populations <- function(x, sample_frac=0.5, nreps=1000){
+ on.exit(cat("\n")) 
  rep <- function(i,d){
   if( i %% 50 == 0){
-     cat(paste(i,"of", nreps,"reps completed"))
+    cat("\r", paste(i, "of", nreps, "reps completed"))
   }
   to.sample <- sample(d$pop.names, length(d$pop.names) * sample_frac)
   return(d[d$pop.names %in% to.sample,])
