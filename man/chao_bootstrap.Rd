@@ -52,6 +52,6 @@ bs.D$summary.global.het - bias
 }
 \seealso{
   Other resample: \code{\link{jacknife_populations}},
-  \code{\link{summarise_bootsrap}}
+  \code{\link{summarise_bootstrap}}
 }
 

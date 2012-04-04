@@ -1,8 +1,8 @@
-\name{summarise_bootsrap}
-\alias{summarise_bootsrap}
+\name{summarise_bootstrap}
+\alias{summarise_bootstrap}
 \title{Apply a differentiation statistic to a bootstrap sample}
 \usage{
-  summarise_bootsrap(bs, statistic)
+  summarise_bootstrap(bs, statistic)
 }
 \arguments{
   \item{bs}{list of genind objects}

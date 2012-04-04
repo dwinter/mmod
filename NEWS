@@ -16,4 +16,10 @@ Discussion in chao_bootsrap's documentation about bias in bootstrapping
 procedure
 Significant speeding up of all functions by using base R as much as possible
 
+0.3 __
+
+Added Phi_st_Meirmans - a differentiation measure based on the AMOVA framework
+Extended the Vignette to include a small discussion on which stats mmod can and
+can't calculate and how to chose the right one for your study
+Caught some typos and made a number of small changes
 

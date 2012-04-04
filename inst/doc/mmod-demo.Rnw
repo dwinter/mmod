@@ -166,7 +166,7 @@ sample of the \texttt{nancycats} data, then calculate $D_\text{est}$ from that s
 
 <<bs>>=
 bs <- chao_bootstrap(nancycats, nreps=10)
-bs.D <- summarise_bootsrap(bs, D_Jost)
+bs.D <- summarise_bootstrap(bs, D_Jost)
 bs.D
 @
 
