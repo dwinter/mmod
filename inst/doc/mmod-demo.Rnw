@@ -3,6 +3,7 @@
 \usepackage{parskip}
 \usepackage{Sweave}
 \usepackage{amsmath}
+\usepackage{hyperref}
 %% \VignetteIndexEntry{mmod-demo}
 
 \begin{document}
@@ -11,8 +12,64 @@
       david.winter@gmail.com}
 \maketitle
 
-This is a short demo of \texttt{mmod} library for differentiation statistics in R.
-As an example, we are going to examine the \texttt{nancycats} data that comes
+\tableofcontents
+\newpage
+
+\section{Why use mmod (or what's wrong with $G_\text{ST}$?)}
+ 
+Population geneticists, molecular ecologists and evolutionary biologists often
+want to be able to determine the degree to which populations are divided into
+smaller sub-populations. One very widely used approach to this question uses
+``F statistics'' (measures based on Wrigtht's $F_\text{ST}$) to compare diversity
+within and between predefined sub-populations. Until recently, the most widely 
+used of these statistics has been Nei's $G_\text{ST}$. Unfortunately, it has 
+become increasingly clear that the value of $G_\text{ST}$ is a at least 
+partially dependent on the number of alleles at each locus and the number of 
+populations sampled - making simple interpretation of this statistics 
+difficult. 
+
+A number of ``$F_\text{ST}$ analogues'' have been developed that compensate for 
+these short comings, and give values that can be compared between studies. 
+\textsc{mmod} is a package that allows three of these statistics, 
+$G''_\text{ST}$, $D_\text{est}$ and $\varphi'_\text{ST}$, to be calculated from
+\texttt{genind} objects (the standard representation of genetic datasets in the
+\texttt{adegenet} library)
+
+\section{Which statistic should I use?}
+
+With the proliferation of $F_\text{ST}$ analogues, it can be hard to decide on the
+most appropriate measure to use for your study. I encourage you to read 
+Meirmans \& Hedrick (2011 [\href={http://dx.doi.org/10.1111/j.1755-0998.2010.02927.x}{doi}]), 
+which includes a discussion on this topic. As you'll see in the demonstration
+below, the corrected statistics often all tell a similar story. Interestingly, 
+$G''_\text{ST}$ can be directly related to the rate of migration between 
+populations while $D_\text{est}$ and $\varphi'_\text{ST}$ are about 
+partitioning distances or diversity between genes. You may consider which 
+approach is most appropriate for the specific questions you wish to ask.
+
+\section{What statistics can't \textsc{mmod} calculate}
+
+There are at least two population genetic statistics related to the ones discussed above that
+\textsc{mmod} can't calculate. $R_\text{ST}$ was developed for micorsattelite
+data, and takes the relationship between alleles (and therefore the mutation
+rate) into account. It is not clear how the maximum potential value of 
+$R_\text{ST}$ for a given dataset can be calculated, so it is not possible to
+correct this statistic in a way similar to $G''_\text{ST}$ and 
+$\varphi'_\text{ST}$. 
+
+Similarly, the calculation of the maximum value of Weir and Cockerham's $\theta$
+is complex (and not yet published). If you wish to calculate a corrected 
+version of this statistic you can use RecodeData 
+(\href{http://www.bentleydrummer.nl/software/software/}{http://www.bentleydrummer.nl/software/software/})
+to create a dataset in which all between-population differences are maximised. 
+You can then calculate $\theta$ for each dataset using \texttt{Fst} from the
+package \texttt{pegas}. The corrected statical is simply $\frac{\theta}{\theta_\text{max}}$
+
+\section{An Example - differentiation in the \textsc{nancycats} data}
+
+
+With the description out of the way, let's see how these functions work in 
+practice. As an example, we are going to examine the \texttt{nancycats} data that comes
 with \texttt{adegenet}. This dataset contains microsattelite genotypes
 taken from feral cats in Nancy, France.
 So let's start.
@@ -22,7 +79,7 @@ library(mmod)
 data(nancycats)
 nancycats
 @
-\newpage
+
 The nancycats data comes in \texttt{adegenet}'s default class for genotypic
 data, the \texttt{genind} class. The functions in \texttt{mmod} work on genind
  objects, so you would usually start by reading in your data using
@@ -72,16 +129,13 @@ in a dataset to between-population and within-population components (it is
 possible to use this framework to partition variance using more than two 
 levels of population structure, but that has not been implemented in 
 \textsc{mmod} yet). Because $\varphi'_\text{ST}$ can take some time to 
-calculate it has its own function:
+calculate it's not included in \verb+diff_stat+ by default (but you can 
+include it using \verb+diff_stat(x, phi_st=TRUE)+). 
  
- 
-<<diffstat>>=
-(nc.phi <- Phi_st_Meirmans(nancycats[1:40,]))
-@
-
-You might want to see how these different measures compare to each other
+You might want to see how all these different measures compare to each other
 across the loci we've looked at. You can see the corrected measures (all those)
-other than $G_\text{ST}$ show a similar pattern (Figure 1):
+other than $G_\text{ST}$ show a similar pattern, and $G_\text{ST}$ is a bit 
+strange  (Figure~\ref{Comparison}):
 
 <<label=fig1plot>>=
 nc.diff_stats <- diff_stats(nancycats, phi_st=TRUE)
@@ -93,8 +147,8 @@ with(nc.diff_stats, pairs(per.locus[,3:6], upper.panel=panel.smooth))
 <<fig1plot>>
 @
 \end{center}
-\label{Gst v D}
 \caption{Comparison of differentiation measures}
+\label{Comparison}
 \end{figure}
 
 The second part of the list returned by \verb+diff_stat+ contains global
@@ -102,25 +156,26 @@ estimates of each of these statistics. For $G_\text{ST}$ and $G''_\text{ST}$ the
 based on the average of \texttt{Hs} and \texttt{Ht} across loci. For
 $D_\text{est}$ you get two, the harmonic mean of the $D_\text{est}$ for each locus and,
 because that method won't work if you end up with negative estimates of $D_\text{est}$,
-one calculated as per $G_\text{ST}$ and $G''_\text{ST}$.
-\newpage
-You probably want to have some idea of how robust this result is. \texttt{mmod} has a
+one calculated as per $G_\text{ST}$ and $G''_\text{ST}$. 
+
+You probably want to have some idea of how robust this result is. \textsc{mmod} has a
 few functions for performing bootstrap samples of \texttt{genind} objects and
 calculating statistics from those samples. Because some of these functions can
-take a long time to run, let's create a whopping great 10 repetition bootstrap
+take a long time to run, we will create a very small (10 repetition) bootstrap
 sample of the \texttt{nancycats} data, then calculate $D_\text{est}$ from that sample:
+
 <<bs>>=
 bs <- chao_bootstrap(nancycats, nreps=10)
 bs.D <- summarise_bootsrap(bs, D_Jost)
 bs.D
 @
+
 As you can see, printing a summarised bootstrap sample gives us shows a basic
 overview of that data, but there is also quite a lot more there --- use
-\texttt{str(bs.D)} or the classic \texttt{bs.D\$}[tab tab] to check it out. I don't
-think there is much point trying to interpret confidence intervals estimated
-from 10 samples, but the point estimates seem to show a population with some
-substantial differentiation.
-\newpage
+\texttt{str(bs.D)}  to check it out. I don't think there is much point trying 
+to interpret confidence intervals estimated from 10 samples, but the point 
+estimates seem to show a population with some substantial differentiation.
+
 Next, we want to know if geography can explain that differentiation.
 The nancycats data comes with coordinates for each populations. We can use
 these to get Euclidean distances:
@@ -148,7 +203,7 @@ mantel.rtest(nc.pw_D, log(nc.pop_dists), 999)
 
 So, the geographic distance between these populations can't explain the
 genetic divergences we see: the correlation is small and non-significant.
-If you like, we can also visualize this relationship (Figure~\ref{Distance}).
+If you like, we can also visualize this relationship (Figure~\ref{Distances}).
 
 <<label=fig2plot>>=
 fit <- lm(as.vector(nc.pw_D) ~ as.vector(nc.pop_dists))

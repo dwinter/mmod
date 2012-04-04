@@ -1,4 +1,4 @@
-#' Calculate distance between individual for co-dominant locus
+#' Calculate Phi_st from a genind object
 #'
 #' This function calculates the distance between individuals in a genind
 #' object based on their genotypes. 

@@ -11,6 +11,9 @@
 #' @param x genind object (from package adegenet)
 #' @param phi_st Boolean Calculate Phi_st (default is FALSE)
 #' @export
+#'
+#' @return per.locus values for each statistic for each locus in the dataset
+#' @return global estimtes for these statistics across all loci in the dataset 
 #' 
 #' @references
 #'  Hedrick, PW. (2005), A Standardized Genetic Differentiation Measure. Evolution 59: 1633-1638. 

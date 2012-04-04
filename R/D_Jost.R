@@ -10,6 +10,10 @@
 #' Because estimators of Hs and Ht are used, its possible to have negative
 #' estimates of D. You should treat these as numbers close to zero.
 #'
+#' @return per.locus values for each D for each locus in the dataset
+#' @return global estimtes for D based on overall heterozygosity or the harmonic
+#' mean of values for each locus
+#'
 #' @param x genind object (from package adegenet)
 #' @export
 #' @examples
