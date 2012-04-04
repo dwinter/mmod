@@ -73,7 +73,7 @@ dist.codom <- function(x, matrix=TRUE, global=TRUE, na.rm=TRUE){
 		if(has_nas){
 			return(list(distances=xbar, dropped=dropped))
 		}
-		else return(mean)
+		else return(xbar)
 	}
 	
 	else{
