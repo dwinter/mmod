@@ -39,9 +39,9 @@ $G''_\text{ST}$, $D_\text{est}$ and $\varphi'_\text{ST}$, to be calculated from
 
 With the proliferation of $F_\text{ST}$ analogues, it can be hard to decide on the
 most appropriate measure to use for your study. I encourage you to read 
-Meirmans \& Hedrick (2011 [\href={http://dx.doi.org/10.1111/j.1755-0998.2010.02927.x}{doi}]), 
+Meirmans and Hedrick (2011 doi:\href{http://dx.doi.org/10.1111/j.1755-0998.2010.02927.x}{10.1111/j.1755-0998.2010.02927.x}), 
 which includes a discussion on this topic. As you'll see in the demonstration
-below, the corrected statistics often all tell a similar story. Interestingly, 
+below, the corrected statistics often tell a similar story. Interestingly, 
 $G''_\text{ST}$ can be directly related to the rate of migration between 
 populations while $D_\text{est}$ and $\varphi'_\text{ST}$ are about 
 partitioning distances or diversity between genes. You may consider which 

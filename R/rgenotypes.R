@@ -10,6 +10,8 @@
 #' @param ploidy integer number of alleles to asign to each individual.
 #' @param probs vector of probabilies corresponding to allele frequences.
 #' @param genind boolean if TRUE return a genind object
+#' @param pop_name charcter Name for population defined in genind object
+#' (not required if genind is not TRUE)
 #'
 #' @return Either a matrix with individuals in columns, alleles in rows or, if
 #' genind is TRUE a genind object for one population and locus.
