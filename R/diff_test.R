@@ -1,4 +1,4 @@
-#' An exact test of population differentiation for Genind objects
+#' An exact test of population differentiation for genind objects
 #'
 #' This function uses Fisher's exact test to determine if alleles in 
 #' sub-populations are drawn randomly from a larger population (i.e. a 
@@ -7,14 +7,15 @@
 #' Note, this test returns p-values for each locus in a dataset _not_  
 #' estimates of effect size. Since most populations have some degree of 
 #' population differentiation, very large samples are almost guaranteed to 
-#' return significant results. Refer to estimates of D or Gst to ascertain 
-#' how meaningful such results might be.
+#' return significant results. Refer to estimates of the various differentiation
+#' statistics (D, G''ST and Phi'ST)to ascertain  how meaningful such results 
+#' might be.
 #'
-#' @param x genind object (from package adegenet)
-#' @param sim boolean simulate p-value by using an MCMC sample of 
+#' @param x a genind object (from package adegenet)
+#' @param sim boolean: if TRUE simulate p-value by using an MCMC sample of 
 #' those tables that have the same marginal totals as the observed data 
 #' (required for all but the smallest datasets)
-#' @param nreps number of steps used to simulate p-value (default 1000)
+#' @param nreps number of steps used to simulate p-value (default 2000)
 #' @return named vector of p-values testing the null hypothesis these samples
 #' where drawn from a panmictic population.
 #' @seealso \code{\link{fisher.test}} from base R, which this function wraps
@@ -26,7 +27,7 @@
 #' 
 
 
-diff_test <- function(x, sim=TRUE, nreps=10000){
+diff_test <- function(x, sim=TRUE, nreps=2000){
   # The test to be applied to each locus
   per.locus <- function(locus){
     allele_counts <- locus@tab*2

@@ -11,8 +11,7 @@
   G'st (1/()1-G'st))}
 }
 \value{
-  dist A distance matrix with between-population values of
-  G''st
+  A distance matrix with between-population values of G''st
 }
 \description{
   This function calculates Hedrick's G'st, a measure of

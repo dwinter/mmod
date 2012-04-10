@@ -11,8 +11,7 @@
   D (1/1-D)}
 }
 \value{
-  dist A distance matrix with between-population values of
-  D
+  A distance matrix with between-population values of D
 }
 \description{
   This function calculates Jost's D, a measure of genetic

@@ -20,15 +20,15 @@
 Population geneticists, molecular ecologists and evolutionary biologists often
 want to be able to determine the degree to which populations are divided into
 smaller sub-populations. One very widely used approach to this question uses
-``F statistics'' (measures based on Wrigtht's $F_\text{ST}$) to compare diversity
+``F analogues'' (measures based on Wrigtht's $F_\text{ST}$) to compare diversity
 within and between predefined sub-populations. Until recently, the most widely 
-used of these statistics has been Nei's $G_\text{ST}$. Unfortunately, it has 
-become increasingly clear that the value of $G_\text{ST}$ is a at least 
-partially dependent on the number of alleles at each locus and the number of 
-populations sampled - making simple interpretation of this statistics 
-difficult. 
+used of these statistics has been Nei's $G_\text{ST}$. Unfortunately, the value 
+of $G_\text{ST}$ is a at least partially dependent on the number of alleles at 
+each locus and the number of populations sampled. This makes simple 
+interpretations of $G_\text{ST}$ difficult, and comparisons between studies (or
+even between loci in the same population) potentially misleading. 
 
-A number of ``$F_\text{ST}$ analogues'' have been developed that compensate for 
+A number of new $F_\text{ST}$ analogues have been developed that compensate for 
 these short comings, and give values that can be compared between studies. 
 \textsc{mmod} is a package that allows three of these statistics, 
 $G''_\text{ST}$, $D_\text{est}$ and $\varphi'_\text{ST}$, to be calculated from
@@ -47,23 +47,25 @@ populations while $D_\text{est}$ and $\varphi'_\text{ST}$ are about
 partitioning distances or diversity between genes. You may consider which 
 approach is most appropriate for the specific questions you wish to ask.
 
-\section{What statistics can't \textsc{mmod} calculate}
+\section{Which statistics can \textsc{mmod} not calculate}
 
 There are at least two population genetic statistics related to the ones discussed above that
 \textsc{mmod} can't calculate. $R_\text{ST}$ was developed for micorsattelite
 data, and takes the relationship between alleles (and therefore the mutation
-rate) into account. It is not clear how the maximum potential value of 
-$R_\text{ST}$ for a given dataset can be calculated, so it is not possible to
-correct this statistic in a way similar to $G''_\text{ST}$ and 
-$\varphi'_\text{ST}$. 
+rate) into account when measuring between-allele distances. It is not clear how 
+the maximum potential value of $R_\text{ST}$ for a given dataset can be 
+calculated, so it is not possible to correct this statistic in a way similar 
+to $G''_\text{ST}$ and $\varphi'_\text{ST}$. 
 
 Similarly, the calculation of the maximum value of Weir and Cockerham's $\theta$
 is complex (and not yet published). If you wish to calculate a corrected 
 version of this statistic you can use RecodeData 
-(\href{http://www.bentleydrummer.nl/software/software/}{http://www.bentleydrummer.nl/software/software/})
+(\url{http://www.bentleydrummer.nl/software/software/})
 to create a dataset in which all between-population differences are maximised. 
 You can then calculate $\theta$ for each dataset using \texttt{Fst} from the
-package \texttt{pegas}. The corrected statical is simply $\frac{\theta}{\theta_\text{max}}$
+package \texttt{pegas}. If the statistic calculated form the recoded data is
+${\theta_\text{max}}$ then the corrected statistic is simply 
+$\frac{\theta}{\theta_\text{max}}$.
 
 \section{An Example - differentiation in the \textsc{nancycats} data}
 
@@ -83,7 +85,7 @@ nancycats
 The nancycats data comes in \texttt{adegenet}'s default class for genotypic
 data, the \texttt{genind} class. The functions in \texttt{mmod} work on genind
  objects, so you would usually start by reading in your data using
- \texttt{read.genepop}
+ \texttt{read.genpop} or \texttt{read.fstat} depending on the format it's in.
  
  
 Now that we have our data on hand, our goal is to see
@@ -125,7 +127,7 @@ different estimates of divergence but they range from $\sim$0.1--0.4.
 \textsc{mmod} can calculate another statistic of differentiation called
 $\varphi'_\text{ST}$. This statistic is based on the Analysis of Molecular
 Variance (AMOVA) method, which partitions the variance in genetic distances
-in a dataset to between-population and within-population components (it is 
+in a dataset to among-population and within-population components (it is 
 possible to use this framework to partition variance using more than two 
 levels of population structure, but that has not been implemented in 
 \textsc{mmod} yet). Because $\varphi'_\text{ST}$ can take some time to 
@@ -133,8 +135,8 @@ calculate it's not included in \verb+diff_stat+ by default (but you can
 include it using \verb+diff_stat(x, phi_st=TRUE)+). 
  
 You might want to see how all these different measures compare to each other
-across the loci we've looked at. You can see the corrected measures (all those)
-other than $G_\text{ST}$ show a similar pattern, and $G_\text{ST}$ is a bit 
+across the loci we've looked at. You can see the corrected measures (all those
+other than $G_\text{ST}$) show a similar pattern, and $G_\text{ST}$ is a bit 
 strange  (Figure~\ref{Comparison}):
 
 <<label=fig1plot>>=
@@ -156,9 +158,12 @@ estimates of each of these statistics. For $G_\text{ST}$ and $G''_\text{ST}$ the
 based on the average of \texttt{Hs} and \texttt{Ht} across loci. For
 $D_\text{est}$ you get two, the harmonic mean of the $D_\text{est}$ for each locus and,
 because that method won't work if you end up with negative estimates of $D_\text{est}$,
-one calculated as per $G_\text{ST}$ and $G''_\text{ST}$. 
+one calculated as per $G_\text{ST}$ and $G''_\text{ST}$. The global estimate of
+$\varphi'_\text{ST}$ is calculated from the average distance among individuals 
+across all loci. 
 
-You probably want to have some idea of how robust this result is. \textsc{mmod} has a
+Now that we have a point-estimate for how differentiated these populations are 
+we will want to have some idea of how robust this result is. \textsc{mmod} has a
 few functions for performing bootstrap samples of \texttt{genind} objects and
 calculating statistics from those samples. Because some of these functions can
 take a long time to run, we will create a very small (10 repetition) bootstrap
@@ -177,8 +182,8 @@ to interpret confidence intervals estimated from 10 samples, but the point
 estimates seem to show a population with some substantial differentiation.
 
 Next, we want to know if geography can explain that differentiation.
-The nancycats data comes with coordinates for each populations. We can use
-these to get Euclidean distances:
+The \texttt{nancycats} data comes with coordinates for each population. We can 
+use these to get Euclidean distances:
 
 <<label=show_coords>>=
 head(nancycats@other$xy, 4)

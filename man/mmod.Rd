@@ -2,24 +2,21 @@
 \name{mmod}
 \alias{mmod}
 \alias{mmod-package}
-\title{Modern Measures of Divergence}
+\title{Modern Measures of Differentiation}
 \description{
   Population geneticists have traditionally used Nei's Gst
   (often confusingly called Fst...) to measure divergence
-  between populations. It turns out, Gst doesn't really
-  measure divergence so, a set of new measures have been
-  developed.
+  between populations. Recently, it has become clear that
+  simple intereptations of the value of Gst can be
+  misleading. For this reason several new measures
+  differntiation have been developed. mmod is a package
+  that brings some of these measures to R.
 }
 \details{
-  mmod is a package that brings two of these mesures,
-  Hedricks (2005) G'st and Jost's (2008) D to R, along wiht
-  an implementation of Nei's Gst that uses nearly unbiased
-  estimators for Hs and Ht, the two key paramaters from
-  which all these stats are calculated. All these functions
-  work on genind objects from the libary adegenet so data
-  can be read in from standard genepop files. See
-  vignette("demo", package="mmod") for some discussion
-  about these statistics and an example of a typical usage
-  of the package.
+  The vignette for this package ( avaliable using
+  vignette("demo", package="mmod") from within R) contains
+  an introduction to these methods and and example usage
+  for this package. I strongly suggest new users start by
+  reading this documentation.
 }
 

@@ -7,11 +7,11 @@
 #' 
 #'
 #' @param x genind object (from package adegenet)
-#' @param matrix Boolean return matrix (not dist object)
-#' @param global Boolean if TRUE, return a single global estimate based on all
+#' @param matrix boolean: if TRUE return matrix (dist object if FALSE)
+#' @param global boolean: if TRUE, return a single global estimate based on all
 #' loci. If FALSE return a list of matrices for each locus.
 #' if FALSE 
-#' @param na.rm Boolean if TRUE remove individuals with NAs
+#' @param na.rm boolean: if TRUE remove individuals with NAs
 #'
 #' @return either a list of distance matrices, one for each locus or a single 
 #' matrix containing the mean distance between individuals across all loci

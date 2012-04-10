@@ -1,10 +1,12 @@
 #' Randomly create genotypes
 #'
 #' Use the multinomial distribution to randomly create genotpes for individuals
-#' for given allele frequences. 
+#' for given allele frequences. By default this function returns a matrix of 
+#' with alleles in rows and individuals in columns. There is an option to return
+#' a genind object representing the same data (see examples).
 #' 
 #' Used in \code{\link{chao_bootstrap}}, also exported as it may come in handy
-#' for other simulations
+#' for other simulations.
 #' 
 #' @param n integer number of indviduals.
 #' @param ploidy integer number of alleles to asign to each individual.

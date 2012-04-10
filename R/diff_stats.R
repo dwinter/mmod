@@ -1,12 +1,11 @@
-#' Calculate differentiation statistics for a genind objects
+#' Calculate differentiation statistics for a genind object
 #'
 #' By default this function calculates three different statistics of 
 #' differentiation for a genetic dataset. Nei's Gst, Hedrick's G''st and
-#' Jost's D. Optionally, it can also calculate Phi'st, which is somewhat 
-#' more computationally intensive.
+#' Jost's D. Optionally, it can also calculate Phi'st, which is not calculated 
+#' by default as it can take somewhat more time to run.
 #' 
-#' See individual functions D_Jost(), Gst_Hedrick() and Gst_Nei() for more
-#' details
+#' See individual functions (listed below) for more details.
 #'
 #' @param x genind object (from package adegenet)
 #' @param phi_st Boolean Calculate Phi_st (default is FALSE)

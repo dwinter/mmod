@@ -1,6 +1,6 @@
 \name{diff_stats}
 \alias{diff_stats}
-\title{Calculate differentiation statistics for a genind objects}
+\title{Calculate differentiation statistics for a genind object}
 \usage{
   diff_stats(x, phi_st = FALSE)
 }
@@ -21,12 +21,11 @@
   By default this function calculates three different
   statistics of differentiation for a genetic dataset.
   Nei's Gst, Hedrick's G''st and Jost's D. Optionally, it
-  can also calculate Phi'st, which is somewhat more
-  computationally intensive.
+  can also calculate Phi'st, which is not calculated by
+  default as it can take somewhat more time to run.
 }
 \details{
-  See individual functions D_Jost(), Gst_Hedrick() and
-  Gst_Nei() for more details
+  See individual functions (listed below) for more details.
 }
 \examples{
 data(nancycats)

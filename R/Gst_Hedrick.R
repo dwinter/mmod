@@ -3,16 +3,18 @@
 #' This function calculates Hedrick's G'st from a genind object
 #'
 #' Takes a genind object with population information and calculates Hedrick's 
-#' G''st. This Returns a list with values for each locus as well as a global estimates
+#' G''st.
 #' 
 #' Because estimators of Hs and Ht are used, it's possible to have negative
-#' estimates of Gst. You should treat such results as zeros (or estimating a
-#' value close to zero, and getting it a little wrong)
+#' estimates of G''st. You should treat such results as zeros (or 
+#' an attempt to estimate a very low number with some error which might push it
+#' below zero)
+#' 
 #'
 #' @param x genind object (from package adegenet)
 #' @export
 #' @return per.locus values for each G''st for each locus in the dataset
-#' @return global estimtes for G''st based on overall heterozygosity or the harmonic
+#' @return global estimtes for G''st based on overall heterozygosity 
 #' @references
 #'  Hedrick, PW. (2005), A Standardized Genetic Differentiation Measure. Evolution 59: 1633-1638. 
 #' @references

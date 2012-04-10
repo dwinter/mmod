@@ -13,17 +13,17 @@
 #' @param statistic differentiation statistic to apply (the function itself, 
 #' as with apply family functions)
 #' @family resample
-#' @return per.locus  matrix of statistics calulate for each locus and each 
+#' @return per.locus:  matrix of statistics calculated for each locus and each 
 #' bootstrap replication
-#' @return global.het vector of global estimates calculated from overall 
+#' @return global.het: vector of global estimates calculated from overall 
 #' heterozygosity 
-#' @return global.het vector of global estimates calculated from harmonic
+#' @return global.het: vector of global estimates calculated from harmonic
 #' mean of statistic (only applied to D_Jost)
-#' @return summary.loci matrix containing mean, .025 and 0.975 percentile and
+#' @return summary.loci: matrix containing mean, .025 and 0.975 percentile and
 #' varaince of statisic for each locus
-#' @return summary.global_het mean, .025 and 0.975 percentile and variance for
+#' @return summary.global_het: mean, .025 and 0.975 percentile and variance for
 #' global estimate variance of statistic for each locus based on heterozygosity
-#' @return summary.global_harm mean, .025 and 0.975 percentile and variance for
+#' @return summary.global_harm: mean, .025 and 0.975 percentile and variance for
 #' global estimate variance of statistic for each locus based on harmonic mean
 # (only applies to D_Jost)
 #' @export

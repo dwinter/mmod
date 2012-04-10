@@ -12,7 +12,6 @@
   dataset
 
   global estimtes for G''st based on overall heterozygosity
-  or the harmonic
 }
 \description{
   This function calculates Hedrick's G'st from a genind
@@ -20,13 +19,13 @@
 }
 \details{
   Takes a genind object with population information and
-  calculates Hedrick's G''st. This Returns a list with
-  values for each locus as well as a global estimates
+  calculates Hedrick's G''st.
 
   Because estimators of Hs and Ht are used, it's possible
-  to have negative estimates of Gst. You should treat such
-  results as zeros (or estimating a value close to zero,
-  and getting it a little wrong)
+  to have negative estimates of G''st. You should treat
+  such results as zeros (or an attempt to estimate a very
+  low number with some error which might push it below
+  zero)
 }
 \examples{
 data(nancycats)

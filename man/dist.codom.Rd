@@ -7,13 +7,15 @@
 \arguments{
   \item{x}{genind object (from package adegenet)}
 
-  \item{matrix}{Boolean return matrix (not dist object)}
+  \item{matrix}{boolean: if TRUE return matrix (dist object
+  if FALSE)}
 
-  \item{global}{Boolean if TRUE, return a single global
+  \item{global}{boolean: if TRUE, return a single global
   estimate based on all loci. If FALSE return a list of
   matrices for each locus. if FALSE}
 
-  \item{na.rm}{Boolean if TRUE remove individuals with NAs}
+  \item{na.rm}{boolean: if TRUE remove individuals with
+  NAs}
 }
 \value{
   either a list of distance matrices, one for each locus or

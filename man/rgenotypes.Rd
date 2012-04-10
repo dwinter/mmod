@@ -26,11 +26,15 @@
 }
 \description{
   Use the multinomial distribution to randomly create
-  genotpes for individuals for given allele frequences.
+  genotpes for individuals for given allele frequences. By
+  default this function returns a matrix of with alleles in
+  rows and individuals in columns. There is an option to
+  return a genind object representing the same data (see
+  examples).
 }
 \details{
   Used in \code{\link{chao_bootstrap}}, also exported as it
-  may come in handy for other simulations
+  may come in handy for other simulations.
 }
 \examples{
 data(nancycats)
