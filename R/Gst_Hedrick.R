@@ -33,13 +33,13 @@ Gst_Hedrick <- function(x){
     hets <- HsHt(g,n) #A private function form mmod
     Ht_est <- hets["Ht_est"]
     Hs_est <- hets["Hs_est"]
-    Gprime_st <- (n * (Ht_est - Hs_est)) / (n * Ht_est - Hs_est) * (1 - Hs_est)
+    Gprime_st <- n * (Ht_est - Hs_est) / ((n * Ht_est - Hs_est) * (1 - Hs_est))
     return(c(Hs_est, Ht_est, Gprime_st))
   }
  loci <- t(sapply(seploc(x), Gst.per.locus))
   global_Hs <- mean(loci[,1], na.rm=T)
   global_Ht <- mean(loci[,2], na.rm=T)
-  global_GstH <-  (n * (global_Ht - global_Hs)) / (n * global_Ht - global_Hs)*(1-global_Hs)
+  global_GstH <-  n * (global_Ht - global_Hs) / ((n * global_Ht - global_Hs)*(1-global_Hs))
   return(list("per.locus"=loci[,3], "global"=global_GstH))
 
 }

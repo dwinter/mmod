@@ -43,7 +43,7 @@ diff_stats <- function(x, phi_st=FALSE){
     Hs_est <- hets["Hs_est"]
     G_est <- (Ht_est-Hs_est)/Ht_est
     D <- (Ht_est-Hs_est)/(1-Hs_est) * (n/(n-1))
-    Gprime_st <- (n * (Ht_est - Hs_est)) / (n * Ht_est - Hs_est) * (1 - Hs_est)
+    Gprime_st <- n * (Ht_est - Hs_est) / ((n * Ht_est - Hs_est) * (1 - Hs_est))
     #And the results formated as list
     result <- c("Hs" = Hs_est, 
                 "Ht" = Ht_est, 
@@ -67,7 +67,7 @@ diff_stats <- function(x, phi_st=FALSE){
   global <- c(Hs = global_Hs, 
               Ht = global_Ht, 
               Gst_est = global_G_est, 
-              "Gprime_st"= (n * (global_Ht - global_Hs)) / (n * global_Ht - global_Hs)*(1-global_Hs),
+              "Gprime_st"= n * (global_Ht - global_Hs) / ((n * global_Ht - global_Hs)*(1-global_Hs)),
               "D_het" = (global_Ht - global_Hs)/(1 - global_Hs ) * (n/(n-1)),
               "D_mean"= harmonic_mean(loci[,5]))
   
