@@ -31,6 +31,11 @@
 
 dist.codom <- function(x, matrix=TRUE, global=TRUE, na.rm=TRUE){
   
+  if (! ploidy(x) == 2){
+   stop("Sorry, the function dist.codom only works diploid datasets at the moment. Fixing this is on the TODO list, contact the author if this causes a problem...")
+  }
+
+  
   pair <- function(l, x, y){
   #find distance between individuls x and y for locus l
     return( sum( abs(l@tab[x,]- l@tab[y,]) ) / 2 )
