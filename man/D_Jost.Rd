@@ -38,8 +38,8 @@ D_Jost(nancycats)
 \seealso{
   Other D: \code{\link{pairwise_D}}
 
-  Other diffstat: \code{\link{diff_stats}},
-  \code{\link{Gst_Hedrick}}, \code{\link{Gst_Nei}},
-  \code{\link{Phi_st_Meirmans}}
+  Other diffstat: \code{\link{Gst_Hedrick}},
+  \code{\link{Gst_Nei}}, \code{\link{Phi_st_Meirmans}},
+  \code{\link{diff_stats}}
 }
 

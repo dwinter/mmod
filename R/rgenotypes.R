@@ -14,6 +14,7 @@
 #' @param genind boolean if TRUE return a genind object
 #' @param pop_name charcter Name for population defined in genind object
 #' (not required if genind is not TRUE)
+#' @param loc_name character name to five locus in genind object
 #'
 #' @return Either a matrix with individuals in columns, alleles in rows or, if
 #' genind is TRUE a genind object for one population and locus.

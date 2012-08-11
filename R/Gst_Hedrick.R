@@ -31,8 +31,8 @@ Gst_Hedrick <- function(x){
   pops <- pop(x)
   Gst.per.locus <- function(g) {
     hets <- HsHt(g,n) #A private function form mmod
-    Ht_est <- hets["Ht_est"]
-    Hs_est <- hets["Hs_est"]
+    Ht_est <- hets[1]
+    Hs_est <- hets[2]
     Gprime_st <- n * (Ht_est - Hs_est) / ((n * Ht_est - Hs_est) * (1 - Hs_est))
     return(c(Hs_est, Ht_est, Gprime_st))
   }

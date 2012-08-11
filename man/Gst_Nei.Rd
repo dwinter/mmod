@@ -29,10 +29,10 @@ Gst_Nei(nancycats)
   253-259.
 }
 \seealso{
-  Other diffstat: \code{\link{diff_stats}},
-  \code{\link{D_Jost}}, \code{\link{Gst_Hedrick}},
-  \code{\link{Phi_st_Meirmans}}
-
   Other Nei: \code{\link{pairwise_Gst_Nei}}
+
+  Other diffstat: \code{\link{D_Jost}},
+  \code{\link{Gst_Hedrick}}, \code{\link{Phi_st_Meirmans}},
+  \code{\link{diff_stats}}
 }
 

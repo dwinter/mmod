@@ -3,7 +3,7 @@
 \title{Randomly create genotypes}
 \usage{
   rgenotypes(n, ploidy, probs, genind = FALSE,
-    pop_name = "A")
+    pop_name = "A", loc_name = "L1")
 }
 \arguments{
   \item{n}{integer number of indviduals.}
@@ -18,6 +18,9 @@
 
   \item{pop_name}{charcter Name for population defined in
   genind object (not required if genind is not TRUE)}
+
+  \item{loc_name}{character name to five locus in genind
+  object}
 }
 \value{
   Either a matrix with individuals in columns, alleles in

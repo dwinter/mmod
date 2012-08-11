@@ -14,5 +14,5 @@ HsHt <- function(x, n){
     Hs_est <- (2*harmN/(2*harmN-1))*HpS
     HpT <- 1 - sum(apply(a,2,mean, na.rm=TRUE)^2)
     Ht_est <- HpT + Hs_est/(2*harmN*n)
-    return(list(Ht_est = Ht_est, Hs_est=Hs_est))
+    return(c(Ht_est, Hs_est))
 }

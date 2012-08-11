@@ -39,8 +39,8 @@ diff_stats <- function(x, phi_st=FALSE){
   pops <- pop(x)
   per.locus <- function(g) {
     hets <- HsHt(g, n) #A private function form mmod
-    Ht_est <- hets["Ht_est"]
-    Hs_est <- hets["Hs_est"]
+    Ht_est <- hets[1]
+    Hs_est <- hets[2]
     G_est <- (Ht_est-Hs_est)/Ht_est
     D <- (Ht_est-Hs_est)/(1-Hs_est) * (n/(n-1))
     Gprime_st <- n * (Ht_est - Hs_est) / ((n * Ht_est - Hs_est) * (1 - Hs_est))

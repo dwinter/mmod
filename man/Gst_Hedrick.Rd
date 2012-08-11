@@ -40,10 +40,10 @@ Gst_Hedrick(nancycats)
   Resources, 11:5-18
 }
 \seealso{
-  Other diffstat: \code{\link{diff_stats}},
-  \code{\link{D_Jost}}, \code{\link{Gst_Nei}},
-  \code{\link{Phi_st_Meirmans}}
-
   Other Hedrick: \code{\link{pairwise_Gst_Hedrick}}
+
+  Other diffstat: \code{\link{D_Jost}},
+  \code{\link{Gst_Nei}}, \code{\link{Phi_st_Meirmans}},
+  \code{\link{diff_stats}}
 }
 

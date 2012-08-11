@@ -35,8 +35,8 @@ Phi_st_Meirmans(nancycats[1:26,])
   DNA restriction data. Genetics 131: 479-91
 }
 \seealso{
-  Other diffstat: \code{\link{diff_stats}},
-  \code{\link{D_Jost}}, \code{\link{Gst_Hedrick}},
-  \code{\link{Gst_Nei}}
+  Other diffstat: \code{\link{D_Jost}},
+  \code{\link{Gst_Hedrick}}, \code{\link{Gst_Nei}},
+  \code{\link{diff_stats}}
 }
 

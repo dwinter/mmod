@@ -31,8 +31,8 @@ D_Jost <- function(x){
   pops <- pop(x)
   D.per.locus <- function(g) {
     hets <- HsHt(g,n) #A private function form mmod
-    Ht_est <- hets["Ht_est"]
-    Hs_est <- hets["Hs_est"]
+    Ht_est <- hets[1]
+    Hs_est <- hets[2]
     D <- (Ht_est-Hs_est)/(1-Hs_est) * (n/(n-1))
     return(c(Hs_est, Ht_est, D))
   }

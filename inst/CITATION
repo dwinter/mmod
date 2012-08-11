@@ -1,0 +1,10 @@
+﻿@article {
+author = {Winter, David J.},
+title = {mmod: an {R} library for the calculation of population differentiation statistics},
+journal = {Molecular Ecology Resources},
+issn = {1755-0998},
+url = {http://dx.doi.org/10.1111/j.1755-0998.2012.03174.x},
+doi = {10.1111/j.1755-0998.2012.03174.x},
+keywords = {Dest, G″ST, GST, φ′ST, empirical population genetics, R, differentiation},
+year = {2012},
+}
