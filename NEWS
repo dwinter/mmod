@@ -23,3 +23,8 @@ Extended the Vignette to include a small discussion on which stats mmod can and
 can't calculate and how to chose the right one for your study
 Caught some typos and made a number of small changes
 
+
+1.0 __
+
+Mainly small tweaks to existing tools
+Bumped to 1.0 as paper describing this software is out (CITATION included)
