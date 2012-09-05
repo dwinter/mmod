@@ -28,3 +28,7 @@ Caught some typos and made a number of small changes
 
 Mainly small tweaks to existing tools
 Bumped to 1.0 as paper describing this software is out (CITATION included)
+
+1.01
+
+Fixed bug in Gst_Nei, reported by Aaron Adamack
