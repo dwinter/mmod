@@ -1,0 +1,34 @@
+Package: mmod
+Version: 1.0
+Date: 2011-11-22
+Title: Modern measures of population differentiation
+Author: David Winter
+Maintainer: David Winter <david.winter@gmail.com>
+Depends:
+    R (>= 2.6.0),
+    adegenet
+Suggests:
+    pegas
+ZipData: no
+Description: mmod provides functions for measuring
+    population divergence from genotypic data
+License: MIT
+URL: https://github.com/dwinter/mmod
+Collate:
+    'diff_stats.R'
+    'D_Jost.R'
+    'Gst_Hedrick.R'
+    'Gst_Nei.R'
+    'harmonic_mean.R'
+    'jacknife_pop.R'
+    'pairwise_D.R'
+    'pairwise_Gst_Hedrick.R'
+    'pairwise_Gst_Nei.R'
+    'help.R'
+    'diff_test.R'
+    'chao_bootstrap.R'
+    'summarise_bootstrap.R'
+    'rgenotypes.R'
+    'dist.codom.R'
+    'Phi_st_Meirmans.R'
+    'HsHt.R'

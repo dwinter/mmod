@@ -1,0 +1,30 @@
+* 0.1.1 __
+
+First release on CRAN - bassic diff. stats including pairwise versions and 
+exact test of differentiation. 
+
+* 0.2 __
+
+More documentation. Added a vignette to reproduce analysis for nancycats data
+
+* 0.2.1 __
+
+chao_boostrap now uses multinomial distribution to create samples (previously 
+it resampled individuals) - this makes very little difference. 
+
+Discussion in chao_bootsrap's documentation about bias in bootstrapping
+procedure
+Significant speeding up of all functions by using base R as much as possible
+
+0.3 __
+
+Added Phi_st_Meirmans - a differentiation measure based on the AMOVA framework
+Extended the Vignette to include a small discussion on which stats mmod can and
+can't calculate and how to chose the right one for your study
+Caught some typos and made a number of small changes
+
+
+1.0 __
+
+Mainly small tweaks to existing tools
+Bumped to 1.0 as paper describing this software is out (CITATION included)
