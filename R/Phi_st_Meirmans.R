@@ -2,7 +2,7 @@
 #'
 #' This function calculates Meirmans' corrected version of Phi_st, an Fst 
 #' analog produced using the AMOVA framework. Note, the global estimate produced
-#' by this function is calculated as the mean distance between indivudals
+#' by this function is calculated as the mean distance between individuals
 #' across all loci, and this exlcuded individuals with one or more missing 
 #' value. 
 #'

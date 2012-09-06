@@ -35,30 +35,22 @@ dist.codom <- function(x, matrix=TRUE, global=TRUE, na.rm=TRUE){
    stop("Sorry, the function dist.codom only works diploid datasets at the moment. Fixing this is on the TODO list, contact the author if this causes a problem...")
   }
 
-  pair <- function(l, x, y){
-  #find distance between individuls x and y for locus l
-    return( sum( abs(l@tab[x,]- l@tab[y,]) ) / 2 )
-  }
   
   per.loc <- function(l){
 	if(na.rm){ 
 	  l@tab <- na.omit(l@tab)
 	  dropped <- attr(l@tab, "na.action") 
-	}
-	n.inds <- dim(l@tab)[1]
-	allP <- combn(1:n.inds, 2)
-	res <- sapply(1:dim(allP)[2], function(i) pair(l, allP[,i][1], allP[,i][2]))
-	#trick to turn vector into distance matrix
-	attributes(res) <- attributes(dist(1:n.inds))	
-	if(matrix) {
-		res <- as.matrix(res)
-		}
-	if(na.rm){
-		return(list(distances=res, dropped=dropped))
-		}
-	else return(res)		
-	}
-
+	    }
+    else{
+        dropped <- NULL
+    }
+	res <- dist(l@tab, "manhattan") / 2
+	if(matrix){
+	    res <- as.matrix(res)
+        }
+        
+    return(list(distances=res, dropped=dropped))
+    }
   
 	if(global){
 		has_nas <- FALSE
@@ -73,7 +65,7 @@ dist.codom <- function(x, matrix=TRUE, global=TRUE, na.rm=TRUE){
 			x <- genind(tab=n_tab, pop=n_pop)
 		}	
 		dists <- lapply(seploc(x), per.loc)
-		xbar <- Reduce("+", lapply(dists, function(x) x$dist))  / length(dists)
+        xbar <- Reduce("+", lapply(dists, function(d) d$distances)) / length(dists)
 		if(has_nas){
 			return(list(distances=xbar, dropped=dropped))
 		}
