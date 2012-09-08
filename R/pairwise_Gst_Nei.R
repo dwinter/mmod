@@ -24,7 +24,7 @@ pairwise_Gst_Nei <- function(x, linearized=FALSE) {
   pops <- seppop(x)
   n.pops <- length(pops)
   #all combinations 
-  allP <- combn(1:n.pops, 2)
+  allP <- utils::combn(1:n.pops, 2)
   # calculate tfh statistic
   pair <- function(index.a,index.b){
     a <- pops[[index.a]]
