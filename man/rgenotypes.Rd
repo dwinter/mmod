@@ -41,10 +41,8 @@
 }
 \examples{
 data(nancycats)
-obs_allele_freqs <- apply(nancycats$tab[,1:16], 2,mean)
+obs_allele_freqs <- apply(nancycats$tab[,1:16], 2,mean, na.rm=TRUE)
 rgenotypes(10, 2, obs_allele_freqs)
-obs_allele_freqs_noNA <- apply(nancycats$tab[,1:16], 2,mean, na.rm=TRUE)
-rgenotypes(10, 2, obs_allele_freqs_noNA)
 }
 \seealso{
   \code{\link{rmultinom}} which this function wraps.

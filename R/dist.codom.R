@@ -26,7 +26,8 @@
 #'  
 #' @examples
 #' data(nancycats)
-#' dist.codom(nancycats[,1])
+#' dm <- dist.codom(nancycats[40:45], matrix=F)
+#' head(dm)
 
 
 dist.codom <- function(x, matrix=TRUE, global=TRUE, na.rm=TRUE){

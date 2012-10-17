@@ -35,7 +35,8 @@
 }
 \examples{
 data(nancycats)
-dist.codom(nancycats[,1])
+dm <- dist.codom(nancycats[40:45], matrix=F)
+head(dm)
 }
 \references{
   Kosman E., Leonard, K.J. Similarity coefficients for
