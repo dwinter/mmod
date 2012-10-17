@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>Index. mmod 1.01</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="David Winter">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">mmod 1.01</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <div class="row">
+  <div class="span8">
+    <p>#Modern Measures of Differentiation</p>
+
+<p><code>mmod</code> is an R package for calculating modern population divergence statistics. </p>
+
+<p>##Quickstart</p>
+
+<p>###Install</p>
+
+<p>mmod is on CRAN, so you can install the latest stable version using 
+<code>install.packages(&quot;mmod&quot;)</code>. This github repository may be running ahead of 
+the version on CRAN, if you really want the latest version you can download
+ <code>mmod_*.tar.gz</code> and install via the command line (or with the GUI if you&#39;d 
+ prefer):</p>
+
+<pre><code>    $R CMD INSTALL mmod_*.tar.gz 
+</code></pre>
+
+<p>###Usage
+Once it&#39;s up an running all you need is genepop (or fstat) file with your data</p>
+
+<pre><code>    &gt;library(mmod)
+    &gt;my_data &lt;- read.genepop(&quot;my_file.gen&quot;)
+    &gt;diff_stats(my_data)
+</code></pre>
+
+<p>##Overview</p>
+
+<p>Population geneticists have traditionally used Nei&#39;s Gst (often confusingly 
+called Fst&hellip;) to measure divergence between populations. It turns out, Gst 
+doesn&#39;t really measure divergence so, <a href="http://www.molecularecologist.com/2011/03/should-i-use-fst-gst-or-d-2/">a set of new measures have been developed</a></p>
+
+<p>mmod is a package that brings two of these measures; Hedricks (2005, 2011) G&#39;&#39;st 
+ Jost&#39;s (2008) D and Meirman&#39;s (2005) φ&#39;st to R, along with a function that 
+ calculates Nei&#39;s Gst using nearly unbiased estimators for Hs and Ht  (the two 
+ key parameters from which most of these stats are calculated). All these 
+ functions work on <code>genind</code> objects from the library <code>adegenet</code> so data can be 
+ read in from standard <code>genepop</code> for <code>fstat</code> files. An overview of a typical 
+ usage is provided in a vignette called &ldquo;demo&rdquo;, acessable from 
+ <code>vignette(&quot;demo&quot;, package=&quot;mmod&quot;)</code>, I suggest new users read this before that 
+ start. </p>
+
+<p>mmod is still very much in development, so I&#39;m happy to receive any
+suggestions contributions or bugs you might find</p>
+
+
+    <h2>Help topics</h2>
+
+    <h3></h3>
+    
+    
+    <ul class="index">
+        
+      <li>
+        <code><a href="chao_bootstrap.html">chao_bootstrap</a></code><br />Produce bootstrap samples from each subpopulation of a genind object</li>
+            
+      <li>
+        <code><a href="diff_stats.html">diff_stats</a></code><br />Calculate differentiation statistics for a genind object</li>
+            
+      <li>
+        <code><a href="diff_test.html">diff_test</a></code><br />An exact test of population differentiation for genind objects</li>
+            
+      <li>
+        <code><a href="dist.codom.html">dist.codom</a></code><br />Calculate distance between individual for co-dominant locus</li>
+            
+      <li>
+        <code><a href="D_Jost.html">D_Jost</a></code><br />Calculate Jost's D</li>
+            
+      <li>
+        <code><a href="Gst_Hedrick.html">Gst_Hedrick</a></code><br />Calculate Nei's Gst using estimators for Hs and Ht</li>
+            
+      <li>
+        <code><a href="Gst_Nei.html">Gst_Nei</a></code><br />Calculate Nei's Gst using estimators for Hs and Ht</li>
+            
+      <li>
+        <code><a href="harmonic_mean.html">harmonic_mean</a></code><br />Harmonic mean</li>
+            
+      <li>
+        <code><a href="jacknife_populations.html">jacknife_populations</a></code><br />Create jacknife samples of a genind object by population</li>
+            
+      <li>
+        <code><a href="mmod.html">mmod</a></code>(mmod-package)<br />Modern Measures of Differentiation</li>
+            
+      <li>
+        <code><a href="pairwise_D.html">pairwise_D</a></code><br />Calculates pairwise values of Jost's D</li>
+            
+      <li>
+        <code><a href="pairwise_Gst_Hedrick.html">pairwise_Gst_Hedrick</a></code><br />Calculates pairwise values of Hedrick's G'st</li>
+            
+      <li>
+        <code><a href="pairwise_Gst_Nei.html">pairwise_Gst_Nei</a></code><br />Calculates pairwise values of Nei's Gst</li>
+            
+      <li>
+        <code><a href="Phi_st_Meirmans.html">Phi_st_Meirmans</a></code><br />Calculate Phi_st from a genind object</li>
+            
+      <li>
+        <code><a href="rgenotypes.html">rgenotypes</a></code><br />Randomly create genotypes</li>
+            
+      <li>
+        <code><a href="summarise_bootstrap.html">summarise_bootstrap</a></code><br />Apply a differentiation statistic to a bootstrap sample</li>
+    
+    </ul>
+  </div>
+  
+  <div class="span3 offset1">
+    <h2>Vignettes</h2>
+    <ul>
+      <li><a href="vignettes/mmod-demo.pdf">mmod-demo</a></li>
+    </ul>
+        
+    <h2>Dependencies</h2>
+    <ul>
+      <li><strong>Depends</strong>: adegenet</li>
+      <li><strong>Imports</strong>: </li>
+      <li><strong>Suggests</strong>: pegas</li>
+      <li><strong>Extends</strong>: </li>
+    </ul>
+     
+    
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>
