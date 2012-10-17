@@ -35,7 +35,7 @@
 }
 \examples{
 data(nancycats)
-dm <- dist.codom(nancycats[40:45], matrix=F)
+dm <- dist.codom(nancycats[40:45], matrix=FALSE)
 head(dm)
 }
 \references{
