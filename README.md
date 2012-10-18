@@ -37,7 +37,10 @@ mmod is a package that brings two of these measures; Hedricks (2005, 2011) G''st
  usage is provided in a vignette called "demo", acessable from 
  `vignette("demo", package="mmod")`, I suggest new users read this before that 
  start. 
- 
-mmod is still very much in development, so I'm happy to receive any
-suggestions contributions or bugs you might find
+
+##Help
+All functions are documented, there are [pretty versions of the help pages here]
+(http://dwinter.github.com/mmod/).
+
+
 
