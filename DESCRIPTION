@@ -1,13 +1,12 @@
 Package: mmod
-Version: 1.01
+Version: 1.1.1
 Date: 2011-11-22
 Title: Modern measures of population differentiation
 Author: David Winter
 Maintainer: David Winter <david.winter@gmail.com>
 Depends:
     R (>= 2.6.0),
-    adegenet
-Suggests:
+    adegenet,
     pegas
 ZipData: no
 Description: mmod provides functions for measuring
@@ -32,3 +31,4 @@ Collate:
     'dist.codom.R'
     'Phi_st_Meirmans.R'
     'HsHt.R'
+    'as.genind.DNAbin.R'
