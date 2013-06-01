@@ -36,7 +36,6 @@ dist.codom <- function(x, matrix=TRUE, global=TRUE, na.rm=TRUE){
    stop("Sorry, the function dist.codom only works diploid datasets at the moment. Fixing this is on the TODO list, contact the author if this causes a problem...")
   }
 
-  
   per.loc <- function(l){
 	if(na.rm){ 
 	  l@tab <- na.omit(l@tab)
@@ -54,7 +53,6 @@ dist.codom <- function(x, matrix=TRUE, global=TRUE, na.rm=TRUE){
     }
   
 	if(global){
-		has_nas <- FALSE
 		if(any(is.na(x@tab))){
 		# if we want a global estimate make new genind with out NAs
 		# (just chopping out NAs from x@tab won't work)
