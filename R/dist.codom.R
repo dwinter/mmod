@@ -50,6 +50,7 @@ dist.codom <- function(x, matrix=TRUE, global=TRUE, na.rm=TRUE){
     }
   
 	if(global){
+        has_nas <- FALSE
 		if(any(is.na(x@tab))){
 		# if we want a global estimate make new genind with out NAs
 		# (just chopping out NAs from x@tab won't work)

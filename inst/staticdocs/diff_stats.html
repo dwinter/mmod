@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>diff_stats. mmod 1.01</title>
+<title>diff_stats. mmod 1.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -20,7 +20,7 @@
     <div class="navbar">
   <div class="navbar-inner">
     <div class="container">
-      <a class="brand" href="#">mmod 1.01</a>
+      <a class="brand" href="#">mmod 1.2</a>
       <div class="nav">
         <ul class="nav">
           <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
@@ -40,7 +40,7 @@
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><span class="functioncall"><a href='diff_stats.html'>diff_stats</a></span><span class="keyword">(</span><span class="symbol">x</span><span class="keyword">,</span> <span class="argument">phi_st</span> <span class="argument">=</span> <span class="number">FALSE</span><span class="keyword">)</span></pre>
+    <pre>diff_stats(x, phi_st = FALSE)</pre>
     
     <h2>Arguments</h2>
     <dl>
@@ -112,8 +112,9 @@
     </div>
     
     <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'><span class="functioncall"><a href='http://www.inside-r.org/r-doc/utils/data'>data</a></span><span class="keyword">(</span><span class="symbol">nancycats</span><span class="keyword">)</span>
-<span class="functioncall"><a href='diff_stats.html'>diff_stats</a></span><span class="keyword">(</span><span class="symbol">nancycats</span><span class="keyword">)</span></div>
+    <pre class="examples"><div class='input'>data(nancycats)
+diff_stats(nancycats)
+</div>
 <div class='output'>$per.locus
              Hs        Ht        Gst Gprime_st          D
 fca8  0.7708277 0.8614311 0.10517782 0.4844461 0.42006021

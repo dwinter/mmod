@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>dist.codom. mmod 1.01</title>
+<title>dist.codom. mmod 1.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="">
 
@@ -20,7 +20,7 @@
     <div class="navbar">
   <div class="navbar-inner">
     <div class="container">
-      <a class="brand" href="#">mmod 1.01</a>
+      <a class="brand" href="#">mmod 1.2</a>
       <div class="nav">
         <ul class="nav">
           <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
@@ -40,7 +40,7 @@
 <div class="row">
   <div class="span8">
     <h2>Usage</h2>
-    <pre><span class="functioncall"><a href='dist.codom.html'>dist.codom</a></span><span class="keyword">(</span><span class="symbol">x</span><span class="keyword">,</span> <span class="argument">matrix</span> <span class="argument">=</span> <span class="number">TRUE</span><span class="keyword">,</span> <span class="argument">global</span> <span class="argument">=</span> <span class="number">TRUE</span><span class="keyword">,</span> <span class="argument">na.rm</span> <span class="argument">=</span> <span class="number">TRUE</span><span class="keyword">)</span></pre>
+    <pre>dist.codom(x, matrix = TRUE, global = TRUE, na.rm = TRUE)</pre>
     
     <h2>Arguments</h2>
     <dl>
@@ -93,9 +93,10 @@
     </div>
     
     <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'><span class="functioncall"><a href='http://www.inside-r.org/r-doc/utils/data'>data</a></span><span class="keyword">(</span><span class="symbol">nancycats</span><span class="keyword">)</span>
-<span class="symbol">dm</span> <span class="assignement">&lt;-</span> <span class="functioncall"><a href='dist.codom.html'>dist.codom</a></span><span class="keyword">(</span><span class="symbol">nancycats</span><span class="keyword">[</span><span class="number">40</span><span class="keyword">:</span><span class="number">45</span><span class="keyword">]</span><span class="keyword">,</span> <span class="argument">matrix</span><span class="argument">=</span><span class="number">FALSE</span><span class="keyword">)</span>
-<span class="functioncall"><a href='http://www.inside-r.org/r-doc/utils/head'>head</a></span><span class="keyword">(</span><span class="symbol">dm</span><span class="keyword">)</span></div>
+    <pre class="examples"><div class='input'>data(nancycats)
+dm <- dist.codom(nancycats[40:45], matrix=FALSE)
+head(dm)
+</div>
 <div class='output'>$distances
           1         2         3         4         5
 2 0.6666667                                        
