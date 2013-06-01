@@ -1,3 +1,10 @@
+*1.1 __
+
+New function to turn a DNAbin object (from ape) into a genind
+with frequency of haplotypes/alleles
+Implemented tests for stats functions
+
+
 * 1.01 __
 
 Fixed bug in Gst_Nei, reported by Aaron Adamack

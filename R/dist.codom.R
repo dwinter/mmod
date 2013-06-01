@@ -32,9 +32,6 @@
 
 dist.codom <- function(x, matrix=TRUE, global=TRUE, na.rm=TRUE){
   
-  if (! ploidy(x) == 2){
-   stop("Sorry, the function dist.codom only works diploid datasets at the moment. Fixing this is on the TODO list, contact the author if this causes a problem...")
-  }
 
   per.loc <- function(l){
 	if(na.rm){ 
@@ -44,7 +41,7 @@ dist.codom <- function(x, matrix=TRUE, global=TRUE, na.rm=TRUE){
     else{
         dropped <- NULL
     }
-	res <- dist(l@tab, "manhattan") / 2
+	res <- dist(l@tab, "manhattan") / l@ploidy
 	if(matrix){
 	    res <- as.matrix(res)
         }
