@@ -7,7 +7,7 @@
 # function is not exported (if someone has a use for it I can change this).
 
 HsHt <- function(x, n){
-    harmN <- harmonic_mean(table(pop(x)))
+    harmN <- harmonic_mean(by(x@tab, pop(x), sum, na.rm=TRUE))
     pops <- pop(x)
     a <- apply(x@tab,2,function(row) tapply(row, pops, mean, na.rm=TRUE))
     HpS <- sum(1 - apply(a^2, 1, sum, na.rm=TRUE)) / n
