@@ -36,7 +36,6 @@ dist.codom <- function(x, matrix=TRUE, global=TRUE, na.rm=TRUE){
    stop("Sorry, the function dist.codom only works diploid datasets at the moment. Fixing this is on the TODO list, contact the author if this causes a problem...")
   }
 
-  
   per.loc <- function(l){
 	if(na.rm){ 
 	  l@tab <- na.omit(l@tab)
@@ -54,26 +53,6 @@ dist.codom <- function(x, matrix=TRUE, global=TRUE, na.rm=TRUE){
     }
   
 	if(global){
-
-
-
-dist.codom.slow <- function(x){
-        all_loci <- seploc(x)
-        nloc <- length(all_loci)
-        n <- length(x@ind.names)
-        dm <- matrix(0,n,n)
-        missing <- matrix(0,n,n)
-        for(i in 1:nloc){
-            dists <- as.matrix(dist(all_loci[[i]]@tab, "manhattan" )/x@ploidy)
-            missing <- missing + ifelse(is.na(dists),1,0)
-            dists[is.na(dists)] <- 0
-            dm <- dm + dists
-        }
-        res <- dm/(nloc-missing)
-        return(res)
-}
-
-
 		if(any(is.na(x@tab))){
 		# if we want a global estimate make new genind with out NAs
 		# (just chopping out NAs from x@tab won't work)
