@@ -19,9 +19,9 @@
 #' Gst_Nei(nancycats)
 
 Gst_Nei <- function(x){
-  n <- length(unique(pop(x)))
+  
   Gst.per.locus <- function(g) { 
-    hets <- HsHt(g,n) #A private function form mmod
+    hets <- HsHt(g) #A private function form mmod
     Ht_est <- hets[1]
     Hs_est <- hets[2]
     G_est <- (Ht_est-Hs_est)/Ht_est

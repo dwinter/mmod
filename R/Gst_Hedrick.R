@@ -26,20 +26,20 @@
 #' Gst_Hedrick(nancycats)
 
 Gst_Hedrick <- function(x){
-  n <- length(unique(pop(x)))
-  harmN <- harmonic_mean(table(pop(x)))
-  pops <- pop(x)
+  gn <- length(unique(pop(x)))  
+
   Gst.per.locus <- function(g) {
-    hets <- HsHt(g,n) #A private function form mmod
-    Ht_est <- hets[1]
-    Hs_est <- hets[2]
+    hets <- HsHt(g) #A private function form mmod
+    Ht_est <- hets[[1]]
+    Hs_est <- hets[[2]]
+    n <- hets[[3]]
     Gprime_st <- n * (Ht_est - Hs_est) / ((n * Ht_est - Hs_est) * (1 - Hs_est))
     return(c(Hs_est, Ht_est, Gprime_st))
   }
  loci <- t(sapply(seploc(x), Gst.per.locus))
   global_Hs <- mean(loci[,1], na.rm=T)
   global_Ht <- mean(loci[,2], na.rm=T)
-  global_GstH <-  n * (global_Ht - global_Hs) / ((n * global_Ht - global_Hs)*(1-global_Hs))
+  global_GstH <-  gn * (global_Ht - global_Hs) / ((gn * global_Ht - global_Hs)*(1-global_Hs))
   return(list("per.locus"=loci[,3], "global"=global_GstH))
 
 }

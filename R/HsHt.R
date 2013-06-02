@@ -6,13 +6,15 @@
 # return these estimates (becuase they use this function internally). This
 # function is not exported (if someone has a use for it I can change this).
 
-HsHt <- function(x, n){
-    harmN <- harmonic_mean(by(x@tab, pop(x), sum, na.rm=TRUE))
+HsHt <- function(x){
     pops <- pop(x)
+    n_by_pop <- by(x@tab, pops, sum, na.rm=TRUE)
+    n <- sum(n_by_pop > 0)
+    harmN <- harmonic_mean(n_by_pop[n_by_pop >0])
     a <- apply(x@tab,2,function(row) tapply(row, pops, mean, na.rm=TRUE))
     HpS <- sum(1 - apply(a^2, 1, sum, na.rm=TRUE)) / n
     Hs_est <- (2*harmN/(2*harmN-1))*HpS
     HpT <- 1 - sum(apply(a,2,mean, na.rm=TRUE)^2)
     Ht_est <- HpT + Hs_est/(2*harmN*n)
-    return(c(Ht_est, Hs_est))
+    return(c(Ht_est, Hs_est, n))
 }

@@ -1,4 +1,4 @@
 library(testthat)
-library(mmod)
+#library(mmod)
 
 test_package("mmod")

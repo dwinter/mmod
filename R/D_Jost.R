@@ -26,20 +26,21 @@
 #' @family D
 
 D_Jost <- function(x){
-  n <- length(unique(pop(x)))
-  harmN <- harmonic_mean(table(pop(x)))
-  pops <- pop(x)
+  gn <- length(unique(pop(x))) 
+  
   D.per.locus <- function(g) {
-    hets <- HsHt(g,n) #A private function form mmod
-    Ht_est <- hets[1]
-    Hs_est <- hets[2]
+    hets <- HsHt(g) #A private function form mmod
+    Ht_est <- hets[[1]]
+    Hs_est <- hets[[2]]
+    n <- hets[[3]]
     D <- (Ht_est-Hs_est)/(1-Hs_est) * (n/(n-1))
     return(c(Hs_est, Ht_est, D))
   }
+
  loci <- t(sapply(seploc(x), D.per.locus))
   global_Hs <- mean(loci[,1], na.rm=T)
   global_Ht <- mean(loci[,2], na.rm=T)
-  global_D <-  (global_Ht - global_Hs)/(1 - global_Hs ) * (n/(n-1))
+  global_D <-  (global_Ht - global_Hs)/(1 - global_Hs ) * (gn/(gn-1))
   harm_D <- harmonic_mean(loci[,3])
   return(list("per.locus"=loci[,3],
               "global.het"=global_D,

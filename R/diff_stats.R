@@ -33,14 +33,14 @@
 #' data(nancycats)
 #' diff_stats(nancycats)
 
-diff_stats <- function(x, phi_st=FALSE){
-  n <- length(unique(pop(x)))
-  harmN <- harmonic_mean(table(pop(x)))
-  pops <- pop(x)
+diff_stats <- function(x, phi_st=FALSE){  
+  #Global mean population sizes for global stats (can vary per locus due to NAs)
+  gn <- length(unique(pop(x))) 
   per.locus <- function(g) {
-    hets <- HsHt(g, n) #A private function form mmod
-    Ht_est <- hets[1]
-    Hs_est <- hets[2]
+    hets <- HsHt(g) #A private function form mmod
+    Ht_est <- hets[[1]]
+    Hs_est <- hets[[2]]
+    n <- hets[[3]]
     G_est <- (Ht_est-Hs_est)/Ht_est
     D <- (Ht_est-Hs_est)/(1-Hs_est) * (n/(n-1))
     Gprime_st <- n * (Ht_est - Hs_est) / ((n * Ht_est - Hs_est) * (1 - Hs_est))
@@ -67,8 +67,8 @@ diff_stats <- function(x, phi_st=FALSE){
   global <- c(Hs = global_Hs, 
               Ht = global_Ht, 
               Gst_est = global_G_est, 
-              "Gprime_st"= n * (global_Ht - global_Hs) / ((n * global_Ht - global_Hs)*(1-global_Hs)),
-              "D_het" = (global_Ht - global_Hs)/(1 - global_Hs ) * (n/(n-1)),
+              "Gprime_st"= gn * (global_Ht - global_Hs) / ((gn * global_Ht - global_Hs)*(1-global_Hs)),
+              "D_het" = (global_Ht - global_Hs)/(1 - global_Hs ) * (gn/(gn-1)),
               "D_mean"= harmonic_mean(loci[,5]))
   
   if(phi_st){
