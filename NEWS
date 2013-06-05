@@ -1,9 +1,9 @@
-*1.1 __
+*1.2 __
 
 New function to turn a DNAbin object (from ape) into a genind
 with frequency of haplotypes/alleles
 Implemented tests for stats functions
-
+Pairwise functions maintain their pop names (thanks Brend Gruber)
 
 * 1.01 __
 
