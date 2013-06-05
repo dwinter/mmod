@@ -30,8 +30,9 @@ pairwise_Gst_Hedrick<- function(x, linearized=FALSE) {
     return(Gst_Hedrick(temp)$global)
     }
   res <- sapply(1:dim(allP)[2], function(i) pair(allP[,i][1], allP[,i][2]))
-  attributes(res) <- attributes(dist(1:n.pops))
-  if(linearized){
+  attributes(res) <- list(class="dist", Diag=FALSE, Upper=FALSE, 
+                          Labels=x@pop.names,Size=n.pops)
+if(linearized){
    return(res/(1-res))
   }
   return(res)

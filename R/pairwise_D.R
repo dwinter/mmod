@@ -30,7 +30,8 @@ pairwise_D <- function(x, linearized=FALSE) {
     return(D_Jost(temp)$global.het)
     }
   res <- sapply(1:dim(allP)[2], function(i) pair(allP[,i][1], allP[,i][2]))
-  attributes(res) <- attributes(dist(1:n.pops))
+  attributes(res) <- list(class="dist", Diag=FALSE, Upper=FALSE, 
+                          Labels=x@pop.names,Size=n.pops)
   if(linearized){
      return(res/(1-res))
      }
