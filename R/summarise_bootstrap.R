@@ -62,7 +62,7 @@ summarise_bootstrap <- function(bs, statistic){
   return(res)
 }
 
-#' @S3method print summarised_bs
+#' @export 
 
 print.summarised_bs <- function(x, ...){
   

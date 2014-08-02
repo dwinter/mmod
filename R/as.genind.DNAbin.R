@@ -2,6 +2,8 @@
 #'
 #'Convert a DNAbin object into a genind object
 #'
+#'@import pegas
+#'@import adegenet
 #'@param x object of class DNAbin
 #'@param pops vector of population assignemnts for each sequence
 #'@return genind
