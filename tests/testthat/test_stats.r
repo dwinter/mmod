@@ -1,8 +1,8 @@
-context("accuracy-stats")
+context("accuracy-of-stats")
 
 test_that("Stats are accurately calculated", { 
     #setup
-    g <- read.genepop("tests/test.gen")
+    g <- read.genepop("test.gen")
     dstats <- lapply(diff_stats(g), round, 3)
     dstats_loc <- dstats$per.loc
     dstats_glob <- dstats$global

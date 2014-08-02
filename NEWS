@@ -1,3 +1,7 @@
+*1.2.1 __
+
+Small Updates to keep up with best practices (devtools CRAN)
+
 *1.2 __
 
 New function to turn a DNAbin object (from ape) into a genind
