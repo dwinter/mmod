@@ -1,3 +1,6 @@
+[![Travis-CI Build
+Status](https://travis-ci.org/dwinter/mmod.png?branch=master)](https://travis-ci.org/dwinter/mmod)
+
 #Modern Measures of Differentiation
 
 `mmod` is an R package for calculating modern population divergence statistics. 
