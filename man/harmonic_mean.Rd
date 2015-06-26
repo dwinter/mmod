@@ -8,6 +8,8 @@ harmonic_mean(x, na.rm = TRUE)
 }
 \arguments{
 \item{x}{numeric vector}
+
+\item{na.rm}{logical remove NAs prior or calculation}
 }
 \value{
 harmonic mean of vector

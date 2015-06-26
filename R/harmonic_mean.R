@@ -3,6 +3,8 @@
 #' Calculate the harmonic mean of a numeric vector
 #' (will return NA if there are any negative numbers in the vector)
 #' @param x numeric vector
+#' @param na.rm logical remove NAs prior or calculation
+#' @export
 #' @export
 #' @return harmonic mean of vector
 #' @examples
