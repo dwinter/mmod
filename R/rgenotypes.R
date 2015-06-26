@@ -35,7 +35,7 @@ rgenotypes <- function(n, ploidy, probs, genind=FALSE, pop_name="A", loc_name = 
  if(genind){
     res <- t(res)
     colnames(res) <- paste(loc_name, 1:length(probs), sep=".")
-    res <- genind(res/2, rep(pop_name, n)) 
+    res <- genind(res, rep(pop_name, n, ploidy=ploidy)) 
  }
  return(res)
 }

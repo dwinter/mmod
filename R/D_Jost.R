@@ -13,7 +13,9 @@
 #' @return per.locus values for each D for each locus in the dataset
 #' @return global estimtes for D based on overall heterozygosity or the harmonic
 #' mean of values for each locus
-#'
+#' @param hsht_mean The type of mean to use to calculate values of Hs and Ht
+#' for a global estimate. (Default is teh airthmetic mean, can also be set to
+#' the harmonic mean).
 #' @param x genind object (from package adegenet)
 #' @export
 #' @examples
@@ -26,7 +28,7 @@
 #' @family diffstat
 #' @family D
 
-D_Jost <- function(x, hsht_mean = "harmonic"){
+D_Jost <- function(x, hsht_mean = "arithmetic"){
   mean_type <- match.arg(hsht_mean, c("arithmetic", "harmonic"))
   mean_f <- if(mean_type == "arithmetic") mean else harmonic_mean
   gn <- length(unique(pop(x))) 
@@ -43,7 +45,10 @@ D_Jost <- function(x, hsht_mean = "harmonic"){
 }
 
 D.per.locus <- function(g) {
-    hets <- HsHt(g) #A private function form mmod
+    hets <- HsHt(g)
+    if(all(is.na(hets))){
+       return(hets)
+    }
     Ht_est <- hets[[1]]
     Hs_est <- hets[[2]]
     n <- hets[[3]]

@@ -34,6 +34,10 @@ dist.codom <- function(x, matrix=TRUE, global=TRUE, na.rm=TRUE){
   
 
   per.loc <- function(l){
+    ploidy <- unique(l@ploidy) 
+    if(length(ploidy) > 1){
+        stop("All samples must have sample ploidy for dist.codom")
+    }
 	if(na.rm){ 
 	  l@tab <- na.omit(l@tab)
 	  dropped <- attr(l@tab, "na.action") 
@@ -41,7 +45,7 @@ dist.codom <- function(x, matrix=TRUE, global=TRUE, na.rm=TRUE){
     else{
         dropped <- NULL
     }
-	res <- dist(l@tab, "manhattan") / l@ploidy
+	res <- dist(l@tab, "manhattan") / ploidy
 	if(matrix){
 	    res <- as.matrix(res)
         }

@@ -3,7 +3,8 @@
 #' This function calculates Jost's D, a measure of genetic
 #' differentiation, between all combinations of populaitons
 #' in a genind object.
-#'
+#' @param hsht_mean type of mean to use for the global estimates of Hs and Ht 
+#' default it "arithmetic", can also be set to "harmonic". 
 #' @param x genind object (from package adegenet)
 #' @param linearized logical, if TRUE will turned linearized D (1/1-D)
 #' @export
@@ -17,7 +18,7 @@
 #' @family pairwise
 #' @family D
 
-pairwise_D <- function(x, linearized=FALSE) {
+pairwise_D <- function(x, linearized=FALSE, hsht_mean="arithmetic") {
   pops <- seppop(x)
   n.pops <- length(pops)
   #all combinations 
@@ -27,18 +28,13 @@ pairwise_D <- function(x, linearized=FALSE) {
     a <- pops[[index.a]]
     b <- pops[[index.b]]
     temp <- repool(a,b)
-    return(D_Jost(temp)$global.het)
+    return(D_Jost(temp, hsht_mean=hsht_mean)$global.het)
     }
   res <- sapply(1:dim(allP)[2], function(i) pair(allP[,i][1], allP[,i][2]))
   attributes(res) <- list(class="dist", Diag=FALSE, Upper=FALSE, 
-                          Labels=x@pop.names,Size=n.pops)
+                          Labels=popNames(x),Size=n.pops)
   if(linearized){
      return(res/(1-res))
      }
   else(return(res))
 }
-
-
-
-
-

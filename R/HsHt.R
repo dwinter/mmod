@@ -8,16 +8,19 @@
 
 HsHt <- function(x){
     #start by dropping missing for this locus
-    x <- x[apply(x@tab, 1, function(i) any(i > 0)),]
+    x <- x[complete.cases(x@tab)]
     n_by_pop <-  table(pop(x))
-    pops <- pop(x)
+    if(length(n_by_pop) < 2){
+        warning("Need at least two population to calculate differentiation")
+        return(c(NA, NA, NA))
+    }
+    afreqs <- apply(x@tab, 2, "/", ploidy(x))
     n <- nPop(x)
     harmN <- harmonic_mean(n_by_pop[n_by_pop >0])
-    a <- apply(apply(x@tab, 2, "/", ploidy(x)), 2, function(L) 
-                   tapply(L, pops, mean, na.rm=TRUE))
-    HpS <- sum(1 - apply(a^2, 1, sum, na.rm=TRUE)) / n
+    a <- apply(afreqs, 2, function(A) tapply(A, pop(x), mean))
+    HpS <- mean(1 - rowSums(a^2))
     Hs_est <- (2*harmN/(2*harmN-1))*HpS
-    HpT <- 1 - sum(apply(a,2,mean, na.rm=TRUE)^2)
+    HpT <- 1 - sum(colMeans(a)^2)
     Ht_est <- HpT + Hs_est/(2*harmN*n)
     return(c(Ht_est, Hs_est, n))
 }
