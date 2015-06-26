@@ -19,7 +19,6 @@ harmonic_mean <- function(x, na.rm=TRUE){
       if(any(is.na(x))) return(NA)
   }
   if(any(x < 0)){
-     warning("Asked to calculate the harmonic mean of a vector containing negative numbers")
      return(NA)
   }
   1/mean(1/x)

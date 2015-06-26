@@ -34,7 +34,7 @@ pairwise_Gst_Nei <- function(x, linearized=FALSE) {
     }
   res <- sapply(1:dim(allP)[2], function(i) pair(allP[,i][1], allP[,i][2]))
   attributes(res) <- list(class="dist", Diag=FALSE, Upper=FALSE, 
-                          Labels=x@pop.names,Size=n.pops)
+                          Labels=popNames(x),Size=n.pops)
   if(linearized){
      return(res/(1-res))
   }
