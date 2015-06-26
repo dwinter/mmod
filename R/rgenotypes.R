@@ -28,7 +28,7 @@
 
 rgenotypes <- function(n, ploidy, probs, genind=FALSE, pop_name="A", loc_name = "L1"){
  if(all(is.na(probs))){ 
-  res <- matrix(rep(probs, n), ncol=n)
+  res <- matrix(NA, ncol=n, nrow=length(probs))
   }
  else
  res <- rmultinom(n, ploidy, probs)

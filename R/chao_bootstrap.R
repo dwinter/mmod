@@ -47,7 +47,8 @@ chao_bootstrap <- function(x, nreps=1000){
   
   one_rep <- function(){
     temp <- x
-    temp@tab <- do.call(rbind, sapply(1:pop_n , per_pop, simplify=FALSE))/2
+    temp@tab <- do.call(rbind, sapply(1:pop_n , per_pop, simplify=FALSE))
+#    temp@tab <- as.integer(temp@tab)
     return(temp)
   }
   
