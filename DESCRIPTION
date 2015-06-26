@@ -9,8 +9,8 @@ Depends:
     adegenet,
     pegas
 ZipData: no
-Description: mmod provides functions for measuring
-    population divergence from genotypic data
+Description: Provides functions for measuring
+    population divergence from genotypic data.
 License: MIT + file LICENSE
 URL: https://github.com/dwinter/mmod
 Roxygen: list(wrap = FALSE)
