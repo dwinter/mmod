@@ -32,6 +32,7 @@ Other diffstat: \code{\link{D_Jost}};
   \code{\link{Gst_Hedrick}}; \code{\link{Phi_st_Meirmans}};
   \code{\link{diff_stats}}
 
-Other Nei: \code{\link{pairwise_Gst_Nei}}
+Other Nei: \code{\link{pairwise_Gst_Nei}},
+  \code{\link{pairwise_Gst_Nei}}
 }
 
