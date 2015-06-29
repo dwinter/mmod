@@ -45,7 +45,7 @@ dist.codom <- function(x, matrix=TRUE, global=TRUE, na.rm=TRUE){
     else{
         dropped <- NULL
     }
-	res <- dist(l@tab, "manhattan") / ploidy
+	res <- dist(l@tab/ploidy, "manhattan")/2
 	if(matrix){
 	    res <- as.matrix(res)
         }
