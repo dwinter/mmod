@@ -10,7 +10,7 @@ Authors@R: c(
 Maintainer: David Winter <david.winter@gmail.com>
 Depends:
     R (>= 2.6.0),
-    adegenet,
+    adegenet (>= 2.0),
     pegas
 ZipData: no
 Description: Provides functions for measuring
