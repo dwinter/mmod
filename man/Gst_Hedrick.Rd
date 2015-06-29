@@ -40,7 +40,6 @@ Other diffstat: \code{\link{D_Jost}};
   \code{\link{Gst_Nei}}; \code{\link{Phi_st_Meirmans}};
   \code{\link{diff_stats}}
 
-Other Hedrick: \code{\link{pairwise_Gst_Hedrick}},
-  \code{\link{pairwise_Gst_Hedrick}}
+Other Hedrick: \code{\link{pairwise_Gst_Hedrick}}
 }
 
