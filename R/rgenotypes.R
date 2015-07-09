@@ -15,7 +15,7 @@
 #' @param pop_name charcter Name for population defined in genind object
 #' (not required if genind is not TRUE)
 #' @param loc_name character name to five locus in genind object
-#'
+#' @importFrom stats rmultinom
 #' @return Either a matrix with individuals in columns, alleles in rows or, if
 #' genind is TRUE a genind object for one population and locus.
 #' @seealso \code{\link{rmultinom}} which this function wraps.

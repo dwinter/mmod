@@ -18,6 +18,7 @@
 #' @return Dropped for each distance matrix and object of class "na.action" 
 #' containing indices to those indivudals in the genind object which where 
 #' omitted due to having NAs
+#' @importFrom stats dist
 #' @export
 #' 
 #' @references
