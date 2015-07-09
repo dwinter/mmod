@@ -1,5 +1,6 @@
 [![Travis-CI Build
-Status](https://travis-ci.org/dwinter/mmod.png?branch=master)](https://travis-ci.org/dwinter/mmod)
+Status](https://travis-ci.org/dwinter/mmod.png?branch=master)](https://travis-ci.org/dwinter/mmod) 
+[![](http://cranlogs.r-pkg.org/badges/mmod)](http://cran.rstudio.com/web/packages/mmod/index.html)
 
 #Modern Measures of Differentiation
 
@@ -11,11 +12,14 @@ Status](https://travis-ci.org/dwinter/mmod.png?branch=master)](https://travis-ci
 
 mmod is on CRAN, so you can install the latest stable version using 
 `install.packages("mmod")`. This github repository may be running ahead of 
-the version on CRAN, if you really want the latest version you can download
- `mmod_*.tar.gz` and install via the command line (or with the GUI if you'd 
- prefer):
+the version on CRAN, if you really want the latest version you can use
+`devtools`
+to install the code in thes repo:
 
-        $R CMD INSTALL mmod_*.tar.gz 
+```r
+library(devtools)
+install_github("dwinter/mmod")
+```
 
 ###Usage
 Once it's up an running all you need is genepop (or fstat) file with your data
@@ -35,15 +39,15 @@ mmod is a package that brings two of these measures; Hedricks (2005, 2011) G''st
  Jost's (2008) D and Meirman's (2005) φ'st to R, along with a function that 
  calculates Nei's Gst using nearly unbiased estimators for Hs and Ht  (the two 
  key parameters from which most of these stats are calculated). All these 
- functions work on `genind` objects from the library `adegenet` so data can be 
+ functions work on `genind` objects from the package `adegenet` so data can be 
  read in from standard `genepop` for `fstat` files. An overview of a typical 
  usage is provided in a vignette called "demo", acessable from 
  `vignette("demo", package="mmod")`, I suggest new users read this before that 
  start. 
 
 ##Help
-All functions are documented, there are [pretty versions of the help pages here]
-(http://dwinter.github.com/mmod/).
+All functions are documented and there is Vignette describing a basic usage of
+the pacakge.
 
 
 
