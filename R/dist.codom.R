@@ -19,6 +19,8 @@
 #' containing indices to those indivudals in the genind object which where 
 #' omitted due to having NAs
 #' @importFrom stats dist
+#' @importFrom stats na.omit
+#' @importFrom stats complete.cases
 #' @export
 #' 
 #' @references

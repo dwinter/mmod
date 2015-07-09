@@ -18,7 +18,9 @@
 #' @param nreps number of steps used to simulate p-value (default 2000)
 #' @return named vector of p-values testing the null hypothesis these samples
 #' where drawn from a panmictic population.
-#' @seealso \code{\link{fisher.test}} from base R, which this function wraps
+#' @importFrom stats fisher.test
+#' @importFrom stats complete.cases
+#' @seealso \code{\link{fisher.test}}, which this function wraps
 #' @export
 #' @examples
 #' 

@@ -26,6 +26,8 @@
 #' @return summary.global_harm: mean, .025 and 0.975 percentile and variance for
 #' global estimate variance of statistic for each locus based on harmonic mean
 # (only applies to D_Jost)
+#' @importFrom stats var
+#' @importFrom stats quantile
 #' @export
 #' @examples
 #'\dontrun{  
