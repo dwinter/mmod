@@ -2,8 +2,7 @@
 #all others (below) can make use of.
 
 pairwise_fxn <- function(x, linearized=FALSE, FXN, VAL, ...){
-    pops <- seppop(x)
-    n.pops <- length(pops)
+    n.pops <- nPop(x)
     #all combinations 
     res <- utils::combn(1:n.pops, 2, function(p) FXN(x[pop=p], ...)[[VAL]])
     attributes(res) <- list(class="dist", Diag=FALSE, Upper=FALSE, 
