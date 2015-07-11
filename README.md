@@ -1,6 +1,6 @@
 [![Travis-CI Build
 Status](https://travis-ci.org/dwinter/mmod.png?branch=master)](https://travis-ci.org/dwinter/mmod) 
-[![](http://cranlogs.r-pkg.org/badges/mmod)](http://cran.rstudio.com/web/packages/mmod/index.html)[![Current CRAN release](https://zenodo.org/badge/doi/10.5281/zenodo.19961.svg)](http://dx.doi.org/10.5281/zenodo.19961)
+[![](http://cranlogs.r-pkg.org/badges/mmod)](http://cran.rstudio.com/web/packages/mmod/index.html) [![Current CRAN release](https://zenodo.org/badge/doi/10.5281/zenodo.19961.svg)](http://dx.doi.org/10.5281/zenodo.19961)
 
 
 #Modern Measures of Differentiation
