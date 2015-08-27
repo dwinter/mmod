@@ -82,5 +82,5 @@ pairwise_Gst_Hedrick<- function(x, linearized=FALSE) {
 #' @family Nei
 
 pairwise_Gst_Nei <- function(x, linearized=FALSE) {
-    pairwise_fxn(x, linearized, Gst_Hedrick, "global")
+    pairwise_fxn(x, linearized, Gst_Nei, "global")
 }
