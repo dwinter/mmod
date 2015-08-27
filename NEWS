@@ -1,3 +1,8 @@
+*1.3.1
+
+Bug fix: Since the last release the pairwise version of Gst_Nei was actually
+caclulated Gst_Hedrick. Thanks to Thierry Gosselin for the patch.
+
 *1.3.0 __
 
 MMOD now compatible with adegenet 2.0.
