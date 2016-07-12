@@ -2,32 +2,43 @@
 #'
 #' This function applies a differentiation statistic (eg, D_Jost, Gst_Hedrick or 
 #' Gst_Nei) to a list of genind objects, possibly produced with
-#' chao_bootsrap or jacknife_populations. The resulting list contains a matrix
-#' of values with the statistic for each locus as well as a global estimate 
-#' for every object in the sample. Additionally, mean and 95% confidence 
-#' intervals are calculated for each set of statisics A custom print method 
-#' that displays these summaries is provided.
+#' chao_bootsrap or jacknife_populations. 
+#' 
+#' Two different approaches are used for calculating confidence intervals in the
+#' results. The estimates given by \code{lower.percentile} and \code{upper.percentile}
+#' are simply the \code{2.5}th and \code{97.5}th precentile of the statistic
+#' across bootstrap samples. Note, the presence or rare alleles in some
+#' populations can bias bootstrapping procedures such that these intervals
+#' are not centered on the observed value. The mean of statistic across
+#' samples is returned as \code{mean.bs} and can be used to correct biased
+#' bootsrap samples. Alternatively, \code{lower.normal} and \code{upper.normal}
+#' form a confidence interval centered on the observed value of the statistic
+#' and using the standard deviation of the statistic across replicates to
+#' generate limits (sometimes called the normal-method of obtaining a confidence
+#' interval). The print function for objects returned by this function displays 
+#' the normal-method confidence intervals.
 #' 
 #'
 #' @param bs list of genind objects
 #' @param statistic differentiation statistic to apply (the function itself, 
 #' as with apply family functions)
 #' @family resample
-#' @return per.locus:  matrix of statistics calculated for each locus and each 
-#' bootstrap replication
-#' @return global.het: vector of global estimates calculated from overall 
+#' @return per.locus:  \code{matirx} of statistics calculated for each locus (column) and each 
+#' bootstrap replicate (row).
+#' @return global.het: \code{vector} of global estimates calculated from overall 
 #' heterozygosity 
-#' @return global.het: vector of global estimates calculated from harmonic
+#' @return global.het: \code{vector} of global estimates calculated from harmonic
 #' mean of statistic (only applied to D_Jost)
-#' @return summary.loci: matrix containing mean, .025 and 0.975 percentile and
-#' varaince of statisic for each locus
-#' @return summary.global_het: mean, .025 and 0.975 percentile and variance for
-#' global estimate variance of statistic for each locus based on heterozygosity
-#' @return summary.global_harm: mean, .025 and 0.975 percentile and variance for
-#' global estimate variance of statistic for each locus based on harmonic mean
-# (only applies to D_Jost)
-#' @importFrom stats var
+#' @return summary.loci: \code{data.frame} summarising the distribution of the
+#' chosen statistic across replicates. Details of the different confidence
+#' intervals are given in details
+#' @return summary.global_het: A vector containing the same measures as
+#' \code{summary.loci} but for a global value of the statistic calculated from
+#' all loci
+#' @return summary.global_harm: As with \code{summary.global_het} but calculated
+#' from the harmonic mean of the statistic across loci (only applies to D_Jost)
 #' @importFrom stats quantile
+#' @importFrom stats sd
 #' @export
 #' @examples
 #'\dontrun{  
@@ -37,48 +48,53 @@
 #'}
 
 
-summarise_bootstrap <- function(bs, statistic){
-  nreps <- length(bs)
-  stats <- sapply(bs, statistic)
-  loc_stats <- do.call(rbind, stats["per.locus",])
 
-  res <-list("per.locus"= loc_stats,
-             "global.het"=unlist(stats[2,])
-            )
-  #Only D_Jost has another estimate of global value
-  if(identical(statistic, D_Jost)){
-    res$global.harm <- unlist(stats[3,])
+summarise_bootstrap <- function(bs, statistic){
+    obs <- statistic(bs$obs)
+    nreps <- length(bs)
+    stats <- sapply(bs$BS, statistic)
+    loc_stats <- do.call(rbind, stats["per.locus",])
+
+    res <-list("per.locus"= loc_stats,
+               "global.het"=unlist(stats[2,])
+    )
+    nloc <- length(obs$per.locus)
+    res$summary.loci <- data.frame(
+        "locus"    = names(obs$per.locus),                           
+        "observed" = obs$per.locus,
+        "lower.normal" = numeric(nloc), 
+        "upper.normal" = numeric(nloc), 
+        "std.dev" = numeric(nloc), 
+        "mean.bs" = numeric(nloc), 
+        "lower.percentile" = numeric(nloc), 
+        "upper.percentile" = numeric(nloc),
+        stringsAsFactors=FALSE #hell no
+    )
+    for(i in 1:nloc){
+        res$summary.loci[i,2:8] <- combined_summary_stats(obs$per.locus[i], bs_summary_stats(loc_stats[,i]))
     }
-  summarise <- function(x){
-    return(c(mean=mean(x), 
-             quantile(x, c(0.025, 0.975), na.rm=TRUE),
-             variance=var(x) 
-            ))
-  }
-  res$summary.loci <- apply(loc_stats, 2, summarise)
-  res$summary.global.het <- summarise(res$global.het)
-  if(identical(statistic, D_Jost)){
-    res$summary.global.harm <- summarise(res$global.harm)
+                                
+    if(identical(statistic, D_Jost)){
+        res$global.harm <- unlist(stats[3,])
+        res$summary.global.harm <- combined_summary_stats(obs$global.harm_mean, bs_summary_stats(res$global.harm))
+        res$summary.global.het<- combined_summary_stats(obs$global.het, bs_summary_stats(res$global.het))
+    } else {
+        res$summary.global.het <- combined_summary_stats(obs$global, bs_summary_stats(res$global.het))
     }
-  class(res) <- "summarised_bs"
-  return(res)
+    class(res) <- "summarised_bs"
+    res
 }
 
 #' @export 
 
 print.summarised_bs <- function(x, ...){
   
-  print_line <- function(x){
-  x <- round(x, 4)
-  return(paste(x[1], "\t(", x[2],"-", x[3], ")\n", sep="")) 
-  }
-  
-  loc.names <- colnames(x$per.locus)
-  loc.results <- apply(x$summary.loci, 2, print_line)
+  print_line <- function(x) sprintf("%.4f\t(%.3f-%.3f)\n", x["observed"], x["lower.normal"], x["upper.normal"]) 
+
   cat("\nEstimates for each locus\n")
   cat("Locus\tMean\t 95% CI\n")
-  for(i in 1:length(loc.names)){
-    cat(paste(loc.names[i], loc.results[i], sep="\t"))
+  for(i in 1:dim(x$summary.loci)[1]){
+    cat( x$summary.loci$locus[i], print_line(x$summary.loci[i,]), sep="\t")    
   }
   cat("\nGlobal Estimate based on average heterozygosity\n")
   cat(print_line(x$summary.global.het))
@@ -88,3 +104,11 @@ print.summarised_bs <- function(x, ...){
   }
 }
 
+bs_summary_stats <- function(B){
+    structure(c(sd(B), mean(B), quantile(B, c(0.025, 0.975))), 
+              .Names=c("std.dev", "mean", "lower.percentile", "upper.precentile"))
+}
+
+combined_summary_stats <- function(obs, summ){
+    c(observed=obs, lower.normal=obs - summ[["std.dev"]]*1.96, upper.normal=obs + summ[["std.dev"]]*1.96, summ)
+}

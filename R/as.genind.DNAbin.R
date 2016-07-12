@@ -19,7 +19,7 @@ as.genind.DNAbin <- function(x, pops){
     tab <- sapply(attr(h, 'index'), function(i) 
                  sapply(1:dim(x)[1], function(j) sum(i==j)))
     colnames(tab) <- paste("L1", 1:dim(tab)[2], sep=".")
-    res <- genind(tab=tab, pop=pops)
+    res <- genind(tab=tab, pop=pops, ploidy=1)
     return(res)
 }
 
