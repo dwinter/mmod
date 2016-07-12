@@ -48,7 +48,7 @@ chao_bootstrap <- function(x, nreps=1000){
   
 }
 
-
+#'@export
 print.genind_bootstrap <- function(x, ...){
     cat("Bootstrap sample of genind objects\n")
     cat(" $BS: ", attr(x, "n"), "genind objects\n $obs: original dataset\n")
