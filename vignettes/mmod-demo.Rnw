@@ -176,7 +176,10 @@ bs.D
 @
 
 As you can see, printing a summarised bootstrap sample gives us shows a basic
-overview of that data, but there is also quite a lot more there --- use
+overview of that data. In this case the confidence intervals are calculated
+using the ``normal method'', which it to say the the intervals are the observed
+value statistic +/- 1.96 x the standard error of the boostrap sample.There is more 
+to these objects than gets printed --- use
 \texttt{str(bs.D)}  to check it out. I don't think there is much point trying 
 to interpret confidence intervals estimated from 10 samples, but the point 
 estimates seem to show a population with some substantial differentiation.
