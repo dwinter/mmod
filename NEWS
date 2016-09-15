@@ -4,6 +4,7 @@
 confidence intervals as well as percentile method. Normal method is used in
 print statement for summarized boostraps.
 
+Small tweaks to match new CRAN policy/ R behaviour
 
 *1.3.1
 
