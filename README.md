@@ -2,13 +2,13 @@
 Status](https://travis-ci.org/dwinter/mmod.png?branch=master)](https://travis-ci.org/dwinter/mmod) 
 [![](http://cranlogs.r-pkg.org/badges/mmod)](http://cran.rstudio.com/web/packages/mmod/index.html) [![Current CRAN Release](https://zenodo.org/badge/13548/dwinter/mmod.svg)](https://zenodo.org/badge/latestdoi/13548/dwinter/mmod)
 
-#Modern Measures of Differentiation
+# Modern Measures of Differentiation
 
 `mmod` is an R package for calculating modern population divergence statistics. 
 
-##Quickstart
+## Quickstart 
 
-###Install
+### Install
 
 mmod is on CRAN, so you can install the latest stable version using 
 `install.packages("mmod")`. This github repository may be running ahead of 
@@ -21,14 +21,14 @@ library(devtools)
 install_github("dwinter/mmod")
 ```
 
-###Usage
+### Usage
 Once it's up an running all you need is genepop (or fstat) file with your data
 
         >library(mmod)
         >my_data <- read.genepop("my_file.gen")
         >diff_stats(my_data)
    
-##Overview
+## Overview
 
 Population geneticists have traditionally used Nei's Gst (often confusingly 
 called Fst...) to measure divergence between populations. It turns out, Gst 
@@ -45,7 +45,7 @@ mmod is a package that brings two of these measures; Hedricks (2005, 2011) G''st
  `vignette("demo", package="mmod")`, I suggest new users read this before that 
  start. 
 
-##Help
+## Help
 All functions are documented and there is Vignette describing a basic usage of
 the pacakge.
 
