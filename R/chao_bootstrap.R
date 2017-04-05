@@ -36,21 +36,41 @@
 #'
 
 chao_bootstrap <- function(x, nreps=1000){
-  loc <- x@loc.fac
+  m <- pop_afreqs(x)
   pop_sizes <- table(pop(x))
-  pop_n <- length(pop_sizes)
-  #population allele frequencies
-  m <- apply(x@tab,2, function(y) tapply(y, pop(x), mean, na.rm=TRUE) )
-  per_pop <- function(i){
-    t(do.call(rbind, tapply(m[i,], loc, function(p) rgenotypes(pop_sizes[i],2,p)) ))
+  ploid <- unique(ploidy(x))
+  if( length(ploid) > 1){
+      stop("Cannot produce bootstraps from a dataset has mixed ploidy")
   }
+  BS <- replicate(nreps, genind_bs(m, pop_sizes, ploid,x)) 
+
+  structure(list(BS=BS, obs=x), class="genind_bootstrap", n=nreps)
   
-  one_rep <- function(){
-    temp <- x
-    temp@tab <- do.call(rbind, sapply(1:pop_n , per_pop, simplify=FALSE))
-#    temp@tab <- as.integer(temp@tab)
-    return(temp)
-  }
-  
-  return(replicate(nreps, one_rep()))
 }
+
+#'@export
+print.genind_bootstrap <- function(x, ...){
+    cat("Bootstrap sample of genind objects\n")
+    cat(" $BS: ", attr(x, "n"), "genind objects\n $obs: original dataset\n")
+}
+
+pop_afreqs <- function(x){
+  apply(tab(x),2, function(y) tapply(y, pop(x), mean, na.rm=TRUE) )
+}
+
+genind_bs <- function(afreqs, pop_sizes, ploidy, x){
+    X <- matrix(0L, nrow=nInd(x), ncol=sum(nAll(x)))
+    start <- 1
+    for(i in 1:nPop(x)){
+        pop_sim <- t(do.call(rbind, tapply(afreqs[i,], locFac(x), function(p) rgenotypes(pop_sizes[i], ploidy, p))))
+        end <- start+pop_sizes[i]
+
+        X[start:(end-1),] <- pop_sim
+        start <- end
+    }
+    ln <- locNames(x)
+    x@tab <- X
+    locNames(x) <- ln
+    x
+}
+

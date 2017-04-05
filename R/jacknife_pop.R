@@ -24,8 +24,8 @@ jacknife_populations <- function(x, sample_frac=0.5, nreps=1000){
   if( i %% 50 == 0){
     cat("\r", paste(i, "of", nreps, "reps completed"))
   }
-  to.sample <- sample(d$pop.names, length(d$pop.names) * sample_frac)
-  return(d[d$pop.names %in% to.sample,])
+  to.sample <- sample(popNames(d),nPop(d) * sample_frac)
+  return(d[popNames(d) %in% to.sample,])
  }
  return(sapply(1:nreps, rep, x))
 }

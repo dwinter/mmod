@@ -27,21 +27,17 @@
 #' rgenotypes(10, 2, obs_allele_freqs)
 
 rgenotypes <- function(n, ploidy, probs, genind=FALSE, pop_name="A", loc_name = "L1"){
- if(all(is.na(probs))){ 
-  res <- matrix(NA, ncol=n, nrow=length(probs))
-  }
- else
- res <- rmultinom(n, ploidy, probs)
- if(genind){
-    res <- t(res)
-    colnames(res) <- paste(loc_name, 1:length(probs), sep=".")
-    res <- genind(res, rep(pop_name, n, ploidy=ploidy)) 
- }
- return(res)
+    if(all(is.na(probs))){ 
+        return(matrix(NA, ncol=n, nrow=length(probs)))
+     }
+     res <- rmultinom(n, ploidy, probs)
+     if(genind){
+        res <- t(res)
+        colnames(res) <- paste(loc_name, 1:length(probs), sep=".")
+        res <- genind(res, rep(pop_name, n, ploidy=ploidy)) 
+    }
+    return(res)
 }
-
-
-
 
 
 
