@@ -50,4 +50,3 @@ Chao, A. et al. (2008). A Two-Stage probabilistic approach to Multiple-Community
 Other resample: \code{\link{jacknife_populations}},
   \code{\link{summarise_bootstrap}}
 }
-

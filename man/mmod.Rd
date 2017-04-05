@@ -4,6 +4,7 @@
 \name{mmod}
 \alias{mmod}
 \alias{mmod-package}
+\alias{mmod-package}
 \title{Modern Measures of Differentiation}
 \description{
 Population geneticists have traditionally used Nei's Gst (often confusingly called 
@@ -18,4 +19,3 @@ vignette("demo", package="mmod") from within R) contains an introduction to
 these methods and and example usage for this package. I strongly suggest new
 users start by reading this documentation.
 }
-

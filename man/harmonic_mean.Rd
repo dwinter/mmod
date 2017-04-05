@@ -24,4 +24,3 @@ data(nancycats)
 pop.sizes <- table(pop(nancycats))
 harmonic_mean(pop.sizes)
 }
-

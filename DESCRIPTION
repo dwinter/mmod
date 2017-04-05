@@ -24,4 +24,4 @@ License: MIT + file LICENSE
 URL: https://github.com/dwinter/mmod
 BugReports: https://github.com/dwinter/mmod/issue
 Roxygen: list(wrap = FALSE)
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

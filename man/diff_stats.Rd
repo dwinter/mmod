@@ -49,4 +49,3 @@ Other diffstat: \code{\link{D_Jost}},
   \code{\link{Gst_Hedrick}}, \code{\link{Gst_Nei}},
   \code{\link{Phi_st_Meirmans}}
 }
-

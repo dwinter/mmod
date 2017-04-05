@@ -64,4 +64,3 @@ summarise_bootstrap(bs, D_Jost)
 Other resample: \code{\link{chao_bootstrap}},
   \code{\link{jacknife_populations}}
 }
-

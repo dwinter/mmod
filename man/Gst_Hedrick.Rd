@@ -42,4 +42,3 @@ Other diffstat: \code{\link{D_Jost}},
 
 Other Hedrick: \code{\link{pairwise_Gst_Hedrick}}
 }
-

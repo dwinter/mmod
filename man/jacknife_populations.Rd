@@ -33,4 +33,3 @@ jn.D <- summarise_bootstrap(jn, D_Jost)
 Other resample: \code{\link{chao_bootstrap}},
   \code{\link{summarise_bootstrap}}
 }
-

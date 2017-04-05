@@ -41,4 +41,3 @@ diff_test(seploc(nancycats)[[2]], nreps=100)
 \seealso{
 \code{\link{fisher.test}}, which this function wraps
 }
-

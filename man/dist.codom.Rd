@@ -40,4 +40,3 @@ head(dm)
 Kosman E., Leonard, K.J. Similarity coefficients for molecular markers in studies of genetic relationships between individuals for haploid
  diploid, and polyploid species. Molecular Ecology. 14: 415-424
 }
-

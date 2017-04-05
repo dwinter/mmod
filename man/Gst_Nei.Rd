@@ -35,4 +35,3 @@ Other diffstat: \code{\link{D_Jost}},
 
 Other Nei: \code{\link{pairwise_Gst_Nei}}
 }
-

@@ -44,4 +44,3 @@ rgenotypes(10, 2, obs_allele_freqs)
 \seealso{
 \code{\link{rmultinom}} which this function wraps.
 }
-

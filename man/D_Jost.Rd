@@ -41,10 +41,9 @@ D_Jost(nancycats, hsht_mean= "arithmetic")
 Jost, L. (2008), GST and its relatives do not measure differentiation. Molecular Ecology, 17: 4015-4026.
 }
 \seealso{
-Other D: \code{\link{pairwise_D}}
-
 Other diffstat: \code{\link{Gst_Hedrick}},
   \code{\link{Gst_Nei}}, \code{\link{Phi_st_Meirmans}},
   \code{\link{diff_stats}}
-}
 
+Other D: \code{\link{pairwise_D}}
+}

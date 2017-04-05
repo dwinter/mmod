@@ -31,9 +31,8 @@ pairwise_D(nancycats[1:26,])
 Jost, L. (2008), GST and its relatives do not measure differentiation. Molecular Ecology, 17: 4015-4026.
 }
 \seealso{
-Other D: \code{\link{D_Jost}}
-
 Other pairwise: \code{\link{pairwise_Gst_Hedrick}},
   \code{\link{pairwise_Gst_Nei}}
-}
 
+Other D: \code{\link{D_Jost}}
+}
