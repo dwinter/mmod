@@ -76,6 +76,10 @@ summarise_bootstrap <- function(bs, statistic){
                                 
     if(identical(statistic, D_Jost)){
         res$global.harm <- unlist(stats[3,])
+        if(any(is.na(res$global.harm))){
+            res$global.harm[is.na(res$global.harm)] <- 0
+            warning("Bootstrap distribution of D_Jost includes negative values, harmonic mean is undefined")
+        }
         res$summary.global.harm <- combined_summary_stats(obs$global.harm_mean, bs_summary_stats(res$global.harm))
         res$summary.global.het<- combined_summary_stats(obs$global.het, bs_summary_stats(res$global.het))
     } else {
@@ -105,6 +109,7 @@ print.summarised_bs <- function(x, ...){
 }
 
 bs_summary_stats <- function(B){
+    
     structure(c(sd(B), mean(B), quantile(B, c(0.025, 0.975))), 
               .Names=c("std.dev", "mean", "lower.percentile", "upper.precentile"))
 }
