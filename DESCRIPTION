@@ -16,7 +16,8 @@ Imports:
     stats,
     pegas
 Suggests:
-    testthat
+    testthat,
+    covr
 ZipData: no
 Description: Provides functions for measuring
     population divergence from genotypic data.

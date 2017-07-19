@@ -1,6 +1,7 @@
 [![Travis-CI Build
 Status](https://travis-ci.org/dwinter/mmod.png?branch=master)](https://travis-ci.org/dwinter/mmod) 
 [![](http://cranlogs.r-pkg.org/badges/mmod)](http://cran.rstudio.com/web/packages/mmod/index.html) [![Current CRAN Release](https://zenodo.org/badge/13548/dwinter/mmod.svg)](https://zenodo.org/badge/latestdoi/13548/dwinter/mmod)
+[![Coverage Status](https://img.shields.io/codecov/c/github/dwinter/mmod/master.svg)](https://codecov.io/github/dwinter/mmod?branch=master)
 
 # Modern Measures of Differentiation
 
