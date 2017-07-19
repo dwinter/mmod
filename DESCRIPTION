@@ -22,6 +22,6 @@ Description: Provides functions for measuring
     population divergence from genotypic data.
 License: MIT + file LICENSE
 URL: https://github.com/dwinter/mmod
-BugReports: https://github.com/dwinter/mmod/issue
+BugReports: https://github.com/dwinter/mmod/issues
 Roxygen: list(wrap = FALSE)
 RoxygenNote: 6.0.1

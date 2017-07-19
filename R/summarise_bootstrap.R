@@ -108,9 +108,8 @@ print.summarised_bs <- function(x, ...){
   }
 }
 
-bs_summary_stats <- function(B){
-    
-    structure(c(sd(B), mean(B), quantile(B, c(0.025, 0.975))), 
+bs_summary_stats <- function(B){     
+    structure(c(sd(B), mean(B), quantile(B, c(0.025, 0.975), na.rm=TRUE)), 
               .Names=c("std.dev", "mean", "lower.percentile", "upper.precentile"))
 }
 
